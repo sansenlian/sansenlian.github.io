@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>位运算</title>
+      <link href="/2019/08/11/wei-yun-suan/"/>
+      <url>/2019/08/11/wei-yun-suan/</url>
+      
+        <content type="html"><![CDATA[<ul><li>测试第 k 位: <code>s &amp; (1 &lt;&lt; k)</code></li><li>设置第 k 位: <code>s |= (1 &lt;&lt; k)</code></li><li>第 k 位置零: <code>s &amp;= ~(1 &lt;&lt; k)</code></li><li>切换第 k 位值: <code>s ^= ~(1 &lt;&lt; k)</code></li><li>乘以 2: <code>s &lt;&lt; n</code></li><li>除以 2: <code>s &gt;&gt; n</code></li><li>交集: <code>s &amp; t</code></li><li>并集: <code>s | t</code></li><li>减法: <code>s &amp; ~t</code></li><li>交换 <code>x = x ^ y ^ (y = x)</code></li><li>取出最小非 0 位（Extract lowest set bit）: <code>s &amp; (-s)</code></li><li>取出最小 0 位（Extract lowest unset bit）: <code>~s &amp; (s + 1)</code></li><li>交换值:<br><br><code>x ^= y; y ^= x; x ^= y;</code></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>文档测试</title>
       <link href="/2019/08/11/wen-dang-ce-shi/"/>
       <url>/2019/08/11/wen-dang-ce-shi/</url>
@@ -11,6 +24,33 @@
         <content type="html"><![CDATA[<p>哈哈哈</p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客JavaScript</title>
+      <link href="/2019/08/11/bo-ke-javascript/"/>
+      <url>/2019/08/11/bo-ke-javascript/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
       
     </entry>
     

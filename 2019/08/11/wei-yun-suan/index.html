@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="文档测试, sansenlian的博客">
-    <meta name="description" content="哈哈哈
-">
+    <meta name="keywords" content="位运算, sansenlian的博客">
+    <meta name="description" content="
+测试第 k 位: s &amp;amp; (1 &amp;lt;&amp;lt; k)
+设置第 k 位: s |= (1 &amp;lt;&amp;lt; k)
+第 k 位置零: s &amp;amp;= ~(1 &amp;lt;&amp;lt; k)
+切换第 k 位值: s ^= ~(1 &amp;lt;&amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>文档测试 | sansenlian的博客</title>
+    <title>位运算 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        文档测试
+                        位运算
                     </div>
                 </div>
             </div>
@@ -396,7 +399,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3
+                        115
                     </div>
                     
 
@@ -419,7 +422,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>哈哈哈</p>
+                <ul>
+<li>测试第 k 位: <code>s &amp; (1 &lt;&lt; k)</code></li>
+<li>设置第 k 位: <code>s |= (1 &lt;&lt; k)</code></li>
+<li>第 k 位置零: <code>s &amp;= ~(1 &lt;&lt; k)</code></li>
+<li>切换第 k 位值: <code>s ^= ~(1 &lt;&lt; k)</code></li>
+<li>乘以 2: <code>s &lt;&lt; n</code></li>
+<li>除以 2: <code>s &gt;&gt; n</code></li>
+<li>交集: <code>s &amp; t</code></li>
+<li>并集: <code>s | t</code></li>
+<li>减法: <code>s &amp; ~t</code></li>
+<li>交换 <code>x = x ^ y ^ (y = x)</code></li>
+<li>取出最小非 0 位（Extract lowest set bit）: <code>s &amp; (-s)</code></li>
+<li>取出最小 0 位（Extract lowest unset bit）: <code>~s &amp; (s + 1)</code></li>
+<li>交换值:<br><br><code>x ^= y; y ^= x; x ^= y;</code></li>
+</ul>
 
             </div>
             <hr/>
@@ -578,9 +595,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《文档测试》
+                    《位运算》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/wen-dang-ce-shi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/wei-yun-suan/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -621,7 +638,7 @@
         repo: 'sansenlian.github.io',
         owner: 'sansenlian',
         admin: "sansenlian",
-        id: '2019-08-11T09-22-32',
+        id: '2019-08-11T09-49-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -642,9 +659,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/08/11/wei-yun-suan/">
                     <div class="card-image">
@@ -666,9 +684,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -677,6 +695,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -687,19 +706,20 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/11/bo-ke-javascript/">
+                <a href="/2019/08/11/wen-dang-ce-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="博客JavaScript">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="文档测试">
                         
-                        <span class="card-title">博客JavaScript</span>
+                        <span class="card-title">文档测试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            哈哈哈
+
                         
                     </div>
                     <div class="publish-info">
@@ -708,27 +728,11 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sansenlian
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/前端/" target="_blank">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
                 </div>
                 
             </div>
