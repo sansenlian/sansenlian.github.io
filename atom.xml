@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sansenlian.github.io/"/>
-  <updated>2019-08-11T02:01:18.049Z</updated>
+  <updated>2019-08-15T06:41:57.703Z</updated>
   <id>https://sansenlian.github.io/</id>
   
   <author>
@@ -17,11 +17,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>KMP字符串匹配算法</title>
+    <link href="https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/"/>
+    <id>https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/</id>
+    <published>2019-08-14T07:33:40.000Z</published>
+    <updated>2019-08-15T06:41:57.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;:::tips&lt;br&gt;&lt;a href=&quot;https://github.com/sansenlian/Algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;常见算法github地址——欢迎随手star&lt;/a&gt;&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常见算法github地址</title>
+    <link href="https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/"/>
+    <id>https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/</id>
+    <published>2019-08-14T07:26:55.000Z</published>
+    <updated>2019-08-15T06:41:57.704Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;:::tips&lt;br&gt;&lt;a href=&quot;https://github.com/sansenlian/Algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;常见算法github地址——欢迎随手star&lt;/a&gt;&lt;br&gt;:::&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>力扣算法-算法初级-数组篇</title>
+    <link href="https://sansenlian.github.io/2019/08/11/li-kou-suan-fa-suan-fa-chu-ji-shu-zu-pian/"/>
+    <id>https://sansenlian.github.io/2019/08/11/li-kou-suan-fa-suan-fa-chu-ji-shu-zu-pian/</id>
+    <published>2019-08-11T06:55:06.000Z</published>
+    <updated>2019-08-15T06:41:57.705Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;52690216&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-从排序数组中删除重复项&quot;&gt;&lt;a href=&quot;#1-从排序数组中删除重复项&quot; class=&quot;headerlink&quot; title=&quot;1. 从排序数组中删除重复项&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>位运算</title>
     <link href="https://sansenlian.github.io/2019/08/11/wei-yun-suan/"/>
     <id>https://sansenlian.github.io/2019/08/11/wei-yun-suan/</id>
     <published>2019-08-11T01:49:19.000Z</published>
-    <updated>2019-08-11T02:01:18.049Z</updated>
+    <updated>2019-08-15T06:41:57.706Z</updated>
     
     <summary type="html">
     
