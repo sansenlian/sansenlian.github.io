@@ -4,11 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="KMP字符串匹配算法, sansenlian的博客">
-    <meta name="description" content=":::tips常见算法github地址——欢迎随手star:::
-字符串A中找是否存在字符串B，当然前提A比B长
+    <meta name="keywords" content="网络问题, sansenlian的博客">
+    <meta name="description" content="
+http状态码和含义1xx
+100continue表示继续，一般在发送post请求的时候，发送了http header后服务端会返回这个消息
 
-动图来自:https://blog.csdn.net/weixin_40346046/article/details/794">
+2xx
+
+200 OK：正常返回信息， 即返回的数据为全量的数据，如果文件不通过GZIP压缩的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>KMP字符串匹配算法 | sansenlian的博客</title>
+    <title>网络问题 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +266,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        KMP字符串匹配算法
+                        网络问题
                     </div>
                 </div>
             </div>
@@ -391,21 +394,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-14
+                    2019-08-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        422
+                        5.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        19 分
                     </div>
                     
                 
@@ -421,99 +424,361 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>:::tips<br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener">常见算法github地址——欢迎随手star</a><br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener"></a>:::</p>
-<p>字符串A中找是否存在字符串B，当然前提A比B长</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768043850-3fe8617a-a825-49d8-b037-69046d425a54.png#align=left&display=inline&height=221&originHeight=221&originWidth=1340&size=0&status=done&width=1340" alt></p>
-<p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190812102019.gif#align=left&alt=&display=inline&message=%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7%E9%87%8D%E8%AF%95&percent=0&status=uploading" alt><br>动图来自:<a href="https://blog.csdn.net/weixin_40346046/article/details/79468142" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40346046/article/details/79468142</a></p>
-<p><a name="543c214e"></a></p>
-<h2 id="next数组构建"><a href="#next数组构建" class="headerlink" title="next数组构建"></a>next数组构建</h2><p>next数组构建要求是找前缀表, 比如对于:    ababaa</p>
-<table>
+                <p><a href></a><a name="4f03b79e"></a></p>
+<h3 id="http状态码和含义"><a href="#http状态码和含义" class="headerlink" title="http状态码和含义"></a>http状态码和含义</h3><p><code>1xx</code></p>
+<p>100continue表示<code>继续</code>，一般在发送post请求的时候，发送了http header后服务端会返回这个消息</p>
+<hr>
+<p><code>2xx</code></p>
+<ul>
+<li>200 OK：正常返回信息， 即返回的数据为全量的数据，如果文件不通过GZIP压缩的话，文件是多大，则要有多大传输量。</li>
+<li>201 Created：请求成功并<code>创建了新的资源</code></li>
+<li>202 Accept：服务器接受了请求但<code>还没处理</code></li>
+</ul>
+<hr>
+<p><code>3xx</code></p>
+<ul>
+<li>301：网页已永久性移动到新位置</li>
+<li>302 Found：<code>临时重定向</code>，只是找到了新地址但是没有跳转</li>
+<li>303 See Other：<code>临时重定向</code>，使用get请求新的url</li>
+<li>304 Not Modified：自从上次请求后网站资源没有更新过<br><br>如果客户端发送了一个带条件的GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个304状态码。</li>
+</ul>
+<hr>
+<p><code>4xx 客户端错误</code></p>
+<ul>
+<li>400 bad request：请求<code>格式不对</code>，服务器无法解析,<code>请求无效</code><blockquote>
+<p>前端提交数据的字段名称和字段类型与后台的实体没有保持一致</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>前端提交到后台的数据应该是json字符串类型，但是前端没有将对象JSON.stringify转化成字符串。</p>
+</blockquote>
+<blockquote>
+<p>解决方法：</p>
+</blockquote>
+<blockquote>
+<p>对照字段的名称，保持一致性</p>
+</blockquote>
+<blockquote>
+<p>将obj对象通过JSON.stringify实现序列化</p>
+</blockquote>
+<ul>
+<li><p>401 请求<code>未授权</code>, 当前请求需要用户验证</p>
+</li>
+<li><p>403 Forbidden <code>禁止访问</code>, 服务器已经得到请求，但是拒绝执行</p>
+</li>
+<li><p>404 <code>未找到与URL匹配的资源</code></p>
+</li>
+</ul>
+<hr>
+<p><code>5xx 服务器错误</code></p>
+<ul>
+<li>500 网络服务错误，最常见的服务器错误</li>
+<li>501　　服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。</li>
+<li>502    这是服务器上的一个错误网关</li>
+<li>503 服务器暂时无法访问，可能过载或维护</li>
+<li>504   这是代表着网关超时是现象出现了。</li>
+<li>505   http的版本是不受支持的</li>
+</ul>
+<p><a href></a><a name="5ef23013"></a></p>
+<h3 id="http请求的几种方法和用途"><a href="#http请求的几种方法和用途" class="headerlink" title="http请求的几种方法和用途"></a>http请求的几种方法和用途</h3><ul>
+<li><p>GET和POST</p>
+</li>
+<li><p>PUT和post有点像，但是是指定了资源要在服务器存储的位置，post没有</p>
+</li>
+<li><p>head只请求头部</p>
+<blockquote>
+<p>Head请求有以下特点：</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><code>只请求资源的首部，</code></p>
+</blockquote>
+<blockquote>
+<p><code>检查超链接的有效性</code></p>
+</blockquote>
+<blockquote>
+<p><code>检查网页是否被修改</code></p>
+</blockquote>
+<blockquote>
+<p><code>用于自动搜索机器人获取网页的标志信息，获取rss种子信息，或者传递安全认证信息等</code></p>
+</blockquote>
+<ul>
+<li><p>delete删除服务器上的某资源</p>
+</li>
+<li><p>option表示url所支持的方法，方法包含在一个allow头里面</p>
+</li>
+<li><p>trace用于激发一个远程应用层消息回路</p>
+</li>
+<li><p>connect把请求连接到透明的tcp/ip通道</p>
+</li>
+</ul>
+<p><a href></a><a name="3736167a"></a></p>
+<h3 id="http和https有什么区别"><a href="#http和https有什么区别" class="headerlink" title="http和https有什么区别"></a>http和https有什么区别</h3><p>https的SSL加密是在传输层实现的</p>
+<blockquote>
+<p>一般情况下我们网站用https, 但是像图片媒体文件之类的就直接挂http</p>
+</blockquote>
+<p><a href></a><a name="385e434d"></a></p>
+<h3 id="http和https的基本概念"><a href="#http和https的基本概念" class="headerlink" title="http和https的基本概念"></a>http和https的基本概念</h3><p>http: 超文本传输协议，用的是TCP标准</p>
+<p>https: 简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p>https协议的主要作用是：建立一个信息安全通道，来确保数组的传输，确保网站的真实性。</p>
+<p><a href></a><a name="9cb05495"></a></p>
+<h3 id="http和https的区别？"><a href="#http和https的区别？" class="headerlink" title="http和https的区别？"></a>http和https的区别？</h3><p>http传输的数据都是未加密的，也就是明文的，网景公司设置了SSL协议来对http协议传输的数据进行加密处理，简单来说https协议是由http和ssl协议构建的可进行加密传输和身份认证的网络协议，比http协议的安全性更高。<br><br>主要的区别如下：</p>
+<p><code>Https协议需要ca证书，费用较高。</code></p>
+<p>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p>
+<p>使用不同的链接方式，端口也不同，一般而言，http协议的端口为80，https的端口为443</p>
+<p><code>http的连接很简单，是无状态的</code>；<code>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议</code>，比http协议安全。</p>
+<p><a href></a><a name="e9261797"></a></p>
+<h3 id="https协议的工作原理"><a href="#https协议的工作原理" class="headerlink" title="https协议的工作原理"></a>https协议的工作原理</h3><p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。</p>
+<ol>
+<li><p>客户使用https url访问服务器，则<code>要求web 服务器建立ssl链接。</code></p>
+</li>
+<li><p>web服务器接收到客户端的请求之后，<code>会将网站的证书（证书中包含了公钥），返回或者说传输给客户端</code>。</p>
+</li>
+<li><p>客户端和web服务器端开始<code>协商SSL链接的安全等级</code>，也就是加密等级。 客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</p>
+</li>
+<li><p><code>web服务器通过自己的私钥解密出会话密钥</code>。</p>
+</li>
+<li><p>web服务器通过会话密钥加密与客户端之间的通信。</p>
+</li>
+</ol>
+<p><code>优点</code></p>
+<p>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</p>
+<p>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</p>
+<p><code>缺点</code></p>
+<p>https握手阶段比较费时，会使页面加载时间延长50%，增加10%~20%的耗电。</p>
+<p>https缓存不如http高效，会增加数据开销。</p>
+<p><code>SSL证书也需要钱，功能越强大的证书费用越高。</code></p>
+<p><code>SSL证书需要绑定IP，不能再同一个ip上绑定多个域名，ipv4资源支持不了这种消耗。</code></p>
+<p><a href></a><a name="889243e2"></a></p>
+<h3 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h3><p><code>TCP的优点：</code> 可靠，稳定 TCP的可靠体现在TCP在传递数据之前，会有三次握手来建立连接，而且在数据传递时，有确认、窗口、重传、拥塞控制机制，在数据传完后，还会断开连接用来节约系统资源。</p>
+<p><code>TCP的缺点：</code> 慢，效率低，占用系统资源高，易被攻击 TCP在传递数据之前，要先建连接，这会消耗时间，而且在数据传递时，确认机制、重传机制、拥塞控制机制等都会消耗大量的时间，而且要在每台设备上维护所有的传输连接，事实上，每个连接都会占用系统的CPU、内存等硬件资源。 而且，因为TCP有确认机制、三次握手机制，这些也导致TCP容易被人利用，实现DOS、DDOS、CC等攻击。<br><br><code>UDP的优点：</code> 快，比TCP稍安全 UDP没有TCP的握手、确认、窗口、重传、拥塞控制等机制，UDP是一个无状态的传输协议，所以它在传递数据时非常快。没有TCP的这些机制，UDP较TCP被攻击者利用的漏洞就要少一些。但UDP也是无法避免攻击的，比如：UDP Flood攻击……</p>
+<p><code>UDP的缺点：</code>不可靠，不稳定 因为UDP没有TCP那些可靠的机制，在数据传递时，如果网络质量不好，就会很容易丢包。</p>
+<p><code>什么时候应该使用TCP：</code>当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议。 在日常生活中，常见使用TCP协议的应用如下： 浏览器，用的HTTP FlashFXP，用的FTP Outlook，用的POP、SMTP Putty，用的Telnet、SSH QQ文件传输</p>
+<p><code>什么时候应该使用UDP：</code>当对网络通讯质量要求不高的时候，要求网络通讯速度能尽量的快，这时就可以使用UDP。 比如，日常生活中，常见使用UDP协议的应用如下： QQ语音 QQ视频 TFTP<br><br><code>TCP与UDP区别总结：</code><br><br>1、<code>TCP面向连接</code>（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接<br><br>2、<code>TCP提供可靠的服务</code>。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付<br><br>3、<code>TCP面向字节流</code>，实际上是TCP把数据看成一连串无结构的字节流;UDP是面向报文的<br><br>UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）<br><br>4、<code>每一条TCP连接只能是点到点的</code>;UDP支持一对一，一对多，多对一和多对多的交互通信<br><br>5、<code>TCP首部开销20字节;UDP的首部开销小，只有8个字节</code><br><br>6、<code>TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道</code></p>
+<p><a href></a><a name="c94a9db5"></a></p>
+<h3 id="三次握手和四次分手"><a href="#三次握手和四次分手" class="headerlink" title="三次握手和四次分手"></a>三次握手和四次分手</h3><p>三次握手</p>
+<ol>
+<li>a: 我要连接你</li>
+<li>b: 好的我准备好了</li>
+<li>a: 我来啦</li>
+</ol>
+<hr>
+<p>四次分手</p>
+<p>a: 我要分手</p>
+<p>b: 等一下,我打完这盘游戏下</p>
+<p>b: 我打完了, 你刚才说什么</p>
+<p>a: 直接分了,走人</p>
+<p><a href></a><a name="6ddb1de2"></a></p>
+<h3 id="WebSocket的实现和应用"><a href="#WebSocket的实现和应用" class="headerlink" title="WebSocket的实现和应用"></a>WebSocket的实现和应用</h3><p><code>什么是WebSocket?</code></p>
+<blockquote>
+<p>WebSocket是HTML5中的协议，支持持久连续，http协议不支持持久性连接。</p>
+</blockquote>
+<blockquote>
+<p>Http1.0和HTTP1.1都不支持持久性的链接，HTTP1.1中的keep-alive，将多个http请求合并为1个</p>
+</blockquote>
+<p>WebSocket是什么样的协议，具体有什么优点？</p>
+<blockquote>
+<p>HTTP的生命周期通过Request来界定，也就是Request一个Response，那么在Http1.0协议中，这次Http请求就结束了。</p>
+</blockquote>
+<blockquote>
+<p>在Http1.1中进行了改进，是的有一个connection：Keep-alive，也就是说，在一个Http连接中，可以发送多个Request，接收多个Response。</p>
+</blockquote>
+<blockquote>
+<p>但是必须记住，在Http中一个Request只能对应有一个Response，而且这个Response是被动的，不能主动发起。</p>
+</blockquote>
+<p>WebSocket是基于Http协议的，或者说<code>借用了Http协议来完成一部分握手</code>，在<code>握手阶段与Http是相同的</code></p>
+<p>基本请求如下：</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4v4bttz0jj30qm0ledjd.jpg#alt=image-20190710223606515" alt></p>
+<p><code>WebSocket的诞生本质上就是为了解决HTTP协议本身的单向性问题</code>：请求必须由客户端向服务端发起，然后服务端进行响应。这个Request-Response的关系是无法改变的。对于一般的网页浏览和访问当然没问题，<code>一旦我们需要服务端主动向客户端发送消息时就麻烦了</code>，<code>因为此前的TCP连接已经释放，根本找不到客户端在哪</code>。</p>
+<p>但并不是用它取代HTTP，而是取代了原先用于通信的基于TCP的Socket。<br><br><code>优点是：</code><br><br>原先在Socket连接后还要进行一些复杂的身份验证，同时要阻止未验证的连接发送控制指令。现在不需要了，<code>在建立WebSocket连接的url里就能携带身份验证参数，验证不通过可以直接拒绝，不用设置状态；</code></p>
+<p>原先要自己定义Socket数据格式，设置长度与标志，处理粘包、分包等问题，现在WebSocket收到的直接就是完整的数据包，完全不用自己处理；</p>
+<p><code>前端的nginx可以直接进行转发与负载均衡，部署简单多了</code></p>
+<p><a href></a><a name="df6154fc"></a></p>
+<h3 id="说一下http2-0"><a href="#说一下http2-0" class="headerlink" title="说一下http2.0"></a>说一下http2.0</h3><p>基于https</p>
+<p><code>提升访问速度</code>（可以对于，请求资源所需时间更少，访问速度更快，相比http1.0）</p>
+<p><code>允许多路复用</code>：多路复用<code>允许同时通过单一的HTTP/2连接发送多重请求-响应信息</code>。改善了：在http1.1中，浏览器客户端在同一时间，针对同一域名下的请求有一定数量限制（连接数量），超过限制会被阻塞。</p>
+<p><code>二进制分帧</code>：HTTP2.0会将所有的传输信息分割为更小的信息或者帧，并对他们进行二进制编码</p>
+<p><code>首部压缩</code></p>
+<p><code>服务器端推送</code></p>
+<hr>
+<p>http2.0的特性如下：</p>
+<p><code>1、内容安全</code>，应为http2.0是基于https的，天然具有安全特性，通过http2.0的特性可以避免单纯使用https的性能下降</p>
+<p><code>2、二进制格式</code>，http1.X的解析是基于文本的，http2.0将所有的传输信息分割为更小的消息和帧，并对他们采用二进制格式编码，基于二进制可以让协议有更多的扩展性，比如引入了帧来传输数据和指令</p>
+<p><code>3、多路复用</code>，这个功能相当于是长连接的增强，每个request请求可以随机的混杂在一起，接收方可以根据request的id将request再归属到各自不同的服务端请求里面，另外多路复用中也支持了流的优先级，允许客户端告诉服务器那些内容是更<code>优先级的资源</code>，可以优先传输，</p>
+<p><a href></a><a name="dcf869d8"></a></p>
+<h3 id="http常用请求头"><a href="#http常用请求头" class="headerlink" title="http常用请求头"></a>http常用请求头</h3><table>
 <thead>
 <tr>
-<th>下标</th>
-<th>前缀表</th>
-<th>目的:<code>找左右对称的长度</code>即next[]</th>
+<th>协议头</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>0 a</td>
-<td>没有前缀</td>
-<td>-1</td>
+<td>Accept</td>
+<td>可接受的响应内容类型（Content-Types）。</td>
 </tr>
 <tr>
-<td>1 b</td>
-<td>a</td>
-<td>0</td>
+<td>Accept-Charset</td>
+<td>可接受的字符集</td>
 </tr>
 <tr>
-<td>2 a</td>
-<td>ab</td>
-<td>0</td>
+<td>Accept-Encoding</td>
+<td>可接受的响应内容的编码方式。</td>
 </tr>
 <tr>
-<td>3 b</td>
-<td><code>a</code>b<code>a</code></td>
-<td>1</td>
+<td>Accept-Language</td>
+<td>可接受的响应内容语言列表。</td>
 </tr>
 <tr>
-<td>4 a</td>
-<td><code>abab</code></td>
-<td>2</td>
+<td>Accept-Datetime</td>
+<td>可接受的按照时间来表示的响应内容版本</td>
 </tr>
 <tr>
-<td>5 a</td>
-<td><code>ababa</code></td>
-<td>3</td>
+<td>Authorization</td>
+<td>用于表示HTTP协议中需要认证资源的认证信息</td>
+</tr>
+<tr>
+<td>Cache-Control</td>
+<td>用来指定当前的请求/回复中的，是否使用缓存机制。</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>客户端（浏览器）想要优先使用的连接类型</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>由之前服务器通过Set-Cookie（见下文）设置的一个HTTP协议Cookie</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>以8进制表示的请求体的长度</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>请求体的内容的二进制 MD5 散列值（数字签名），以 Base64 编码的结果</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>请求体的MIME类型 （用于POST和PUT请求中）</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>发送该消息的日期和时间（以<a href="https://www.nowcoder.com/tutorial/96/24304825a0c04ea9a53cdb09cb664834#section-7.1.1.1" target="_blank" rel="noopener">RFC 7231</a>中定义的”HTTP日期”格式来发送）</td>
+</tr>
+<tr>
+<td>Expect</td>
+<td>表示客户端要求服务器做出特定的行为</td>
+</tr>
+<tr>
+<td>From</td>
+<td>发起此请求的用户的邮件地址</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>表示服务器的域名以及服务器所监听的端口号。如果所请求的端口是对应的服务的标准端口（80），则端口号可以省略。</td>
+</tr>
+<tr>
+<td>If-Match</td>
+<td>仅当客户端提供的实体与服务器上对应的实体相匹配时，才进行对应的操作。主要用于像 PUT 这样的方法中，仅当从用户上次更新某个资源后，该资源未被修改的情况下，才更新该资源。</td>
+</tr>
+<tr>
+<td>If-Modified-Since</td>
+<td>允许在对应的资源未被修改的情况下返回304未修改</td>
+</tr>
+<tr>
+<td>If-None-Match</td>
+<td>允许在对应的内容未被修改的情况下返回304未修改（ 304 Not Modified ），参考 超文本传输协议 的实体标记</td>
+</tr>
+<tr>
+<td>If-Range</td>
+<td>如果该实体未被修改过，则向返回所缺少的那一个或多个部分。否则，返回整个新的实体</td>
+</tr>
+<tr>
+<td>If-Unmodified-Since</td>
+<td>仅当该实体自某个特定时间以来未被修改的情况下，才发送回应。</td>
+</tr>
+<tr>
+<td>Max-Forwards</td>
+<td>限制该消息可被代理及网关转发的次数。</td>
+</tr>
+<tr>
+<td>Origin</td>
+<td>发起一个针对<a href="http://itbilu.com/javascript/js/VkiXuUcC.html" target="_blank" rel="noopener">跨域资源共享</a>的请求（该请求要求服务器在响应中加入一个Access-Control-Allow-Origin的消息头，表示访问控制所允许的来源）。</td>
+</tr>
+<tr>
+<td>Pragma</td>
+<td>与具体的实现相关，这些字段可能在请求/回应链中的任何时候产生。</td>
+</tr>
+<tr>
+<td>Proxy-Authorization</td>
+<td>用于向代理进行认证的认证信息。</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>表示请求某个实体的一部分，字节偏移以0开始。</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面。Referer其实是Referrer这个单词，但RFC制作标准时给拼错了，后来也就将错就错使用Referer了。</td>
+</tr>
+<tr>
+<td>TE</td>
+<td>浏览器预期接受的传输时的编码方式：可使用回应协议头Transfer-Encoding中的值（还可以使用”trailers”表示数据传输时的分块方式）用来表示浏览器希望在最后一个大小为0的块之后还接收到一些额外的字段。</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>浏览器的身份标识字符串</td>
+</tr>
+<tr>
+<td>Upgrade</td>
+<td>要求服务器升级到一个高版本协议。</td>
+</tr>
+<tr>
+<td>Via</td>
+<td>告诉服务器，这个请求是由哪些代理发出的。</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>一个一般性的警告，表示在实体内容体中可能存在错误。</td>
 </tr>
 </tbody></table>
-<p>那么目的是找左右对称的长度，需要我每一个都进行对比计算吗，那不是非常费时间</p>
-<p>其实不用的，可以通过类似斐波那契数的方式，通过上一层的计算来满足下一层的计算，通过动态规划的方式慢慢递增构建，具体举例：</p>
-<p>总共三个角色:</p>
-<ul>
-<li>j:  一直向前移动的下标</li>
-<li>K: 当前最长相等长度的下标</li>
-<li>next数组: 当前数字前面所拥有的前缀的最长相等长度</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768042982-02698b87-77d9-469d-a675-95dc13b2169e.png#align=left&display=inline&height=494&originHeight=494&originWidth=932&size=0&status=done&width=932" alt></p>
-<p><a name="X1KeB"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> strStr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>haystack<span class="token punctuation">,</span> needle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> next <span class="token operator">=</span> <span class="token function">getNextArr</span><span class="token punctuation">(</span>needle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> hasyArr <span class="token operator">=</span> haystack<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> needleArr <span class="token operator">=</span> needle<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> hasyArr<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> hasyArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> needleArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-            j<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> i <span class="token operator">-</span> j
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> getNextArr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nextStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> nextArr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> nextArrStr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 代表前缀中当前最长对称的下表</span>
-    nextArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// j的值默认就在k的后面一位置</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> nextArr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 如果比较,值相等的话就往后移动一步,并且next数值+1</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> nextArrStr<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nextArrStr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            nextArr<span class="token punctuation">[</span><span class="token operator">++</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>k<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 如果不相等的话,就跳到前一个next数组进行继续比较</span>
-            k <span class="token operator">=</span> nextArr<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> nextArr
-<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="29335508"></a></p>
+<h3 id="http缓存机制"><a href="#http缓存机制" class="headerlink" title="http缓存机制"></a>http缓存机制</h3><p>HTTP缓存即是浏览器第一次想一个服务器发起HTTP请求后，服务器会返回请求的资源，并且在响应头中添加一些有关缓存的字段如：</p>
+<p>cache-control，expires,last-modifed，ETag,Date，等，之后浏览器再向该服务器请求资源就可以视情况使用强缓存和协商缓存</p>
+<p><code>强缓存：浏览器直接从本地缓存中获取数据，不与服务器进行交互</code></p>
+<p><code>协商缓存：浏览器发送请求到服务器，服务器判断是否可使用本地缓存</code><br><br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g56oswgmb2j30qc0hvn01.jpg#alt=" alt></p>
+<p><a href></a><a name="e2af21c9"></a></p>
+<h3 id="怎么生成token-怎么传递"><a href="#怎么生成token-怎么传递" class="headerlink" title="怎么生成token, 怎么传递"></a>怎么生成token, 怎么传递</h3><p>第一个<code>token是针对接口的</code>（api_token）；<br><br>第二个<code>token是针对用户的</code>（user_token）；</p>
+<p><code>先说第一个token（api_token）</code><br><br>它的职责是保持接口访问的隐蔽性和有效性，<code>保证接口只能给自家人用</code></p>
+<ol>
+<li>获取GET参数值</li>
+<li>根据客户端传过来的client_id，查询数据库，获取对应的client_secret。</li>
+<li>服务器重新生成一份api_token</li>
+<li>客户端传过来的api_token与服务器生成的api_token进行校对，如果不相等，则表示验证失败。</li>
+<li>验证通过，返回数据到客户端。</li>
+</ol>
+<p><code>再说第二个token（user_token）</code></p>
+<p>它的职责是保护用户的用户名及密码多次提交，以防密码泄露。<br><br>如果接口需要用户登录，其访问流程如下：<br><br>1、用户提交“用户名”和“密码”，实现登录（条件允许，这一步最好走https）；<br><br>2、登录成功后，服务端返回一个 user_token</p>
+<p><a href></a><a name="7d4ec231"></a></p>
+<h3 id="说下http1-1有什么不同"><a href="#说下http1-1有什么不同" class="headerlink" title="说下http1.1有什么不同"></a>说下http1.1有什么不同</h3><p><code>1、HTTP 1.1支持长连接</code>（PersistentConnection）和请求的流水线（Pipelining）处理</p>
+<p><code>在1.0时的会话方式：</code></p>
+<ol>
+<li>建立连接</li>
+<li>发出请求信息</li>
+<li>回送响应信息</li>
+<li>关掉连接</li>
+</ol>
+<p><code>HTTP 1.1的持续连接，也需要增加新的请求头来帮助实现，例如，Connection请求头的值为Keep-Alive</code>时，客户端通知服务器返回本次请求结果后保持连接；Connection请求头的值为close时，客户端通知服务器返回本次请求结果后关闭连接。HTTP 1.1还提供了与身份认证、状态管理和Cache缓存等机制相关的请求头和响应头。</p>
+<p><code>请求的流水线（Pipelining）处理</code>，在一个TCP连接<code>上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟</code>。例如：一个包含有许多图像的网页文件的多个请求和应答可以在一个连接中传输，但每个单独的网页文件的请求和应答仍然需要使用各自的连接。  <code>HTTP 1.1还允许客户端不用等待上一次请求结果返回，就可以发出下一次请求</code>，但服务器端必须按照接收到客户端请求的先后顺序依次回送响应结果，以保证客户端能够区分出每次请求的响应内容。</p>
+<p><code>2.HTTP 1.1增加host字段</code></p>
+<p>在HTTP1.0中认为每台服务器都绑定一个唯一的IP地址，因此，请求消息中的URL并没有传递主机名（hostname）。但随着虚拟主机技术的发展，在一台物理服务器上可以存在多个虚拟主机（Multi-homed Web Servers），并且它们共享一个IP地址。</p>
+<p>HTTP1.1的请求消息和响应消息都应支持Host头域，且请求消息中如果没有Host头域会报告一个错误（400 Bad Request）。此外，服务器应该接受以绝对路径标记的资源请求。</p>
+<p><code>3、100(Continue) Status(节约带宽)</code></p>
+<p><code>HTTP/1.1加入了一个新的状态码</code><br><br><code>100（Continue）</code>。客户端事先发送一个只带头域的请求，如果服务器因为权限拒绝了请求，就回送响应码<code>401（Unauthorized）</code>；如果服务器接收此请求就回送响应码100，客户端就可以继续发送带实体的完整请求了。100 (Continue) 状态代码的使用，允许客户端在发request消息body之前先用request header试探一下server，看server要不要接收request body，再决定要不要发request body。</p>
+<p><code>4、HTTP/1.1中引入了Chunked</code>transfer-coding来解决上面这个问题，发送方将消息分割成若干个任意大小的数据块，每个数据块在发送时都会附上块的长度，最后用一个零长度的块作为消息结束的标志。这种方法允许发送方只缓冲消息的一个片段，避免缓冲整个消息带来的过载。</p>
+<p><code>5、HTTP/1.1在1.0的基础上加入了一些cache的新特性</code>，当缓存对象的Age超过Expire时变为stale对象，<code>cache不需要直接抛弃stale对象，而是与源服务器进行重新激活（revalidation）。</code></p>
 
             </div>
             <hr/>
@@ -672,9 +937,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《KMP字符串匹配算法》
+                    《网络问题》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/wang-luo-wen-ti/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -715,7 +980,7 @@
         repo: 'sansenlian.github.io',
         owner: 'sansenlian',
         admin: "sansenlian",
-        id: '2019-08-14T15-33-40',
+        id: '2019-08-18T21-43-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -740,24 +1005,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/16/c-chang-yong-xie-fa/">
+                <a href="/2019/08/18/xu-qiu-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++常用写法">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="需求实现">
                         
-                        <span class="card-title">C++常用写法</span>
+                        <span class="card-title">需求实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+鼠标悬浮显示下拉菜单
+代码地址
+
+搜索显示历史搜索记录
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                         </span>
                         <span class="publish-author">
                             
@@ -777,25 +1046,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/14/chang-jian-suan-fa-github-di-zhi/">
+                <a href="/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="常见算法github地址">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="前端综合知识要点">
                         
-                        <span class="card-title">常见算法github地址</span>
+                        <span class="card-title">前端综合知识要点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            :::tips常见算法github地址——欢迎随手star:::
-
+                            
+前端SEO要注意哪些
+合理的标题，描述和关键字要强调重点
+语义化html代码
+最重要的html代码放在最前面
+重要内容不要用js输出，爬虫不会去爬js获取内容
+少用iframe
+非装饰性图片要加alt，图片不加载的时候显示的文字
+提高网站
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                             </span>
                         <span class="publish-author">
                             

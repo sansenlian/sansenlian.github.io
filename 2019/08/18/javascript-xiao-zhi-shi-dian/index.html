@@ -1,0 +1,1307 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript小知识点, sansenlian的博客">
+    <meta name="description" content="
+JavaScript 堆和栈有哪些
+栈(stack)：栈会自动分配内存空间，会自动释放，存放基本类型，简单的数据段，占据固定大小的空间。（基本类型：String，Number，Boolean，Null，Undefined）速度快
+
+堆(h">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JavaScript小知识点 | sansenlian的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<meta name="referrer" content="no-referrer" />
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">sansenlian的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">sansenlian的博客</div>
+        <div class="logo-desc">
+            
+            sansenlian的博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        JavaScript小知识点
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-18
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        11 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href></a><a name="51b2a30f"></a></p>
+<h4 id="JavaScript-堆和栈有哪些"><a href="#JavaScript-堆和栈有哪些" class="headerlink" title="JavaScript 堆和栈有哪些"></a>JavaScript 堆和栈有哪些</h4><ul>
+<li><p>栈(stack)：栈会自动分配内存空间，会自动释放，存放基本类型，简单的数据段，占据固定大小的空间。（<code>基本类型：</code>String，Number，Boolean，Null，Undefined）<code>速度快</code></p>
+</li>
+<li><p>堆(heap)：<code>动态分配的内存，大小不定也不会自动释放</code>，存放引用类型，指那些可能由多个值构成的对象，保存在堆内存中，包含引用类型的变量，实际上保存的不是变量本身，而是指向该对象的<code>指针</code>。（<code>引用类型：</code>Function，Array，Object）<br><br><code>可以重复引用</code></p>
+</li>
+</ul>
+<p><a href></a><a name="28e177bb"></a></p>
+<h4 id="谈谈对this的理解"><a href="#谈谈对this的理解" class="headerlink" title="谈谈对this的理解"></a>谈谈对this的理解</h4><p>this总是指向函数的调用者<br><br>如果有new 关键字,     this指向new出来的那个对象<br><br>在事件中this指向触发这个事件的对象<br><br><code>在函数内部的this就是指向函数本身</code><br><br><code>解决方法就是</code>在外面先用一个变量保存捕获this</p>
+<p><a href></a><a name="6c2803af"></a></p>
+<h4 id="call-bind-apply"><a href="#call-bind-apply" class="headerlink" title="call/bind/apply"></a>call/bind/apply</h4><p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190810021839.png#alt=" alt></p>
+<p>bind()方法作用主要是<code>把函数绑定到对象身上</code><br><br>例如：f.bind(obj)，实际上可以理解为obj.f()，这时f函数体内的this自然指向的是obj；<br><br>绑定了,    可以理解为,这个参数被我占用了,之后一直都是我的,    例如:</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token operator">+</span>c<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> func <span class="token operator">=</span> add<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>undefined<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//给add()传了第一个参数a</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//103，继续传入b和c</span>
+
+<span class="token keyword">var</span> func2 <span class="token operator">=</span> func<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>undefined<span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//给func2传入第一个参数，也就是b，此前func已有参数a=100</span>
+<span class="token function">func2</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//310,继续传入c，100+200+10</span></code></pre>
+<p>通过new的方式创建一个对象，bind()函数在this层面上并不起作用，但是需要注意在参数层面上仍起作用，如下：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> func <span class="token operator">=</span>  foo<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span>a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//undefined 20，通过new创建对象func，bind绑定的c依旧起作用</span></code></pre>
+<p><a href></a><a name="3e20b1b9"></a></p>
+<h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>let可以定义块级作用域</p>
+<p>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br><br>const一旦声明变量，就必须立即初始化，不能留到以后赋值。</p>
+<p><a href></a><a name="41e87233"></a></p>
+<h4 id="web-work"><a href="#web-work" class="headerlink" title="web work"></a>web work</h4><p><code>也是异步处理</code></p>
+<p>Worker对象往js文件发送消息，js文件内部的处理逻辑，处理完毕后，再发送消息回到当前页面，纯异步方式，不影响当前主页面渲染。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+        <span class="token comment" spellcheck="true">//创建线程 work对象</span>
+        <span class="token keyword">var</span> work <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token string">"work.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     
+        <span class="token comment" spellcheck="true">//发送消息</span>
+        work<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 监听消息: 返回的消息</span>
+        work<span class="token punctuation">.</span>onmessage <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// work.js</span>
+onmessage <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//从1加到num</span>
+    <span class="token keyword">var</span> num <span class="token operator">=</span> event<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">postMessage</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="7c78c178"></a></p>
+<h4 id="navigator-location"><a href="#navigator-location" class="headerlink" title="navigator  location"></a>navigator  location</h4><p>window.navigate 与 window.location.href 都是实现页面的链接跳转</p>
+<p>window.navigate(‘页面链接地址’) 这个方法是只针对IE,    忘记他</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> userAgentInfo <span class="token operator">=</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">;</span>
+   <span class="token keyword">var</span> Agents <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Android"</span><span class="token punctuation">,</span> <span class="token string">"iPhone"</span><span class="token punctuation">,</span>
+      <span class="token string">"SymbianOS"</span><span class="token punctuation">,</span> <span class="token string">"Windows Phone"</span><span class="token punctuation">,</span>
+      <span class="token string">"iPad"</span><span class="token punctuation">,</span> <span class="token string">"iPod"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<p>Navigator 对象包含有关浏览器的信息</p>
+<ul>
+<li>window.location.href 返回当前页面的 href (URL)</li>
+<li>window.location.hostname 返回 web 主机的域名</li>
+<li>window.location.pathname 返回当前页面的路径或文件名</li>
+<li>window.location.protocol 返回使用的 web 协议（http: 或 https:）</li>
+<li>window.location.assign 加载新文档</li>
+</ul>
+<p><a href></a><a name="51c2e5b0"></a></p>
+<h4 id="为什么会在低端机上出现动画不流畅抖动等问题"><a href="#为什么会在低端机上出现动画不流畅抖动等问题" class="headerlink" title="为什么会在低端机上出现动画不流畅抖动等问题"></a>为什么会在低端机上出现动画不流畅抖动等问题</h4><p><code>屏幕分辨率问题</code></p>
+<p>屏幕间隔不一定会和设置的步调相同,    使用<code>requestanimationframe</code>可以解决问题</p>
+<p>setTimeout和setInterval的问题是，它们都不精确。它们的内在<a href="http://www.cnblogs.com/xiaohuochai/p/5773183.html#anchor3" target="_blank" rel="noopener">运行机制</a>决定了时间间隔参数实际上只是指定了把动画代码添加到浏览器UI线程队列中以等待执行的时间。如果队列前面已经加入了其他任务，那动画代码就要等前面的任务完成后再执行<code>放入到异步队列里面只有主线程完成后才去执行异步队列,    导致执行时间不确定</code></p>
+<p>requestAnimationFrame采用系统时间间隔，保持最佳绘制效率，不会因为间隔时间过短，造成过度绘制，增加开销；也不会因为间隔时间太长，使用动画卡顿不流畅，让各种网页动画效果能够有一个统一的刷新机制，从而节省系统资源，提高系统性能，改善视觉效果</p>
+<blockquote>
+<p>requestAnimationFrame会把每一帧中的所有DOM操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率</p>
+</blockquote>
+<blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> timer <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p><a href></a><a name="96f553f6"></a></p>
+<h4 id="Dom0-dom2-dom3"><a href="#Dom0-dom2-dom3" class="headerlink" title="Dom0 dom2 dom3"></a>Dom0 dom2 dom3</h4><ol>
+<li>dom0 事件就是直接通过 onclick 绑定到 html上的事件,     清理dom0 事件时，只需给该事件赋值为 null</li>
+<li>dom2 事件是通过 addEventListener 绑定的事件,  按照绑定顺序执行,  清除 dom2 事件时，使用 removeEventListener</li>
+<li>DOM3级事件在DOM2级事件的基础上添加了更多的事件类型, focus之类的</li>
+</ol>
+<p><a href></a><a name="03da32b8"></a></p>
+<h4 id="Object-create实现原理"><a href="#Object-create实现原理" class="headerlink" title="Object.create实现原理"></a>Object.create实现原理</h4><p>其实就是新建一个空函数<br><br>把传入对象作为新函数的原型并返回它, 来处理</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 思路：将传入的对象作为原型</span>
+<span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    F<span class="token punctuation">.</span>prototype <span class="token operator">=</span> obj
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="955ab1a8"></a></p>
+<h4 id="mouseover和mouseenter的区别"><a href="#mouseover和mouseenter的区别" class="headerlink" title="mouseover和mouseenter的区别"></a>mouseover和mouseenter的区别</h4><p><code>mouseover：</code>当鼠标移入元素或<code>其子元素都会触发事件，所以有一个重复触发，冒泡的过程</code>。对应的移除事件是<code>mouseout</code></p>
+<p><code>mouseenter</code>：当鼠标移入元素本身（<code>不包含元素的子元素</code>）会触发事件，也就是<code>不会冒泡</code>，对应的移除事件是<code>mouseleave</code></p>
+<p><a href></a><a name="92f293aa"></a></p>
+<h4 id="offWidth-clientWidth-scrollwidth有什么区别"><a href="#offWidth-clientWidth-scrollwidth有什么区别" class="headerlink" title="offWidth/clientWidth/scrollwidth有什么区别"></a>offWidth/clientWidth/scrollwidth有什么区别</h4><p><code>scrollWidth/scrollHeight</code></p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g3h5k5tfulj30fu09t74q.jpg#alt=image-20190528172033567" alt></p>
+<p><code>clientWidth/clientHeight</code>内两层</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3h5kz8solj309k07fwfv.jpg#alt=image-20190528172121211" alt></p>
+<p><code>offWidth/offHeight</code>内三层</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3h5lc8xjaj30al062wf0.jpg#alt=image-20190528172142007" alt></p>
+<p><a href></a><a name="0f49941b"></a></p>
+<h4 id="eval是做什么的"><a href="#eval是做什么的" class="headerlink" title="eval是做什么的"></a>eval是做什么的</h4><p>它的功能是将对应的字符串解析成js并执行，应该避免使用js，因为非常消耗性能<code>（2次，一次解析成js，一次执行）</code></p>
+<p><a href></a><a name="17a2c129"></a></p>
+<h4 id="js有没有块级作用域"><a href="#js有没有块级作用域" class="headerlink" title="js有没有块级作用域"></a>js有没有块级作用域</h4><p>一般情况下是没有块级作用域的</p>
+<p>let可以</p>
+<p>with 基本都不会用<br><br>try-catch catch可以创建块级作用域但是性能很低<br><br>eval</p>
+<p><a href></a><a name="6f573683"></a></p>
+<h4 id="如何实现一个私有变量"><a href="#如何实现一个私有变量" class="headerlink" title="如何实现一个私有变量"></a>如何实现一个私有变量</h4><p>(1)通过defineProperty来实现</p>
+<pre class=" language-javascript"><code class="language-javascript">obj<span class="token operator">=</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span>yuxiaoliang<span class="token punctuation">,</span>
+  getName<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//不可枚举不可配置 </span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a href></a><a name="59ba4ccf"></a></p>
+<h4 id="和-、以及Object-is的区别"><a href="#和-、以及Object-is的区别" class="headerlink" title="==和===、以及Object.is的区别"></a>==和===、以及Object.is的区别</h4><p><code>(1) ==</code></p>
+<p>主要存在：强制转换成</p>
+<pre class=" language-javascript"><code class="language-javascript">number<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token operator">==</span>undefined 
+
+  <span class="token string">" "</span><span class="token operator">==</span><span class="token number">0</span>  <span class="token comment" spellcheck="true">//true </span>
+
+  <span class="token string">"0"</span><span class="token operator">==</span><span class="token number">0</span>  <span class="token comment" spellcheck="true">//true </span>
+
+  <span class="token string">" "</span> <span class="token operator">!=</span><span class="token string">"0"</span> <span class="token comment" spellcheck="true">//true </span>
+
+  <span class="token number">123</span><span class="token operator">==</span><span class="token string">"123"</span> <span class="token comment" spellcheck="true">//true </span>
+
+  <span class="token keyword">null</span><span class="token operator">==</span>undefined <span class="token comment" spellcheck="true">//true</span></code></pre>
+<p><code>(2)Object.js</code></p>
+<p>主要的区别就是+0！= -0 而NaN==NaN<br><br>(相对比===和==的改进)</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 特例</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// false</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">// true</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// true</span></code></pre>
+<p><a href></a><a name="631c0c3a"></a></p>
+<h4 id="setTimeout、requestAnimationFrame之间的区别"><a href="#setTimeout、requestAnimationFrame之间的区别" class="headerlink" title="setTimeout、requestAnimationFrame之间的区别"></a>setTimeout、requestAnimationFrame之间的区别</h4><p>requestAnimationFrame为的是动画设定的, 为了其他的不干扰动画的重绘</p>
+<p>requestAnimationFrame<code>采用系统时间间隔，保持最佳绘制效率，不会因为间隔时间过短，造成过度绘制</code>，增加开销；<code>也不会因为间隔时间太长，使用动画卡顿不流畅</code>，让各种网页动画效果能够有一个统一的刷新机制，从而节省系统资源，提高系统性能，改善视觉效果</p>
+<blockquote>
+<p>requestAnimationFrame的用法与settimeout很相似，只是不需要设置时间间隔而已。</p>
+</blockquote>
+<p>requestAnimationFrame使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。它返回一个整数，表示定时器的编号，这个值可以传递cancelAnimationFrame用于取消这个函数的执行</p>
+<pre class=" language-javascript"><code class="language-javascript">requestID <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//控制台输出1和0</span>
+<span class="token keyword">var</span> timer <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//1</span></code></pre>
+<p><code>cancelAnimationFrame方法用于取消定时器</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//控制台什么都不输出</span>
+<span class="token keyword">var</span> timer <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">cancelAnimationFrame</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><code>也可以直接使用返回值进行取消</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> timer <span class="token operator">=</span> <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">cancelAnimationFrame</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>因为ie9不支持requestAnimationFrame</p>
+<p><code>可以用setTimeout来兼容</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span>requestAnimationFrame<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> lastTime <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    window<span class="token punctuation">.</span>requestAnimationFrame <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">var</span> currTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> timeToCall <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">16.7</span><span class="token operator">-</span><span class="token punctuation">(</span>currTime <span class="token operator">-</span> lastTime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> id  <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">callback</span><span class="token punctuation">(</span>currTime <span class="token operator">+</span> timeToCall<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>timeToCall<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lastTime <span class="token operator">=</span> currTime <span class="token operator">+</span> timeToCall<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span>cancelAnimationFrame<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>cancelAnimationFrame <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">clearTimeout</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="3adae073"></a></p>
+<h4 id="Function-proto-getPrototypeOf-是什么"><a href="#Function-proto-getPrototypeOf-是什么" class="headerlink" title="Function.proto(getPrototypeOf)是什么"></a>Function.<em>proto</em>(getPrototypeOf)是什么</h4><p>Function.<strong>proto</strong>==Object.prototype //false</p>
+<p>Function.<strong>proto</strong>==Function.prototype//true</p>
+<p>我们发现Function的原型也是Function。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5565o628lj30zd0shdk2.jpg#alt=image-20190719151506671" alt></p>
+<p><a href></a><a name="822a992b"></a></p>
+<h4 id="怎么进行js类型判断"><a href="#怎么进行js类型判断" class="headerlink" title="怎么进行js类型判断"></a>怎么进行js类型判断</h4><p><code>typeof()</code><br><br><code>instanceof</code> instanceof 运算符用来检测 constructor.prototype 是否存在于参数 object 的原型链上。<br><br><code>Object.prototype.toString.call()等</code></p>
+<p><a href></a><a name="a2e60d94"></a></p>
+<h4 id="什么叫暂停死区"><a href="#什么叫暂停死区" class="headerlink" title="什么叫暂停死区"></a>什么叫暂停死区</h4><p>在代码块内，使用let、const命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”</p>
+<p><a href></a><a name="e1c44c61"></a></p>
+<h4 id="什么是按需加载"><a href="#什么是按需加载" class="headerlink" title="什么是按需加载"></a>什么是按需加载</h4><p><code>当用户触发了动作时才加载对应的功能。</code>触发的动作，是要看具体的业务场景而言，包括但不限于以下几个情况：鼠标点击、输入文字、拉动滚动条，鼠标移动、窗口大小更改等。加载的文件，可以是JS、图片、CSS、HTML等。</p>
+<p><a href></a><a name="9d1b91e7"></a></p>
+<h4 id="静态作用域什么意思"><a href="#静态作用域什么意思" class="headerlink" title="静态作用域什么意思"></a>静态作用域什么意思</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>这里结果并不是2, 而是1<br><br>是因为js是静态作用域<br><br>也就是说在函数定义的时候就定好了</p>
+<p>假设JavaScript采用动态作用域，让我们分析下执行过程：执行foo 函数，依然是从 foo 函数内部查找是否有局部变量 value。如果没有，就从调用函数的作用域，也就是 bar 函数内部查找 value 变量，所以结果会打印 2。</p>
+<p><a href></a><a name="32b825b8"></a></p>
+<h4 id="如果已经有三个promise，A、B和C，想串行执行，该怎么写"><a href="#如果已经有三个promise，A、B和C，想串行执行，该怎么写" class="headerlink" title="如果已经有三个promise，A、B和C，想串行执行，该怎么写"></a>如果已经有三个promise，A、B和C，想串行执行，该怎么写</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// promise</span>
+A<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>C<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// async/await</span>
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><a href></a><a name="55a04949"></a></p>
+<h4 id="箭头函数和function有什么区别"><a href="#箭头函数和function有什么区别" class="headerlink" title="箭头函数和function有什么区别"></a>箭头函数和function有什么区别</h4><p>箭头函数根本就没有绑定自己的this，在箭头函数中调用 this 时，仅仅是简单的沿着作用域链向上寻找，找到最近的一个 this 拿来使用</p>
+<p><a href></a><a name="c6b50765"></a></p>
+<h4 id="JSON互转为对象"><a href="#JSON互转为对象" class="headerlink" title="JSON互转为对象"></a>JSON互转为对象</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// JSON字符串转换为JSON对象</span>
+<span class="token keyword">var</span> jsonObj<span class="token operator">=</span>JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// JSON对象转为字符串</span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span></code></pre>
+<p><a href></a><a name="795a68fe"></a></p>
+<h4 id="xml和json有什么区别"><a href="#xml和json有什么区别" class="headerlink" title="xml和json有什么区别"></a>xml和json有什么区别</h4><p>JSON：js的对象表示法（JS Object Notation）<br><br>JSON：存储和交换文本信息的语法，类似XML<br><br>JSON比XML更小、更快、更易解析</p>
+<p>附赠：JSON &amp; XML<br><br>可读性：差不多，XML可读性更好一些<br><br>可扩展性：差不多<br><br>编码难度：JSON更容易<br><br>解析（码）难度：XML很难，JSON难度几乎为0<br><br>流行度：XML更流行。不过，在Ajax中，几乎都用JSON<br><br>数据体积：JSON体积更小，传输速度更快<br><br>数据交互：JSON和JS的交互更加方便，更容易解析处理，更好的数据交互<br><br>数据描述：XML对数据的描述更好<br><br>传输速度：JSON的速度远远快于XML</p>
+<p><a href></a><a name="970900d8"></a></p>
+<h4 id="JavaScript有哪些方法定义对象"><a href="#JavaScript有哪些方法定义对象" class="headerlink" title="JavaScript有哪些方法定义对象"></a>JavaScript有哪些方法定义对象</h4><ul>
+<li>对象字面量 var obj = {}</li>
+<li>构造函数 var obj = new Object()</li>
+<li>var obj = object.create(Object.prototype)</li>
+</ul>
+<p><a href></a><a name="ac7cebe9"></a></p>
+<h4 id="讲一下什么是渐进增强和优雅降级"><a href="#讲一下什么是渐进增强和优雅降级" class="headerlink" title="讲一下什么是渐进增强和优雅降级"></a>讲一下什么是渐进增强和优雅降级</h4><p><code>渐进增强</code></p>
+<p>是增对浏览器进行构建页面, 保证最基本的内容, 然后再对高级浏览器进行效果交互改进</p>
+<p><code>优雅降级</code></p>
+<p>就是直接做高级内容, 然后在对老式浏览器进行兼容</p>
+<p><a href></a><a name="b6f6a607"></a></p>
+<h4 id="…spread什么意思"><a href="#…spread什么意思" class="headerlink" title="…spread什么意思"></a>…spread什么意思</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ES5 的写法</span>
+Math<span class="token punctuation">.</span>max<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// ES6 的写法</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//  等同于</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a href></a><a name="05539600"></a></p>
+<h4 id="怎么解决回调地狱"><a href="#怎么解决回调地狱" class="headerlink" title="怎么解决回调地狱"></a>怎么解决回调地狱</h4><p>说起回调地狱 首先想到的是<code>异步</code>  在js中我们经常会大量使用异步回调，例如使用<code>ajax</code>请求</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token function">functionb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">c</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>我们发现上面代码大量使用了回调函数（将一个函数作为参数传递给另个函数）并且有许多 <code>})</code>结尾的符号，使得代码看起来很混乱。</p>
+<p><code>1. 可以使用promise</code>使用then来处理回调</p>
+<p><code>2. 使用generate</code>函数生成器</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token operator">*</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ni hao"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre>
+<p><code>3. 使用async/await</code>使用异步函数, await表示等待异步值返回</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="f3eee51e"></a></p>
+<h4 id="怎么实现轮播"><a href="#怎么实现轮播" class="headerlink" title="怎么实现轮播"></a>怎么实现轮播</h4><p>图片轮播的原理就是图片排成一行，然后准备一个只有一张图片大小的容器，对这个容器设置超出部分隐藏，在控制定时器来让这些图片整体左移或右移，这样呈现出来的效果就是图片在轮播了。</p>
+<p><code>如果有两个轮播</code>，可封装一个轮播组件，供两处调用</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">别问,问就是穷</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《JavaScript小知识点》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/javascript-xiao-zhi-shi-dian/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                sansenlian
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '1d68e9ae58d4e243a088',
+        clientSecret: 'b310f3e56f7fdc6151fa40a962fd5b0e6efac57e',
+        repo: 'sansenlian.github.io',
+        owner: 'sansenlian',
+        admin: "sansenlian",
+        id: '2019-08-18T15-01-08',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/08/18/javascript-yao-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="JavaScript要点">
+                        
+                        <span class="card-title">JavaScript要点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+ES6
+模块化可以用export来对外暴露函数, 外部通过import来引入函数
+
+
+简单介绍一下symbol主要是为了解决命名重复问题，可以在对象属性的时候用到，但是不会被枚举
+
+代表用给定名称作为唯一标识，这种类型的值可以这样创建，l
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sansenlian
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/18/javascript-ji-chu-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript基础点">
+                        
+                        <span class="card-title">JavaScript基础点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+for … of循环和for … in循环有何区别
+for ... in循环遍历的实际上是对象的属性名称
+
+var a = ['A', 'B', 'C'];
+a.name = 'Hello';
+for (var x in a) {
+con
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sansenlian
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: sansenlian的博客<br />'
+            + '作者: sansenlian<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 sansenlian 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+      <span id="sitetime"></span>
+      基于
+      <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+      <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+      
+      &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+      <span class="white-color">38.1k</span>
+      
+
+      
+      
+      <br>
+      
+      <span id="busuanzi_container_site_pv" style='display:none'>
+        <i class="fa fa-heart-o"></i>
+        本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+      </span>
+      
+      
+      <span id="busuanzi_container_site_uv" style='display:none'>
+        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+      </span>
+      
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sansenlian" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sansenlian@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=489572627" class="tooltipped" data-tooltip="QQ联系我: 489572627" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+<script language=javascript>
+  function siteTime() {
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth() + 1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+    var diff = t2 - t1;
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+    document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+  } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+<script>
+  $(document).ready(function() {
+
+    var int = setInterval(fixCount, 50); // 50ms周期检测函数
+    var pvcountOffset = 80000; // 初始化首次数据
+    var uvcountOffset = 20000;
+
+    function fixCount() {
+      if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+        clearInterval(int);
+      }
+      if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+        clearInterval(int); // 停止检测
+      }
+    }
+  });
+</script>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
+</html>

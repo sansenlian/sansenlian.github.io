@@ -4,11 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="KMP字符串匹配算法, sansenlian的博客">
-    <meta name="description" content=":::tips常见算法github地址——欢迎随手star:::
-字符串A中找是否存在字符串B，当然前提A比B长
+    <meta name="keywords" content="HTML小知识点, sansenlian的博客">
+    <meta name="description" content="
+html标签有几个可以逃过同源策略
 
-动图来自:https://blog.csdn.net/weixin_40346046/article/details/794">
+
+
+attribute和property有什么区别
+attribute和property有什么区别
+
+
+img的title和alt有什么区别
+title是鼠标滑动到元素上时候显示alt是img的特有属">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>KMP字符串匹配算法 | sansenlian的博客</title>
+    <title>HTML小知识点 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        KMP字符串匹配算法
+                        HTML小知识点
                     </div>
                 </div>
             </div>
@@ -391,21 +398,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-14
+                    2019-08-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        422
+                        683
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -421,100 +428,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>:::tips<br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener">常见算法github地址——欢迎随手star</a><br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener"></a>:::</p>
-<p>字符串A中找是否存在字符串B，当然前提A比B长</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768043850-3fe8617a-a825-49d8-b037-69046d425a54.png#align=left&display=inline&height=221&originHeight=221&originWidth=1340&size=0&status=done&width=1340" alt></p>
-<p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190812102019.gif#align=left&alt=&display=inline&message=%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7%E9%87%8D%E8%AF%95&percent=0&status=uploading" alt><br>动图来自:<a href="https://blog.csdn.net/weixin_40346046/article/details/79468142" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40346046/article/details/79468142</a></p>
-<p><a name="543c214e"></a></p>
-<h2 id="next数组构建"><a href="#next数组构建" class="headerlink" title="next数组构建"></a>next数组构建</h2><p>next数组构建要求是找前缀表, 比如对于:    ababaa</p>
-<table>
-<thead>
-<tr>
-<th>下标</th>
-<th>前缀表</th>
-<th>目的:<code>找左右对称的长度</code>即next[]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0 a</td>
-<td>没有前缀</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>1 b</td>
-<td>a</td>
-<td>0</td>
-</tr>
-<tr>
-<td>2 a</td>
-<td>ab</td>
-<td>0</td>
-</tr>
-<tr>
-<td>3 b</td>
-<td><code>a</code>b<code>a</code></td>
-<td>1</td>
-</tr>
-<tr>
-<td>4 a</td>
-<td><code>abab</code></td>
-<td>2</td>
-</tr>
-<tr>
-<td>5 a</td>
-<td><code>ababa</code></td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>那么目的是找左右对称的长度，需要我每一个都进行对比计算吗，那不是非常费时间</p>
-<p>其实不用的，可以通过类似斐波那契数的方式，通过上一层的计算来满足下一层的计算，通过动态规划的方式慢慢递增构建，具体举例：</p>
-<p>总共三个角色:</p>
-<ul>
-<li>j:  一直向前移动的下标</li>
-<li>K: 当前最长相等长度的下标</li>
-<li>next数组: 当前数字前面所拥有的前缀的最长相等长度</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768042982-02698b87-77d9-469d-a675-95dc13b2169e.png#align=left&display=inline&height=494&originHeight=494&originWidth=932&size=0&status=done&width=932" alt></p>
-<p><a name="X1KeB"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> strStr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>haystack<span class="token punctuation">,</span> needle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> next <span class="token operator">=</span> <span class="token function">getNextArr</span><span class="token punctuation">(</span>needle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> hasyArr <span class="token operator">=</span> haystack<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> needleArr <span class="token operator">=</span> needle<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> hasyArr<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> hasyArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> needleArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-            j<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> i <span class="token operator">-</span> j
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> getNextArr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nextStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> nextArr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> nextArrStr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 代表前缀中当前最长对称的下表</span>
-    nextArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// j的值默认就在k的后面一位置</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> nextArr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 如果比较,值相等的话就往后移动一步,并且next数值+1</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> nextArrStr<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nextArrStr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            nextArr<span class="token punctuation">[</span><span class="token operator">++</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>k<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 如果不相等的话,就跳到前一个next数组进行继续比较</span>
-            k <span class="token operator">=</span> nextArr<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> nextArr
-<span class="token punctuation">}</span></code></pre>
+                <p><a name="ecb9c6c4"></a></p>
+<h4 id="html标签有几个可以逃过同源策略"><a href="#html标签有几个可以逃过同源策略" class="headerlink" title="html标签有几个可以逃过同源策略"></a>html标签有几个可以逃过同源策略</h4><link rel="stylesheet" type="text/css" href="*.css">
+<script><script>
 
+<p><a name="5c0b237a"></a></p>
+<h4 id="attribute和property有什么区别"><a href="#attribute和property有什么区别" class="headerlink" title="attribute和property有什么区别"></a>attribute和property有什么区别</h4><blockquote>
+<p>attribute和property有什么区别</p>
+</blockquote>
+<p><a name="af33242e"></a></p>
+<h4 id="img的title和alt有什么区别"><a href="#img的title和alt有什么区别" class="headerlink" title="img的title和alt有什么区别"></a>img的title和alt有什么区别</h4><blockquote>
+<p>title是鼠标滑动到元素上时候显示<br>alt是img的特有属性，用于图片无法加载显示<br>提高了图片可访问性，搜索会重点分析alt</p>
+</blockquote>
+<p><a name="230236f0"></a></p>
+<h4 id="什么是语义化"><a href="#什么是语义化" class="headerlink" title="什么是语义化"></a>什么是语义化</h4><blockquote>
+<p>HTML5语义化标签是指正确的标签包含了正确的内容，结构良好，便于阅读<br>比如nav表示导航条，类似的还有article、header、footer等等标签。</p>
+<ol>
+<li>让人更容易读懂</li>
+<li>让机器更容易读懂</li>
+<li>有助于SEO</li>
+</ol>
+</blockquote>
+<p><a name="39e82639"></a></p>
+<h4 id="html5有哪些新特性"><a href="#html5有哪些新特性" class="headerlink" title="html5有哪些新特性"></a>html5有哪些新特性</h4><blockquote>
+<p>主要是<code>图像    位置    存储    多任务</code><br>websocket<br>video和audio，绘画canvas<br>增加localStorage长期驻留浏览器, sessionStorage浏览器关闭就删除</p>
+</blockquote>
+<p><a name="NoUuk"></a></p>
+<h4 id="html5离线存储怎么使用"><a href="#html5离线存储怎么使用" class="headerlink" title="html5离线存储怎么使用"></a>html5离线存储怎么使用</h4><blockquote>
+<p>新建一个<code>.appcache文件缓存机制</code><br>里面有一份需要解析的清单，会被存储在本地<br>没网的时候显示这个就好了<br>具体的就是在<code>页面头部下加入一个manifest属性</code><br>在<code>里面编写需要存储的离线存储资源清单</code><br>在离线的时候，调用<code>window.applicationCache</code>就可以进行需求实现<br><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566027888125-814c370a-3094-4cba-8a0f-d624eec42798.jpeg#align=left&display=inline&height=127&originHeight=127&originWidth=160&size=0&status=done&width=160" alt=""></p>
+</blockquote>
+<p><a name="a43a2a9f"></a></p>
+<h4 id="iframe有什么缺点"><a href="#iframe有什么缺点" class="headerlink" title="iframe有什么缺点"></a>iframe有什么缺点</h4><blockquote>
+<p>定义：iframe元素会创建包含另一个文档的内联框架<br>可以将提示文字放在<iframe>之间，来提示某些不支持iframe的浏览器</p>
+<ol>
+<li>会阻塞页面的onload事件</li>
+<li>不利于seo</li>
+<li>会影响页面的并行加载，因为共享池问题对相同域的连接有限制</li>
+</ol>
+</blockquote>
+<p><a name="a2c74cad"></a></p>
+<h4 id="xhtml和html有什么区别"><a href="#xhtml和html有什么区别" class="headerlink" title="xhtml和html有什么区别"></a>xhtml和html有什么区别</h4><blockquote>
+<p>功能上有差别，<code>xhtml有很好的兼容性</code><br>书写情况也有差别，xhtml更加严格必须被<code>严格嵌套，闭合和区分大小写</code>等<br>可以通过开头的Doctype来区分</p>
+</blockquote>
+<p><a name="e8d1f286"></a></p>
+<h4 id="canvas和svg有什么区别"><a href="#canvas和svg有什么区别" class="headerlink" title="canvas和svg有什么区别"></a>canvas和svg有什么区别</h4><blockquote>
+<p>svg绘制出来的<code>元素都可以作为独立的DOM节点</code>, 能够<code>绑定事件</code>,并且是<code>矢量图</code><br>canvas输出的是一张图, 不是矢量的</p>
+</blockquote>
+<p><a name="09b7f8ca"></a></p>
+<h4 id="说一下HTML5-drag-api"><a href="#说一下HTML5-drag-api" class="headerlink" title="说一下HTML5 drag api"></a>说一下HTML5 drag api</h4><blockquote>
+<p>dragstart：事件主体是被拖放元素，在开始拖放被拖放元素时触发。<br>darg：事件主体是被拖放元素，在正在拖放被拖放元素时触发。<br>dragenter：事件主体是目标元素，在被拖放元素进入某元素时触发。<br>dragover：事件主体是目标元素，在被拖放在某元素内移动时触发。<br>dragleave：事件主体是目标元素，在被拖放元素移出目标元素是触发。<br>drop：事件主体是目标元素，在目标元素完全接受被拖放元素时触发。<br>dragend：事件主体是被拖放元素，在整个拖放操作结束时触发</p>
+</blockquote>
+</script>
             </div>
             <hr/>
 
@@ -672,9 +636,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《KMP字符串匹配算法》
+                    《HTML小知识点》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/17/html-xiao-zhi-shi-dian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -715,7 +679,7 @@
         repo: 'sansenlian.github.io',
         owner: 'sansenlian',
         admin: "sansenlian",
-        id: '2019-08-14T15-33-40',
+        id: '2019-08-17T15-43-36',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -740,24 +704,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/16/c-chang-yong-xie-fa/">
+                <a href="/2019/08/18/javascript-dai-ma-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++常用写法">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="JavaScript代码实现">
                         
-                        <span class="card-title">C++常用写法</span>
+                        <span class="card-title">JavaScript代码实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+实现一个通用事件代理绑定函数绑定, 触发, 解绑
+目的是为了实现一个事件类event, 包含: 绑定事件, 触发事件, 解绑事件其实是一个发布订阅模式:
+
+class Event {
+        constructor() {
+   
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                         </span>
                         <span class="publish-author">
                             
@@ -777,25 +747,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/14/chang-jian-suan-fa-github-di-zhi/">
+                <a href="/2019/08/17/javascript-xiao-zhi-shi-dian-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="常见算法github地址">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript小知识点(一)">
                         
-                        <span class="card-title">常见算法github地址</span>
+                        <span class="card-title">JavaScript小知识点(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            :::tips常见算法github地址——欢迎随手star:::
-
+                            
+promise有没有不能满足你需求的情况有的, 就是在我需要等待一个事件完成后再进行下一步的时候才能做下一步的时候之前我写牛客网本地JS编辑的时候就需要等待读取完成文件后再进行下一步返回数据, 但是如果使用的是Promise就会先返回un
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-17
                             </span>
                         <span class="publish-author">
                             

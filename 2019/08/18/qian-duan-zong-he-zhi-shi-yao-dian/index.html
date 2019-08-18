@@ -1,0 +1,1496 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="前端综合知识要点, sansenlian的博客">
+    <meta name="description" content="
+前端SEO要注意哪些
+合理的标题，描述和关键字要强调重点
+语义化html代码
+最重要的html代码放在最前面
+重要内容不要用js输出，爬虫不会去爬js获取内容
+少用iframe
+非装饰性图片要加alt，图片不加载的时候显示的文字
+提高网站">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>前端综合知识要点 | sansenlian的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<meta name="referrer" content="no-referrer" />
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">sansenlian的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">sansenlian的博客</div>
+        <div class="logo-desc">
+            
+            sansenlian的博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        前端综合知识要点
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-18
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        5.3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        19 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href></a><a name="2591eeb7"></a></p>
+<h3 id="前端SEO要注意哪些"><a href="#前端SEO要注意哪些" class="headerlink" title="前端SEO要注意哪些"></a>前端SEO要注意哪些</h3><ul>
+<li>合理的标题，描述和关键字要强调重点</li>
+<li>语义化html代码</li>
+<li>最重要的html代码放在最前面</li>
+<li>重要内容不要用js输出，爬虫不会去爬js获取内容</li>
+<li>少用iframe</li>
+<li>非装饰性图片要加alt，图片不加载的时候显示的文字</li>
+<li>提高网站速度，这是一个重要指标</li>
+</ul>
+<p><a href></a><a name="aa8321f2"></a></p>
+<h3 id="web中怎么实现会话跟踪"><a href="#web中怎么实现会话跟踪" class="headerlink" title="web中怎么实现会话跟踪"></a>web中怎么实现会话跟踪</h3><p>可以通过</p>
+<ul>
+<li>cookie</li>
+<li>session</li>
+<li>url重写</li>
+<li>隐藏的input</li>
+<li>ip地址</li>
+</ul>
+<p><a href></a><a name="0823f9b6"></a></p>
+<h3 id="常见的web安全及防护原理"><a href="#常见的web安全及防护原理" class="headerlink" title="常见的web安全及防护原理"></a>常见的web安全及防护原理</h3><p>常见的web安全及防护原理</p>
+<p><code>sql注入</code></p>
+<p>通过sql命令插入到web表单中欺骗服务器</p>
+<hr>
+<p>解决:</p>
+<ul>
+<li>不要相信用户的输入, 都应该做验证</li>
+<li>不要用动态拼接sql</li>
+<li>不要用管理员权限进行数据库连接, 每个应用权限都是有限的</li>
+<li>不要明文存放信息</li>
+</ul>
+<p><code>CSRF攻击</code></p>
+<p>csrf是代替用户完成指定动作, 通过伪装来自受信任用户的请求来进行对受信任的网站一些操作</p>
+<p>xss是其中的方法之一</p>
+<p>例如利用本地cookie访问危险网站</p>
+<hr>
+<p>解决:</p>
+<ul>
+<li><p>通过在客户端页面增加伪随机数</p>
+</li>
+<li><p>进行验证</p>
+</li>
+</ul>
+<hr>
+<p><code>xss攻击</code></p>
+<p>通过外部脚本攻击, 在页面内插入恶意html标签或者JavaScript代码, 用于窃听cookie</p>
+<p>解决:</p>
+<ul>
+<li><p>进行标签过滤, 和关键字符过滤</p>
+</li>
+<li><p>任何内容写入到页面钱都应该进行encode</p>
+</li>
+</ul>
+<p><a href></a><a name="797ac6d3"></a></p>
+<h3 id="浏览器从url输入到显示页面的步骤"><a href="#浏览器从url输入到显示页面的步骤" class="headerlink" title="浏览器从url输入到显示页面的步骤"></a>浏览器从url输入到显示页面的步骤</h3><p>用户输入URL并回车，浏览器进程判断是搜索还是URL址址，是URL址址就通过IPC将URL发送给<code>网络进程</code>，网络进程查找<code>本地缓存</code>，如果没找到，进行DNS解析IP，端口请求是http发送的，利用IP和端口构建TCP连接，三次握手，发送HTTP请求，服务器响应并返回HTTP响应。如果有301，302则执行重定向相应流程。200则继续，判断Content-type如果<code>text/html</code>，浏览器进程准备<code>渲染进程</code>，<code>发送提交文档消息，让网络进程与渲染进程建立管道</code>，将内容提交给渲染进程，如果是同域建复用父进程的渲染进程。<code>渲染进程接收完毕</code>，向浏览器进程发送<code>确认文档</code>，浏览器<code>安全栏，前进，后退界面更新</code>，渲染进程渲染完后，向浏览器进程提交页面加载完毕。</p>
+<p><a href></a><a name="539e1647"></a></p>
+<h3 id="如何进行网站优化"><a href="#如何进行网站优化" class="headerlink" title="如何进行网站优化"></a>如何进行网站优化</h3><p><a href></a><a name="70d3abc9"></a></p>
+<h4 id="js的性能优化有哪些"><a href="#js的性能优化有哪些" class="headerlink" title="js的性能优化有哪些"></a>js的性能优化有哪些</h4><ul>
+<li><p>添加本地缓存</p>
+</li>
+<li><p>避免使用CSS表达式</p>
+</li>
+<li><p>减少DNS查询</p>
+</li>
+<li><p>使用外部javascript和CSS</p>
+</li>
+<li><p>避免重定向</p>
+</li>
+<li><p>图片lazyLoad</p>
+</li>
+<li><p>事件节流</p>
+<blockquote>
+<p>比如在textarea里面如果需要监听change事件，即keyup来监听事件</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>可以通过加上settimeout来进行事件节流 就是不要一直都是实时监听，可以隔一段时间监听下</p>
+</blockquote>
+<ul>
+<li><p>使用ssr后端渲染, 减少前端渲染时间，就是一次性输出html内容，不用频繁调用ajax</p>
+</li>
+<li><p>css放在前面， js放在后面</p>
+</li>
+</ul>
+<p><a href></a><a name="ebfe2a87"></a></p>
+<h4 id="服务器方面"><a href="#服务器方面" class="headerlink" title="服务器方面"></a>服务器方面</h4><p>使用CND加速，ETag配置，用Gzip压缩</p>
+<p><a href></a><a name="b901e650"></a></p>
+<h4 id="内容方面"><a href="#内容方面" class="headerlink" title="内容方面"></a>内容方面</h4><ol>
+<li>减少http请求， 包括图像使用css雪碧图，合并文件之类的</li>
+<li>减少dns查询，用dns缓存</li>
+<li>减少DOM数量</li>
+<li>减小cookies的大小</li>
+<li>尽量不要在html中去拉伸图片</li>
+</ol>
+<p><code>css</code></p>
+<p>样式表放在顶部， 不要使用css表达式，使用不用<a href="/import">@import </a> </p>
+<p><code>JavaScript</code></p>
+<ol>
+<li><p>脚本放在页面底部</p>
+</li>
+<li><p>文件用外部引入，压缩，减少不必要脚本</p>
+</li>
+<li><p>减少DOM访问</p>
+</li>
+</ol>
+<hr>
+<p>降低请求量：合并资源，减少HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。</p>
+<p>加快请求速度：预解析DNS，减少域名数，并行加载，CDN 分发。</p>
+<p>缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存localStorage。</p>
+<p>渲染：JS/CSS优化，加载顺序，服务端渲染，pipeline。</p>
+<p><a href></a><a name="3a00f9e4"></a></p>
+<h3 id="谈谈你对重构的理解"><a href="#谈谈你对重构的理解" class="headerlink" title="谈谈你对重构的理解"></a>谈谈你对重构的理解</h3><p>网站重构是不改变外观的前提下, 进行结构优化, 添加可读性, 加快速度</p>
+<p><code>高复用低耦合, 文件小, 好维护, 好扩展</code>才是好代码</p>
+<p><a href></a><a name="0b3dbe8c"></a></p>
+<h4 id="常用的重构方法是"><a href="#常用的重构方法是" class="headerlink" title="常用的重构方法是"></a>常用的重构方法是</h4><ul>
+<li>表格table改为div+css</li>
+<li>使网站兼容现代浏览器, 废弃ie6</li>
+<li>对于移动平台进行优化</li>
+<li>针对seo进行优化</li>
+<li>减少无用代码, 和代码体积, 提高速度</li>
+</ul>
+<p><a href></a><a name="726c9033"></a></p>
+<h3 id="严格模式和混杂模式有什么区别"><a href="#严格模式和混杂模式有什么区别" class="headerlink" title="严格模式和混杂模式有什么区别"></a>严格模式和混杂模式有什么区别</h3><p><code>Doctype</code>声明于文档最前面，告诉浏览器以何种方式来渲染页面，这里有两种模式，严格模式和混杂模式。</p>
+<p><code>严格模式</code>是让浏览器用最高标准运行</p>
+<p>比如最新版本代码会忽略一些老旧的代码</p>
+<p>那么老旧的代码就不会被运行，叫做以最高标准进行</p>
+<hr>
+<p><code>混杂模式</code>是可以向后兼容老式浏览器的</p>
+<p>就是新的可以支持，老的代码也可以运行成功</p>
+<p><a href></a><a name="d343aabe"></a></p>
+<h3 id="Cookie、sessionStorage、localStorage的区别"><a href="#Cookie、sessionStorage、localStorage的区别" class="headerlink" title="Cookie、sessionStorage、localStorage的区别"></a>Cookie、sessionStorage、localStorage的区别</h3><p>cookie是在http请求中携带的，用于<code>浏览器和服务器之间通信</code>大小限制在<code>4k内</code></p>
+<p>sessionStorage，localStorage只在本地存储，大小可以大一些些. 5mb左右</p>
+<p><code>localStorage.setItem尽量加到try-catch中, 因为某些浏览器是禁用这个api的</code></p>
+<hr>
+<p><code>共同点</code>：都是保存在浏览器端，并且是同源的</p>
+<p><code>Cookie</code>：cookie数据始终在<code>同源的http请求中携带（即使不需要）</code>，</p>
+<blockquote>
+<p>即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</p>
+</blockquote>
+<blockquote>
+<p>cookie数据存储的大小很小只有4K左右。</p>
+</blockquote>
+<blockquote>
+<p>另外两个是5mb左右</p>
+</blockquote>
+<p><code>sessionStorage</code>：<code>仅在当前浏览器窗口关闭前有效</code>，自然也就不可能持久保持，</p>
+<p><code>localStorage：始终有效</code>，窗口或浏览器关闭也一直保存，因此用作持久数据；</p>
+<p><code>cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</code>。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
+<hr>
+<p><code>localStorage：</code>localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：<code>同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效</code>）</p>
+<p>补充说明一下<code>cookie的作用：</code></p>
+<ul>
+<li><code>保存用户登录状态。</code>例如将用户<code>id存储于一个cookie内</code>，这样当用户下次访问该页面时就<code>不需要重新登录了</code>，现在很多论坛和社区都提供这样的功能。   cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个  月、一年等。</li>
+<li><code>跟踪用户行为。</code>例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后  台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。</li>
+</ul>
+<blockquote>
+<p>从安全性来说，因为<code>每次http请求都回携带cookie信息，这样子浪费了带宽</code>，所以<code>cookie应该尽可能的少用</code></p>
+</blockquote>
+<blockquote>
+<p>此外cookie还需要<code>指定作用域，不可以跨域调用</code>，限制很多，但是<code>用户识别用户登陆来说，cookie还是比storage好用，其他情况下可以用storage，localstorage可以用来在页面传递参数</code></p>
+</blockquote>
+<blockquote>
+<p>sessionstorage可以用来保存一些<code>临时的数据，防止用户刷新页面后丢失了一些参数</code></p>
+</blockquote>
+<hr>
+<p>HTTP是一个无状态协议，因此<code>Cookie的最大的作用就是存储sessionId</code>用来唯一标识用户</p>
+<ol>
+<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
+</li>
+<li><p>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗<br><br>考虑到安全应当使用session。</p>
+</li>
+<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能<br><br>考虑到减轻服务器性能方面，应当使用COOKIE。</p>
+</li>
+<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
+</li>
+</ol>
+<p><a href></a><a name="0c81dc0d"></a></p>
+<h3 id="说一下浏览器缓存"><a href="#说一下浏览器缓存" class="headerlink" title="说一下浏览器缓存"></a>说一下浏览器缓存</h3><p>缓存分为两种：<code>强缓存和协商缓存</code>，根据响应的header内容来决定。</p>
+<blockquote>
+<p>因为服务器上的资源不是一直固定不变的，大多数情况下它会更新，这个时候如果我们还访问本地缓存，那么对用户来说，那就相当于资源没有更新，用户看到的还是旧的资源；<code>所以我们希望服务器上的资源更新了浏览器就请求新的资源，没有更新就使用本地的缓存</code>，以最大程度的减少因网络请求而产生的资源浪费。</p>
+</blockquote>
+<blockquote>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190312/311436_1552361773903_9DC69E327B4B3691E94CD9D52D10E2C1#alt=img" alt></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>获取资源形式</th>
+<th>状态码</th>
+<th>发送请求到服务器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>强缓存</td>
+<td>从缓存取</td>
+<td>200（from cache）</td>
+<td>否，直接从缓存取</td>
+</tr>
+<tr>
+<td>协商缓存</td>
+<td>从缓存取</td>
+<td>304（not modified）</td>
+<td>是，通过服务器来告知缓存是否可用</td>
+</tr>
+</tbody></table>
+<p><code>强缓存相关字段有expires，cache-control</code>。如果cache-control与expires同时存在的话，cache-control的优先级高于expires。</p>
+<p>协商缓存相关字段`有</p>
+<ul>
+<li>Last-Modified/If-Modified-Since</li>
+<li>Etag/If-None-Match</li>
+</ul>
+<hr>
+<p><a href></a><a name="ca8b8687"></a></p>
+<h3 id="讲讲移动端自适应问题"><a href="#讲讲移动端自适应问题" class="headerlink" title="讲讲移动端自适应问题"></a>讲讲移动端自适应问题</h3><p>逻辑分辨率和物理分辨率不一致是很正常的</p>
+<p>css渲染是根据逻辑分辨率, 所以有时候就会出现1px对应4个物理分辨率的情况, 会产生模糊</p>
+<p><a href></a><a name="0eb44b7f"></a></p>
+<h3 id="响应式和自适应"><a href="#响应式和自适应" class="headerlink" title="响应式和自适应"></a>响应式和自适应</h3><p>响应式主要是根据@media来实现</p>
+<p>自适应则是忽略了@media依靠的是窗口比例来实现</p>
+<p>自适应比较好</p>
+<p>如今的大型网站, 例如淘宝已经没有响应式了</p>
+<p>淘宝手机端和网页端使用的是两个域名, 不同客户端不再使用同一套dom, 而是区分开做自适应</p>
+<p>为什么呢?</p>
+<p>试想一下淘宝这种大型网站，一个分页下的商品条目特别多，并且每个商品条目的dom结构又十分复杂，而且pc端往往显示的信息是要比手机端更多的。如果不分开做两套，而是直接用响应式的话，那么pc端上显示的很多dom就要在手机端上隐藏，结果这些dom都没有被用到，但是却加载了。在这个流量和速度至上的时代，代码冗余先不说，多加载的这些无用的代码而消耗的流量，从某种意义上来说就已经损失了很多的效益。</p>
+<blockquote>
+<p>兼容性问题</p>
+</blockquote>
+<p>从<code>Chrome32+</code>版本开始是会默认禁用用户缩放的，但是考虑到兼容大部分设备，还是要加上其他设置，让<code>meta</code>标签能够有更好的容错性。也就是下面这段代码：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0, maximum-scale<span class="token punctuation">=</span>1.0, 
+ user-scalable<span class="token punctuation">=</span>no;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>需要注意的是，在<code>ios10+</code>以上，尽管开发者设置了<code>user-scalable=no</code>，<code>Safari</code>还是允许用户通过手势来缩放。（安卓手机各大厂商的内置浏览器也逐渐开放用户缩放，即使使用<code>meta</code>标签进行设置）</p>
+<p>解决的方法也很简单，只需要检测<code>touch</code>相关事件来阻止事件的触发即可。</p>
+<pre class=" language-javascript"><code class="language-javascript">window<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 同时按下两个手指</span>
+    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>touches<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> lastTouchEnd <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 特别注意300ms时差的设置</span>
+    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchend'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>now<span class="token operator">-</span>lastTouchEnd <span class="token operator">&lt;=</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        lastTouchEnd <span class="token operator">=</span> now<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p><img src="http://www.w3cplus.com/sites/default/files/blogs/2015/1511/rem-6.jpg#alt=Flexible%C3%A5%C2%AE%C2%9E%C3%A7%C2%8E%C2%B0%C3%A6%C2%89%C2%8B%C3%A6%C2%B7%C2%98H5%C3%A9%C2%A1%C2%B5%C3%A9%C2%9D%C2%A2%C3%A7%C2%9A%C2%84%C3%A7%C2%BB%C2%88%C3%A7%C2%AB%C2%AF%C3%A9%C2%80%C2%82%C3%A9%0A%C2%8D" alt></p>
+<p>viewport: layout viewport、visual viewport、ideal viewport。</p>
+<ul>
+<li><code>layout viewport:</code>大于实际屏幕， 元素的宽度继承于 layoutviewport，用于保证网站的外观特性与桌面浏览器一样。layoutviewport 到底多宽，每个浏览器不同。iPhone 的 safari 为 980px，通过 document.documentElement.clientWidth 获取。</li>
+<li><code>visual viewport:</code>当前显示在屏幕上的页面，即浏览器可视区域的宽度。</li>
+<li><code>ideal viewport:</code> 为浏览器定义的可完美适配移动端的理想 viewport，固定不变，可以认为是设备视口宽度。比如 iphone 7 为 375px, iphone 7p 为 414px。</li>
+</ul>
+<p><a name="viewport"></a></p>
+<h4 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>viewport<span class="token punctuation">'</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>width<span class="token punctuation">=</span>device-width,initial-scale<span class="token punctuation">=</span>1,user-scale<span class="token punctuation">=</span>no<span class="token punctuation">'</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>只要 layoutviewport === visualviewport，页面下面不会出现滚动条，默认只是把页面放大或缩小</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 设定两个变量：  </span>
+viewport_1 <span class="token operator">=</span> width<span class="token punctuation">;</span>  
+viewport_2 <span class="token operator">=</span> idealviewport <span class="token operator">/</span> initial<span class="token operator">-</span>scale<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 则：  </span>
+layoutviewport <span class="token operator">=</span> max<span class="token punctuation">{</span>viewport_1<span class="token punctuation">,</span> viewport_2<span class="token punctuation">}</span><span class="token punctuation">;</span>  
+visualviewport <span class="token operator">=</span> viewport_2<span class="token punctuation">;</span></code></pre>
+<hr>
+<p><code>dpr</code></p>
+<p>什么是dpr: 设备像素比(dpr) = 物理像素/设备独立像素。如 iphone 6、7、8 的 dpr 为 2，那么一个设备独立像素便为 4 个物理像素，因此在 css 上设置的 1px 在其屏幕上占据的是 2个物理像素，0.5px 对应的才是其所能展示的最小单位。这就是 1px 在 retina 屏上变粗的原因，目前有很多办法来解决这一问题。</p>
+<hr>
+<p><a href></a><a name="ce806820"></a></p>
+<h4 id="px与自适应"><a href="#px与自适应" class="headerlink" title="px与自适应"></a>px与自适应</h4><p>上述我们了解到了当通过viewport元标签，设置布局视口为理想视口时，1个css像素可以表示成：</p>
+<pre><code>1 CSS像素 = 物理像素／分辨率</code></pre><p>我们直到，在pc端的布局视口通常情况下为980px，移动端以iphone6为例，分辨率为375 _ 667，也就是说布局视口在理想的情况下为375px。比如现在我们有一个750px _ 1134px的视觉稿，那么在pc端，一个css像素可以如下计算：</p>
+<pre><code>PC端： 1 CSS像素 = 物理像素／分辨率 = 750 ／ 980 =0.76 px</code></pre><p>而在iphone6下：</p>
+<pre><code>iphone6：1 CSS像素 = 物理像素 ／分辨率 = 750 ／ 375 = 2 px</code></pre><p><a href></a><a name="107b9842"></a></p>
+<h4 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h4><pre class=" language-scss"><code class="language-scss">@media screen <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">960</span>px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#FF6699</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+@media screen <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">768</span>px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#00FF66</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+@media screen <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">550</span>px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#6633FF</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+@media screen <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">320</span>px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#FFFF00</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>但是媒体查询的缺点也很明显，如果在浏览器大小改变时，需要改变的样式太多，那么多套样式代码会很繁琐。</p>
+<p><a href></a><a name="81522afd"></a></p>
+<h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>trangle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>设置样式让其自适应：</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.trangle</span></span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">padding-top</span><span class="token punctuation">:</span><span class="token number">75%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>通过设置padding-top：75%,相对比宽度的75%，因此这样就设置了一个长宽高恒定比例的长方形，具体效果展示如下：</p>
+<p><a href="https://user-images.githubusercontent.com/17233651/41851698-52d2bd2c-78bb-11e8-97cb-26f985195809.gif" target="_blank" rel="noopener"><img src="https://user-images.githubusercontent.com/17233651/41851698-52d2bd2c-78bb-11e8-97cb-26f985195809.gif#alt=jest" alt></a></p>
+<p><code>有明显的以下两个缺点：</code></p>
+<p>（1）<code>计算困难，</code>如果我们要定义一个元素的宽度和高度，按照设计稿，必须换算成百分比单位。<br><br>（2）各个属性中如果使用百分比，<code>相对父元素的属性并不是唯一的</code>。比如width和height相对于父元素的width和height，而margin、padding不管垂直还是水平方向都相对比父元素的宽度、border-radius则是相对于元素自身等等，造成我们使用百分比单位容易使布局问题变得复杂。</p>
+<p><a name="rem"></a></p>
+<h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><p>rem单位都是<code>相对于根元素html的font-size</code>来决定大小的</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">refreshRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> docEl <span class="token operator">=</span> doc<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> width <span class="token operator">=</span> docEl<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> rem <span class="token operator">=</span> width <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    docEl<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> rem <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+    flexible<span class="token punctuation">.</span>rem <span class="token operator">=</span> win<span class="token punctuation">.</span>rem <span class="token operator">=</span> rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+win<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> refreshRem<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>小缺陷是：</p>
+<p><strong><em>在响应式布局中，必须通过js来动态控制根元素font-size的大小。</em></strong>也就是说css样式和js代码有一定的耦合性。且必须将改变font-size的代码放在css样式之前。</p>
+<p><a href></a><a name="0dc77462"></a></p>
+<h4 id="通过vw-vh来实现自适应"><a href="#通过vw-vh来实现自适应" class="headerlink" title="通过vw/vh来实现自适应"></a>通过vw/vh来实现自适应</h4><p>对于iphone6/7  375*667的分辨率，那么px可以通过如下方式换算成vw：</p>
+<pre><code>1px = （1/375）*100 vw</code></pre><p>此外，也可以通过postcss的相应插件，预处理css做一个自动的转换，<a href="https://github.com/evrone/postcss-px-to-viewport" target="_blank" rel="noopener">postcss-px-to-viewport</a>可以自动将px转化成vw。</p>
+<p><a href></a><a name="9ea28e21"></a></p>
+<h3 id="1px解决办法"><a href="#1px解决办法" class="headerlink" title="1px解决办法"></a>1px解决办法</h3><p>可以使用以下方法来:</p>
+<ol>
+<li>border-image/background-image</li>
+<li>伪类+transform</li>
+<li>svg<code>基本可以满足所有场景</code></li>
+<li>viewport<code>但是所有布局都要按照物理像素来写</code>这样不现实, 可以借助<code>flexible</code>或<code>vw、vh</code>来帮助我们进行适配</li>
+<li>多背景渐变实现和阴影方式(其实和背景一样)</li>
+</ol>
+<p><a href></a><a name="0fe37b3f"></a></p>
+<h4 id="1-border-image-background-image"><a href="#1-border-image-background-image" class="headerlink" title="1. border-image/background-image"></a>1. border-image/background-image</h4><p><strong>优点：</strong></p>
+<ul>
+<li>可以设置单条,多条边框</li>
+<li>没有性能瓶颈的问题</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>修改颜色麻烦, 需要替换图片</li>
+<li>圆角需要特殊处理，并且边缘会模糊</li>
+</ul>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5a3qsuxpbj31iw0d6q5r.jpg#alt=" alt></p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5a3koajdjj31720u00xj.jpg#alt=" alt></p>
+<p><code>border-image</code>属性是一个简写的CSS属性，它可以同时设置<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-source.html" target="_blank" rel="noopener">border-image-source</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-slice.html" target="_blank" rel="noopener">border-image-slice</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-width.html" target="_blank" rel="noopener">border-image-width</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-outset.html" target="_blank" rel="noopener">border-image-outset</a>和<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-repeat.html" target="_blank" rel="noopener">border-image-repeat</a>属性。</p>
+<p>基于<code>media</code>查询判断不同设备像素比给定不同的<code>border-image</code></p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.border_1px</span></span><span class="token punctuation">{</span>
+          <span class="token property">border-bottom</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">-webkit-min-device-pixel-ratio</span><span class="token punctuation">:</span>2<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+            <span class="token selector"><span class="token class">.border_1px</span></span><span class="token punctuation">{</span>
+                <span class="token property">border-bottom</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+                <span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url(../img/1pxline.png)</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">2</span> <span class="token number">0</span> stretch<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+          <span class="token selector"><span class="token class">.background-image-1px</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url">url(../img/line.png)</span> repeat-x left bottom<span class="token punctuation">;</span>
+  <span class="token property">-webkit-background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+        <span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="e12fef84"></a></p>
+<h4 id="2-渐变和阴影"><a href="#2-渐变和阴影" class="headerlink" title="2. 渐变和阴影"></a>2. 渐变和阴影</h4><p>与background-image方案类似，<code>只是将图片替换为css3渐变</code>。设置1px的渐变背景，<code>50%有颜色，50%透明。</code></p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>可以实现单条、多条边框</li>
+<li>边框的颜色随意设置</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>代码量不少</li>
+<li>圆角没法实现</li>
+<li>多背景图片有兼容性问题</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.background-gradient-1px</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span>
+    <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token hexcode">#000</span>, <span class="token hexcode">#000</span> <span class="token number">100%</span>, transparent <span class="token number">100%</span><span class="token punctuation">)</span> left / <span class="token number">1</span>px <span class="token number">100%</span> no-repeat,
+    <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token hexcode">#000</span>, <span class="token hexcode">#000</span> <span class="token number">100%</span>, transparent <span class="token number">100%</span><span class="token punctuation">)</span> right / <span class="token number">1</span>px <span class="token number">100%</span> no-repeat,
+    <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token hexcode">#000</span>,<span class="token hexcode">#000</span> <span class="token number">100%</span>, transparent <span class="token number">100%</span><span class="token punctuation">)</span> top / <span class="token number">100%</span> <span class="token number">1</span>px no-repeat,
+    <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token hexcode">#000</span>,<span class="token hexcode">#000</span> <span class="token number">100%</span>, transparent <span class="token number">100%</span><span class="token punctuation">)</span> bottom / <span class="token number">100%</span> <span class="token number">1</span>px no-repeat
+<span class="token punctuation">}</span></code></pre>
+<p>使用box-shadow模拟边框</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box-shadow-1px</span> </span><span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> inset <span class="token number">0</span>px -<span class="token number">1</span>px <span class="token number">1</span>px -<span class="token number">1</span>px <span class="token hexcode">#c8c7cc</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>优点：</strong></p>
+<ul>
+<li>代码量少</li>
+<li>可以满足所有场景</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>边框有阴影，颜色变浅</li>
+</ul>
+<p><a href></a><a name="b5bbb66e"></a></p>
+<h4 id="3-viewport-rem-实现"><a href="#3-viewport-rem-实现" class="headerlink" title="3. viewport + rem 实现"></a>3. viewport + rem 实现</h4><pre class=" language-css"><code class="language-css">&lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"</span>></code></pre>
+<p>在devicePixelRatio = 3 时，输出viewport：</p>
+<pre class=" language-css"><code class="language-css">&lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no"</span>></code></pre>
+<p>这种兼容方案相对比较完美，适合新的项目，老的项目修改成本过大。<br><br>对于这种方案，可以看看<a href="https://github.com/amfe/article/issues/17" target="_blank" rel="noopener">《使用Flexible实现手淘H5页面的终端适配》</a><br><br><strong>优点：</strong></p>
+<ul>
+<li>所有场景都能满足</li>
+<li>一套代码，可以兼容基本所有布局</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>老项目修改代价过大，只适用于新项目</li>
+</ul>
+<p><a href></a><a name="26949996"></a></p>
+<h4 id="4-伪类-transform-重做border"><a href="#4-伪类-transform-重做border" class="headerlink" title="4. 伪类+transform(重做border)"></a>4. 伪类+transform(<code>重做border</code>)</h4><p>对于老项目，伪类+transform是比较完美的方法了。<br><br><code>原理是把原先元素的 border 去掉</code>，然后利用 :before 或者 :after <code>重做 border ，并 transform 的 scale 缩小一半</code>，原先的元素相对定位，新做的 border 绝对定位。单条border样式设置：</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.scale-1px</span></span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.scale-1px</span><span class="token pseudo-element">:after</span></span><span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">-webkit-transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">-webkit-transform-origin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><a name="f5889746"></a></p>
+<h4 id="5-svg-目前最佳"><a href="#5-svg-目前最佳" class="headerlink" title="5. svg(目前最佳)"></a>5. svg(<code>目前最佳</code>)</h4><p>上面我们<code>border-image</code>和<code>background-image</code>都可以模拟<code>1px</code>边框，但是使用的都是位图，还需要外部引入。</p>
+<blockquote>
+<p>借助<code>PostCSS</code>的<code>postcss-write-svg</code></p>
+</blockquote>
+<blockquote>
+<p>直接使用<code>border-image</code>和<code>background-image</code>创建<code>svg</code>的<code>1px</code>边框：</p>
+</blockquote>
+<pre class=" language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@svg</span> border_1px</span> <span class="token punctuation">{</span> 
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">2</span>px<span class="token punctuation">;</span> 
+  <span class="token atrule"><span class="token rule">@rect</span></span> <span class="token punctuation">{</span> 
+    <span class="token property">fill</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color, black<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span> 
+<span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">{</span> <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid transparent<span class="token punctuation">;</span> <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token function">svg</span><span class="token punctuation">(</span>border_<span class="token number">1</span>px <span class="token function">param</span><span class="token punctuation">(</span>--color <span class="token hexcode">#00b1ff</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">2</span> <span class="token number">2</span> stretch<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
+<p>编译后：</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">{</span> <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid transparent<span class="token punctuation">;</span> <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='2px'%3E%3Crect fill='%2300b1ff' width='100%25' height='50%25'/%3E%3C/svg%3E")</span> <span class="token number">2</span> <span class="token number">2</span> stretch<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
+<p>基本可以满足所有场景。</p>
+<p><a href></a><a name="06c46e14"></a></p>
+<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><p><code>get参数通过url传递，post放在request body中。</code></p>
+<p>get请求在url中传递的参数是有长度限制的，而post没有。</p>
+<p>get比post更不安全，因为参数直接暴露在url中，所以不能用来传递敏感信息。</p>
+<p>get请求只能进行url编码，而post支持多种编码方式</p>
+<p>get请求会浏览器主动cache，而post支持多种编码方式。</p>
+<p>get请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留。</p>
+<p>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
+<p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<blockquote>
+<p>总之能用post就post</p>
+</blockquote>
+<p><a href></a><a name="79274068"></a></p>
+<h3 id="怎么看网站的性能如何"><a href="#怎么看网站的性能如何" class="headerlink" title="怎么看网站的性能如何"></a>怎么看网站的性能如何</h3><p>检测页面加载时间一般有两种方式，一种是被动去测：就是在被检测的页面置入脚本或探针，当用户访问网页时，探针自动采集数据并传回数据库进行分析</p>
+<p>另一种主动监测的方式，即主动的搭建分布式受控环境，模拟用户发起页面访问请求，主动采集性能数据并分析，在检测的精准度上，专业的第三方工具效果更佳，比如说性能极客</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">别问,问就是穷</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《前端综合知识要点》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                sansenlian
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '1d68e9ae58d4e243a088',
+        clientSecret: 'b310f3e56f7fdc6151fa40a962fd5b0e6efac57e',
+        repo: 'sansenlian.github.io',
+        owner: 'sansenlian',
+        admin: "sansenlian",
+        id: '2019-08-18T21-43-14',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/08/18/wang-luo-wen-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="网络问题">
+                        
+                        <span class="card-title">网络问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+http状态码和含义1xx
+100continue表示继续，一般在发送post请求的时候，发送了http header后服务端会返回这个消息
+
+2xx
+
+200 OK：正常返回信息， 即返回的数据为全量的数据，如果文件不通过GZIP压缩的
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sansenlian
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端综合小知识点">
+                        
+                        <span class="card-title">前端综合小知识点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+node的使用场景和优缺点是一个JavaScript运行环境, 依赖于v8引擎, 是事件驱动, 单进程, 单线程, 高并发是最重要的优点
+
+缺点是: 只支持单核cpu, 不能充分利用cpu资源
+可靠性低, 一旦代码某个环节奔溃整个系统都会
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sansenlian
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: sansenlian的博客<br />'
+            + '作者: sansenlian<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 sansenlian 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+      <span id="sitetime"></span>
+      基于
+      <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+      <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+      
+      &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+      <span class="white-color">38.1k</span>
+      
+
+      
+      
+      <br>
+      
+      <span id="busuanzi_container_site_pv" style='display:none'>
+        <i class="fa fa-heart-o"></i>
+        本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+      </span>
+      
+      
+      <span id="busuanzi_container_site_uv" style='display:none'>
+        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+      </span>
+      
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sansenlian" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sansenlian@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=489572627" class="tooltipped" data-tooltip="QQ联系我: 489572627" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+<script language=javascript>
+  function siteTime() {
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth() + 1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+    var diff = t2 - t1;
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+    document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+  } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+<script>
+  $(document).ready(function() {
+
+    var int = setInterval(fixCount, 50); // 50ms周期检测函数
+    var pvcountOffset = 80000; // 初始化首次数据
+    var uvcountOffset = 20000;
+
+    function fixCount() {
+      if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+        clearInterval(int);
+      }
+      if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+        clearInterval(int); // 停止检测
+      }
+    }
+  });
+</script>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
+</html>

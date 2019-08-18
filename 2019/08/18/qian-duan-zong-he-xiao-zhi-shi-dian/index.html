@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="KMP字符串匹配算法, sansenlian的博客">
-    <meta name="description" content=":::tips常见算法github地址——欢迎随手star:::
-字符串A中找是否存在字符串B，当然前提A比B长
+    <meta name="keywords" content="前端综合小知识点, sansenlian的博客">
+    <meta name="description" content="
+node的使用场景和优缺点是一个JavaScript运行环境, 依赖于v8引擎, 是事件驱动, 单进程, 单线程, 高并发是最重要的优点
 
-动图来自:https://blog.csdn.net/weixin_40346046/article/details/794">
+缺点是: 只支持单核cpu, 不能充分利用cpu资源
+可靠性低, 一旦代码某个环节奔溃整个系统都会">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>KMP字符串匹配算法 | sansenlian的博客</title>
+    <title>前端综合小知识点 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        KMP字符串匹配算法
+                        前端综合小知识点
                     </div>
                 </div>
             </div>
@@ -391,21 +392,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-14
+                    2019-08-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        422
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -421,99 +422,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>:::tips<br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener">常见算法github地址——欢迎随手star</a><br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener"></a>:::</p>
-<p>字符串A中找是否存在字符串B，当然前提A比B长</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768043850-3fe8617a-a825-49d8-b037-69046d425a54.png#align=left&display=inline&height=221&originHeight=221&originWidth=1340&size=0&status=done&width=1340" alt></p>
-<p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190812102019.gif#align=left&alt=&display=inline&message=%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7%E9%87%8D%E8%AF%95&percent=0&status=uploading" alt><br>动图来自:<a href="https://blog.csdn.net/weixin_40346046/article/details/79468142" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40346046/article/details/79468142</a></p>
-<p><a name="543c214e"></a></p>
-<h2 id="next数组构建"><a href="#next数组构建" class="headerlink" title="next数组构建"></a>next数组构建</h2><p>next数组构建要求是找前缀表, 比如对于:    ababaa</p>
-<table>
-<thead>
-<tr>
-<th>下标</th>
-<th>前缀表</th>
-<th>目的:<code>找左右对称的长度</code>即next[]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0 a</td>
-<td>没有前缀</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>1 b</td>
-<td>a</td>
-<td>0</td>
-</tr>
-<tr>
-<td>2 a</td>
-<td>ab</td>
-<td>0</td>
-</tr>
-<tr>
-<td>3 b</td>
-<td><code>a</code>b<code>a</code></td>
-<td>1</td>
-</tr>
-<tr>
-<td>4 a</td>
-<td><code>abab</code></td>
-<td>2</td>
-</tr>
-<tr>
-<td>5 a</td>
-<td><code>ababa</code></td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>那么目的是找左右对称的长度，需要我每一个都进行对比计算吗，那不是非常费时间</p>
-<p>其实不用的，可以通过类似斐波那契数的方式，通过上一层的计算来满足下一层的计算，通过动态规划的方式慢慢递增构建，具体举例：</p>
-<p>总共三个角色:</p>
-<ul>
-<li>j:  一直向前移动的下标</li>
-<li>K: 当前最长相等长度的下标</li>
-<li>next数组: 当前数字前面所拥有的前缀的最长相等长度</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768042982-02698b87-77d9-469d-a675-95dc13b2169e.png#align=left&display=inline&height=494&originHeight=494&originWidth=932&size=0&status=done&width=932" alt></p>
-<p><a name="X1KeB"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> strStr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>haystack<span class="token punctuation">,</span> needle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> next <span class="token operator">=</span> <span class="token function">getNextArr</span><span class="token punctuation">(</span>needle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> hasyArr <span class="token operator">=</span> haystack<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> needleArr <span class="token operator">=</span> needle<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> hasyArr<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> hasyArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> needleArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-            j<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> i <span class="token operator">-</span> j
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> getNextArr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nextStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> nextArr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> nextArrStr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 代表前缀中当前最长对称的下表</span>
-    nextArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// j的值默认就在k的后面一位置</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> nextArr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 如果比较,值相等的话就往后移动一步,并且next数值+1</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> nextArrStr<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nextArrStr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            nextArr<span class="token punctuation">[</span><span class="token operator">++</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>k<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 如果不相等的话,就跳到前一个next数组进行继续比较</span>
-            k <span class="token operator">=</span> nextArr<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> nextArr
-<span class="token punctuation">}</span></code></pre>
+                <p><a href></a><br><a name="20ad3c21"></a></p>
+<h3 id="node的使用场景和优缺点"><a href="#node的使用场景和优缺点" class="headerlink" title="node的使用场景和优缺点"></a>node的使用场景和优缺点</h3><p>是一个JavaScript运行环境, 依赖于v8引擎, 是事件驱动, <code>单进程, 单线程, 高并发是最重要的优点</code></p>
+<hr>
+<p>缺点是: <code>只支持单核cpu</code>, 不能充分利用cpu资源</p>
+<p>可靠性低, <code>一旦代码某个环节奔溃整个系统都会奔溃</code></p>
+<p><a href></a><br><a name="2c6ea741"></a></p>
+<h3 id="对git熟悉吗-知道常用的git命令吗"><a href="#对git熟悉吗-知道常用的git命令吗" class="headerlink" title="对git熟悉吗, 知道常用的git命令吗"></a>对git熟悉吗, 知道常用的git命令吗</h3><pre class=" language-git"><code class="language-git">git clone &lt;远程项目地址>  #克隆
+git status # 查看修改情况
+git diff &lt;文件名称> #查看单个文件修改情况</code></pre>
+<p><code>单人开发</code></p>
+<pre class=" language-git"><code class="language-git">git pull origin master #同步别人修改的内容
+git push origin master #提交到远程服务器</code></pre>
+<hr>
+<p><code>多人开发</code><br><br>branch就不一定是master了, 依据自己的分支来操作</p>
+<pre class=" language-git"><code class="language-git">git checkout -b &lt;分支名字> #拉取分支
+git branch #可以参看本地所有分支名字
+
+git merge master #同步master分支的内容
+git checkout &lt;分支名字> #切换分支</code></pre>
+<p>将自己修改的内容提交到远程服务器</p>
+<pre class=" language-git"><code class="language-git">git add .
+git commit -m <span class="token string">"xxx"</span> #提交所包含的信息
+git push origin &lt;branchname> #提交到远程分支,自己的分支</code></pre>
+<p>如果自己的代码没有问题的话可以合并到master分支</p>
+<pre class=" language-git"><code class="language-git">git checkout master #切换到master分支
+git merge &lt;branchname> #合并自己的分支
+git push origin master #提交到master分支</code></pre>
+<p><a href></a><br><a name="6adc733f"></a></p>
+<h3 id="常见的BOM属性对象方法"><a href="#常见的BOM属性对象方法" class="headerlink" title="常见的BOM属性对象方法"></a>常见的BOM属性对象方法</h3><p><code>(1)location对象</code></p>
+<p>location.href– 返回或设置当前文档的URL<br><br>location.search – 返回URL中的查询字符串部分。例如 <a href="http://www.dreamdu.com/dreamdu.php?id=5&name=dreamdu" target="_blank" rel="noopener">http://www.dreamdu.com/dreamdu.php?id=5&amp;name=dreamdu</a> 返回包括(?)后面的内容?id=5&amp;name=dreamdu<br><br>location.hash – 返回URL#后面的内容，如果没有#，返回空<br><br>location.host – 返回URL中的域名部分，例如<a href="http://www.dreamdu.com" target="_blank" rel="noopener">www.dreamdu.com</a><br><br>location.hostname – 返回URL中的主域名部分，例如dreamdu.com<br><br>location.pathname – 返回URL的域名后的部分。例如 <a href="http://www.dreamdu.com/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com/xhtml/</a> 返回/xhtml/<br><br>location.port – 返回URL中的端口部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回8080<br><br>location.protocol – 返回URL中的协议部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回(//)前面的内容http:<br><br>location.assign – 设置当前文档的URL<br><br>location.replace() – 设置当前文档的URL，并且在history对象的地址列表中移除这个URL location.replace(url);<br><br>location.reload() – 重载当前页面</p>
+<p><code>(2)history对象</code></p>
+<p>history.go() – 前进或后退指定的页面数 history.go(num);<br><br>history.back() – 后退一页<br><br>history.forward() – 前进一页</p>
+<p><code>(3)Navigator对象</code></p>
+<p>navigator.userAgent – 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)<br><br>navigator.cookieEnabled – 返回浏览器是否支持(启用)cookie</p>
+<p><a href></a><br><a name="d9eb80cf"></a></p>
+<h3 id="说一下web-Quality（无障碍）"><a href="#说一下web-Quality（无障碍）" class="headerlink" title="说一下web Quality（无障碍）"></a>说一下web Quality（无障碍）</h3><p>能够被残障人士使用的网站才能称得上一个易用的（易访问的）网站。</p>
+<p>使用alt属性：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.jpg<span class="token punctuation">"</span></span>  <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this is a person<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></code></pre>
+<p>有时候浏览器会无法显示图像。具体的原因有：</p>
+<p>用户关闭了图像显示</p>
+<p>浏览器是不支持图形显示的迷你浏览器</p>
+<p>浏览器是语音浏览器（供盲人和弱视人群使用）<br><br>如果您使用了alt 属性，那么浏览器至少可以显示或读出有关图像的描述。</p>
+<p><a href></a><br><a name="1b760308"></a></p>
+<h3 id="你怎么理解浏览器内核"><a href="#你怎么理解浏览器内核" class="headerlink" title="你怎么理解浏览器内核"></a>你怎么理解浏览器内核</h3><p>主要分为渲染引擎和JS引擎</p>
+<p><a href></a><br><a name="9e5c825b"></a></p>
+<h3 id="fetch发送2次请求的原因"><a href="#fetch发送2次请求的原因" class="headerlink" title="fetch发送2次请求的原因"></a>fetch发送2次请求的原因</h3><p>fetch发送post请求的时候，总是发送2次，第一次状态码是204，第二次才成功？</p>
+<p>原因很简单，因为你用fetch的post请求的时候，导致fetch 第一次发送了一个<code>Options请求，询问服务器是否支持修改的请求头</code>，如果服务器支持，则在第二次中发送真正的请求。</p>
+<p><a href></a><br><a name="979b0d7d"></a></p>
+<h3 id="说一下web-worker"><a href="#说一下web-worker" class="headerlink" title="说一下web worker"></a>说一下web worker</h3><p>在HTML页面中，如果在执行脚本时，页面的状态是不可相应的，直到脚本执行完成后，页面才变成可相应。</p>
+<p><code>web worker是运行在后台的js，独立于其他脚本，不会影响页面你的性能。</code>并且<code>通过postMessage将结果回传到主线程</code>。这样在进行复杂操作的时候，就不会阻塞主线程了。</p>
+<p>如何创建web worker：</p>
+<ol>
+<li>检测浏览器对于web worker的支持性</li>
+<li>创建web worker文件（js，回传函数等）</li>
+<li>创建web worker对象</li>
+</ol>
+<p><a href></a><br><a name="fb429527"></a></p>
+<h3 id="cache-control的值有哪些"><a href="#cache-control的值有哪些" class="headerlink" title="cache-control的值有哪些"></a>cache-control的值有哪些</h3><p>cache-control是一个通用消息头字段被用于HTTP请求和响应中，通过指定指令来实现缓存机制，这个缓存指令是单向的，常见的取值有<code>private、no-cache、max-age、must-revalidate</code>等，<code>默认为private</code>。</p>
+<p><a href></a><br><a name="27d68721"></a></p>
+<h3 id="浏览器在生成页面的时候，会生成那两颗树？"><a href="#浏览器在生成页面的时候，会生成那两颗树？" class="headerlink" title="浏览器在生成页面的时候，会生成那两颗树？"></a>浏览器在生成页面的时候，会生成那两颗树？</h3><p>构造两棵树，DOM树和CSSOM规则树</p>
+<p>当浏览器接收到服务器相应来的HTML文档后，会遍历文档节点，生成DOM树，</p>
+<p>CSSOM规则树由浏览器解析CSS文件生成</p>
+<p><a href></a><br><a name="421f52ca"></a></p>
+<h3 id="click在ios上有300ms延迟，原因及如何解决？"><a href="#click在ios上有300ms延迟，原因及如何解决？" class="headerlink" title="click在ios上有300ms延迟，原因及如何解决？"></a>click在ios上有300ms延迟，原因及如何解决？</h3><p><code>(1)粗暴型，禁用缩放</code><br><code>(2)改用FastClick，其原理是：</code></p>
+<p>检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉</p>
 
             </div>
             <hr/>
@@ -672,9 +645,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《KMP字符串匹配算法》
+                    《前端综合小知识点》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -715,7 +688,7 @@
         repo: 'sansenlian.github.io',
         owner: 'sansenlian',
         admin: "sansenlian",
-        id: '2019-08-14T15-33-40',
+        id: '2019-08-18T21-43-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -740,24 +713,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/16/c-chang-yong-xie-fa/">
+                <a href="/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++常用写法">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="前端综合知识要点">
                         
-                        <span class="card-title">C++常用写法</span>
+                        <span class="card-title">前端综合知识要点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+前端SEO要注意哪些
+合理的标题，描述和关键字要强调重点
+语义化html代码
+最重要的html代码放在最前面
+重要内容不要用js输出，爬虫不会去爬js获取内容
+少用iframe
+非装饰性图片要加alt，图片不加载的时候显示的文字
+提高网站
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                         </span>
                         <span class="publish-author">
                             
@@ -777,25 +758,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/14/chang-jian-suan-fa-github-di-zhi/">
+                <a href="/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-zi-fu-chuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="常见算法github地址">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="LeetCode算法初级题解——字符串">
                         
-                        <span class="card-title">常见算法github地址</span>
+                        <span class="card-title">LeetCode算法初级题解——字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            :::tips常见算法github地址——欢迎随手star:::
+                            
+1. 反转字符串题目
 
+问题描述编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
+不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。
+你可以假设数
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                             </span>
                         <span class="publish-author">
                             

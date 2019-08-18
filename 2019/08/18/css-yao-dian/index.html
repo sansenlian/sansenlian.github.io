@@ -4,11 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="KMP字符串匹配算法, sansenlian的博客">
-    <meta name="description" content=":::tips常见算法github地址——欢迎随手star:::
-字符串A中找是否存在字符串B，当然前提A比B长
+    <meta name="keywords" content="CSS要点, sansenlian的博客">
+    <meta name="description" content="
+说下盒模型
 
-动图来自:https://blog.csdn.net/weixin_40346046/article/details/794">
+如何实现居中
+水平居中行内水平居中
+行内水平居中就直接用text-align: center
+块级水平居中
+直接用margin: auto来实现
+绝对定位元素的居中
+可以是哟经left: 50%, margin: 负固定值来">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>KMP字符串匹配算法 | sansenlian的博客</title>
+    <title>CSS要点 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +269,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        KMP字符串匹配算法
+                        CSS要点
                     </div>
                 </div>
             </div>
@@ -391,21 +397,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-14
+                    2019-08-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        422
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -421,99 +427,181 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>:::tips<br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener">常见算法github地址——欢迎随手star</a><br><a href="https://github.com/sansenlian/Algorithm" target="_blank" rel="noopener"></a>:::</p>
-<p>字符串A中找是否存在字符串B，当然前提A比B长</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768043850-3fe8617a-a825-49d8-b037-69046d425a54.png#align=left&display=inline&height=221&originHeight=221&originWidth=1340&size=0&status=done&width=1340" alt></p>
-<p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190812102019.gif#align=left&alt=&display=inline&message=%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7%E9%87%8D%E8%AF%95&percent=0&status=uploading" alt><br>动图来自:<a href="https://blog.csdn.net/weixin_40346046/article/details/79468142" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40346046/article/details/79468142</a></p>
-<p><a name="543c214e"></a></p>
-<h2 id="next数组构建"><a href="#next数组构建" class="headerlink" title="next数组构建"></a>next数组构建</h2><p>next数组构建要求是找前缀表, 比如对于:    ababaa</p>
-<table>
-<thead>
-<tr>
-<th>下标</th>
-<th>前缀表</th>
-<th>目的:<code>找左右对称的长度</code>即next[]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0 a</td>
-<td>没有前缀</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>1 b</td>
-<td>a</td>
-<td>0</td>
-</tr>
-<tr>
-<td>2 a</td>
-<td>ab</td>
-<td>0</td>
-</tr>
-<tr>
-<td>3 b</td>
-<td><code>a</code>b<code>a</code></td>
-<td>1</td>
-</tr>
-<tr>
-<td>4 a</td>
-<td><code>abab</code></td>
-<td>2</td>
-</tr>
-<tr>
-<td>5 a</td>
-<td><code>ababa</code></td>
-<td>3</td>
-</tr>
-</tbody></table>
-<p>那么目的是找左右对称的长度，需要我每一个都进行对比计算吗，那不是非常费时间</p>
-<p>其实不用的，可以通过类似斐波那契数的方式，通过上一层的计算来满足下一层的计算，通过动态规划的方式慢慢递增构建，具体举例：</p>
-<p>总共三个角色:</p>
-<ul>
-<li>j:  一直向前移动的下标</li>
-<li>K: 当前最长相等长度的下标</li>
-<li>next数组: 当前数字前面所拥有的前缀的最长相等长度</li>
+                <p><a href></a><br><a name="89a87447"></a></p>
+<h1 id="说下盒模型"><a href="#说下盒模型" class="headerlink" title="说下盒模型"></a>说下盒模型</h1><p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190808104146.png#align=left&display=inline&height=437&originHeight=991&originWidth=740&status=done&width=326" alt></p>
+<p><a href></a><br><a name="b0304957"></a></p>
+<h1 id="如何实现居中"><a href="#如何实现居中" class="headerlink" title="如何实现居中"></a>如何实现居中</h1><p><a href></a><br><a name="d365d58d"></a></p>
+<h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><p><code>行内水平居中</code></p>
+<p>行内水平居中就直接用text-align: center</p>
+<p><code>块级水平居中</code></p>
+<p>直接用margin: auto来实现</p>
+<p><code>绝对定位元素的居中</code></p>
+<p>可以是哟经left: 50%, margin: 负固定值来实现<br><br><br>也可以使用transform: translate(x轴, y轴)来实现</p>
+<p><code>flex居中</code></p>
+<p>使用justify-content: center来实现, 这个是主轴</p>
+<p><a href></a><br><a name="4117e80d"></a></p>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p><code>行内垂直居中</code></p>
+<p>设置line-height和height一样高就好了</p>
+<p><code>绝对定位元素居中</code></p>
+<p>绝对定位元素可以使用<code>top: 50%, margin-top: 负的一半</code>高度<br><br><br>或者直接使用<code>transform: translate(x轴, y轴)</code>来实现</p>
+<p>也可以结合使用绝对定位+margin:auto来实现</p>
+<p>margin: auto中的auto意思是自动填充满剩余空间部分</p>
+<p><code>flex居中</code></p>
+<p>使用flex布局来实现 <code>align-items: center</code>,代表交叉轴, 也就是垂直轴</p>
+<p><a href></a><br><a name="2e347bce"></a></p>
+<h1 id="BFC怎么形成"><a href="#BFC怎么形成" class="headerlink" title="BFC怎么形成"></a>BFC怎么形成</h1><ul>
+<li><code>根元素html 而不是body</code>, 并且body设置overflow: hidden 无效, 详见<a href="https://stackoverflow.com/questions/41506456/why-body-overflow-not-working/41507857#41507857" target="_blank" rel="noopener">https://stackoverflow.com/questions/41506456/why-body-overflow-not-working/41507857#41507857</a></li>
+<li><code>overflow 不为visible</code></li>
+<li><code>display的值为inline-block、table-cell、table-caption flex/ inline-flex</code></li>
+<li><code>position的值为absolute或fixed</code></li>
+<li><code>通过浮动元素来创建</code></li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565768042982-02698b87-77d9-469d-a675-95dc13b2169e.png#align=left&display=inline&height=494&originHeight=494&originWidth=932&size=0&status=done&width=932" alt></p>
-<p><a name="X1KeB"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> strStr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>haystack<span class="token punctuation">,</span> needle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> next <span class="token operator">=</span> <span class="token function">getNextArr</span><span class="token punctuation">(</span>needle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> hasyArr <span class="token operator">=</span> haystack<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> needleArr <span class="token operator">=</span> needle<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> hasyArr<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> hasyArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> needleArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-            j<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> needleArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> i <span class="token operator">-</span> j
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> getNextArr <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nextStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> nextArr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> nextArrStr <span class="token operator">=</span> nextStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 代表前缀中当前最长对称的下表</span>
-    nextArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// j的值默认就在k的后面一位置</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> nextArr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 如果比较,值相等的话就往后移动一步,并且next数值+1</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> nextArrStr<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nextArrStr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            nextArr<span class="token punctuation">[</span><span class="token operator">++</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>k<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 如果不相等的话,就跳到前一个next数组进行继续比较</span>
-            k <span class="token operator">=</span> nextArr<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> nextArr
+<p>计算BFC的高度的时候，浮动元素也参与计算</p>
+<ol>
+<li>解决普通文档流块元素的外边距折叠问题<br><br>也就是说, 之前遇到的上下margin会重叠问题<blockquote>
+<p>解决方法:<br>元素置于不同的BFC中进行隔离就可以解决<br><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g3eygqstspj30sa08eacq.jpg#align=left&display=inline&height=302&originHeight=302&originWidth=1018&status=done&width=1018" alt></p>
+</blockquote>
+</li>
+</ol>
+<ol start="2">
+<li>清除盒子内子元素的浮动问题<br><br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g3eyfqv0kqj306m035jr7.jpg#align=left&display=inline&height=113&originHeight=113&originWidth=238&status=done&width=238" alt><blockquote>
+<p>解决:<br>在父元素里添加属性overflow: hidden会触发BFC, 和外部隔开, 内部规矩化</p>
+</blockquote>
+</li>
+</ol>
+<ol start="3">
+<li>被浮动元素遮挡问题<blockquote>
+<p>解决:<br>可以触发下方的元素, 对其添加属性overflow:hidden 触发BFC盒子模型<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3eyhb6d05j30ol04fwfv.jpg#align=left&display=inline&height=159&originHeight=159&originWidth=885&status=done&width=885" alt><br>可以对demo2触发其BFC然后就不会遮挡<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3eyhz5ta0j306m04jdg0.jpg#align=left&display=inline&height=163&originHeight=163&originWidth=238&status=done&width=238" alt></p>
+</blockquote>
+</li>
+</ol>
+<p><a href></a><br><a name="b9a4588a"></a></p>
+<h1 id="圣杯布局和双飞翼布局"><a href="#圣杯布局和双飞翼布局" class="headerlink" title="圣杯布局和双飞翼布局"></a>圣杯布局和双飞翼布局</h1><p>双飞翼布局优秀点, 变大后不会变形</p>
+<p><a href></a><br><a name="0d889a3f"></a></p>
+<h5 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h5><p>圣杯布局 container要<code>float: left</code></p>
+<p>是<code>container预留padding左右</code>, 然后main占100%宽度</p>
+<p>左边的margin: -100%, <code>position设为relative</code></p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">body </span><span class="token punctuation">{</span>
+  <span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">550</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#container</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span> 
+  <span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token number">150</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#container</span> <span class="token class">.column</span> </span><span class="token punctuation">{</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#center</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#left</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span> 
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#right</span> </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">150</span>px<span class="token punctuation">;</span> 
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> -<span class="token number">150</span>px<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token id">#footer</span> </span><span class="token punctuation">{</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
+<p>为什么左边的是-100%, 因为-左边padding预留位置就会跑到上一行mian那一行</p>
+<p>但是是在最右边, 那还是要跑去最左边才可以, 也就是再继续靠左, 加起来就是100%width</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3exkoq78xj30ev09fwf5.jpg#align=left&display=inline&height=339&originHeight=339&originWidth=535&status=done&width=535" alt></p>
+<p><a href></a><br><a name="bb7f05f6"></a></p>
+<h5 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h5><p>与圣杯布局不同的是, container只有包裹住中间的main</p>
+<p><code>然后左右用margin来空出位置</code></p>
+<p>左边的也是要margin-left: -100%,    但是不需要relative定位</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g3exojtfs7j30jd09340s.jpg#align=left&display=inline&height=327&originHeight=327&originWidth=697&status=done&width=697" alt></p>
+<pre class=" language-javascript"><code class="language-javascript">#container <span class="token punctuation">{</span>
+  width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span>column <span class="token punctuation">{</span>
+  float<span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+#center <span class="token punctuation">{</span>
+  margin<span class="token operator">-</span>left<span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  margin<span class="token operator">-</span>right<span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+#left <span class="token punctuation">{</span>
+  width<span class="token punctuation">:</span> 200px<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+#right <span class="token punctuation">{</span>
+  width<span class="token punctuation">:</span> 150px<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+#footer <span class="token punctuation">{</span>
+  clear<span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href></a><br><a name="2e169b41"></a></p>
+<h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><p><code>容器属性</code></p>
+<ul>
+<li>justify-content    主轴布局</li>
+<li>align-items    垂直轴布局</li>
+<li>flex-direction    轴的方向</li>
+<li>flex-wrap    是否换行</li>
+<li>flex-flow    是flex-direction属性和flex-wrap属性的简写形式，默认 row nowrap</li>
+<li>align-content    垂直轴对其方式</li>
+<li>justify-content    主轴对其方式</li>
+</ul>
+<p><code>项目属性</code></p>
+<ul>
+<li>order    项目的排列顺序。数值越小，排列越靠前，默认为0.</li>
+<li>flex-grow    放大比例，默认值为0，即如果存在剩余空间，也不放大</li>
+<li>flex-shrink    项目的缩小比例，默认为1，即如果空间不足，改项目将缩小</li>
+<li>flex-basis    在分配多余空间之前，项目占据的主轴空间,   默认值为auto，即项目的本来大小,    可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间</li>
+<li>flex    是flex-grow，flex-shrink和flex-basis的简写，默认值为0 1 auto。后面两个属性可选</li>
+<li>align-self    允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto</li>
+</ul>
+<p><a href></a><br><a name="e2f54c69"></a></p>
+<h1 id="怎么清除浮动"><a href="#怎么清除浮动" class="headerlink" title="怎么清除浮动"></a>怎么清除浮动</h1><p>一般我们是用clear: both来清除浮动的, 使用div会占用DOM空间, 所以比较好的做法是在父元素中加上伪元素:after</p>
+<hr>
+<p>末尾添加一个空div作为兄弟：<br></p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.clearfix</span><span class="token pseudo-element">::after</span> </span><span class="token punctuation">{</span>
+      <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span>,
+      <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+      <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>父元素添加overflow: hidden | auto 或其他能够构成BFC的属性</p>
+<p><a href></a><br><a name="601902a8"></a></p>
+<h1 id="重绘和回流"><a href="#重绘和回流" class="headerlink" title="重绘和回流"></a>重绘和回流</h1><p><code>重绘（repaint或redraw）</code>：当盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来之后，浏览器便把这些原色都按照各自的特性绘制一遍，将内容呈现在页面上。重绘是指一个元素外观的改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现新的外观。</p>
+<p>触发重绘的条件：<code>改变元素外观属性。</code>如：color，background-color等。</p>
+<blockquote>
+<p>注意：table及其内部元素可能需要多次计算才能确定好其在渲染树中节点的属性值，比同等元素要多花两倍时间，这就是我们尽量避免使用table布局页面的原因之一。</p>
+</blockquote>
+<p>重排（重构/回流/reflow）：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建, 这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。<br><br>DOM的变化影响到了预算内宿的几何属性比如宽高，浏览器重新计算元素的几何属性，其他元素的几何属性也会受到影响，<code>浏览器需要重新构造渲染书，这个过程称之为重排</code>，浏览器将受到影响的<code>部分重新绘制在屏幕上 的过程称为重绘</code>，引起重排重绘的原因有：</p>
+<ol>
+<li>添加或者删除可见的DOM元素</li>
+<li>元素尺寸位置的改变</li>
+<li>浏览器页面初始化浏览器窗口大小发生改变</li>
+</ol>
+<p><code>重排一定导致重绘，重绘不一定导致重排</code></p>
+<p>减少重绘重排的方法有：</p>
+<ul>
+<li>不在布局信息改变时做DOM查询</li>
+<li>使用csstext,className一次性改变属性</li>
+<li>使用fragment</li>
+</ul>
+<p>对于多次重排的元素，比如说动画。<code>使用绝对定位脱离文档流</code>，使其不影响其他元素</p>
+<hr>
+<p><code>重绘</code></p>
+<p>重绘是指在<code>不修改文档流</code>的情况下<code>进行简单的样式修改</code></p>
+<p><code>回流</code></p>
+<p>修改了dom元素的尺寸和大小, 重新渲染页面</p>
+<p><code>会造成页面抖动,</code> 影响性能,</p>
+<p>尽量少用</p>
 
             </div>
             <hr/>
@@ -672,9 +760,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《KMP字符串匹配算法》
+                    《CSS要点》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/18/css-yao-dian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -715,7 +803,7 @@
         repo: 'sansenlian.github.io',
         owner: 'sansenlian',
         admin: "sansenlian",
-        id: '2019-08-14T15-33-40',
+        id: '2019-08-18T21-07-31',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -740,24 +828,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/16/c-chang-yong-xie-fa/">
+                <a href="/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++常用写法">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode算法初级题解——链表">
                         
-                        <span class="card-title">C++常用写法</span>
+                        <span class="card-title">LeetCode算法初级题解——链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+0. 创建链表修改下传入数组就好了
+function ListNode(val) {
+        this.val = val;
+        this.next = null;
+    }
+    function createN
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                         </span>
                         <span class="publish-author">
                             
@@ -777,25 +871,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/14/chang-jian-suan-fa-github-di-zhi/">
+                <a href="/2019/08/18/css-xiao-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="常见算法github地址">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CSS小知识">
                         
-                        <span class="card-title">常见算法github地址</span>
+                        <span class="card-title">CSS小知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            :::tips常见算法github地址——欢迎随手star:::
-
+                            
+float有什么要注意的点float设计出来是用于文字环绕效果的现在转成了用于布局float会脱离文档流, 形成紧密的BFC, 非常具有包裹性如果div设置了float其宽度就会自动调整为包裹住内容宽度, 而不是撑满整个父容器img中会有
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-18
                             </span>
                         <span class="publish-author">
                             

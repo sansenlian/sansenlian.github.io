@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="力扣算法-算法初级-数组篇, sansenlian的博客">
+    <meta name="keywords" content="LeetCode算法初级题解——数组, sansenlian的博客">
     <meta name="description" content="
 1. 从排序数组中删除重复项题目
 
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>力扣算法-算法初级-数组篇 | sansenlian的博客</title>
+    <title>LeetCode算法初级题解——数组 | sansenlian的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -265,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        力扣算法-算法初级-数组篇
+                        LeetCode算法初级题解——数组
                     </div>
                 </div>
             </div>
@@ -464,7 +464,8 @@ for (int i = 0; i &lt; len; i++) {
     <span class="token keyword">return</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><a name="93841778"></a></p>
-<h1 id="2-买卖股票的最佳时机-II"><a href="#2-买卖股票的最佳时机-II" class="headerlink" title="2. 买卖股票的最佳时机 II"></a>2. 买卖股票的最佳时机 II</h1><p><a name="254dd6d2-1"></a></p>
+<h1 id="2-买卖股票的最佳时机-II"><a href="#2-买卖股票的最佳时机-II" class="headerlink" title="2. 买卖股票的最佳时机 II"></a>2. 买卖股票的最佳时机 II</h1><p><a href="https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/22/" target="_blank" rel="noopener">题目</a></p>
+<p><a name="254dd6d2-1"></a></p>
 <h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p>给定一个数组，它的第 <em>i</em> 个元素是一支给定股票第 <em>i</em> 天的价格。</p>
 <p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
 <p><strong>注意：</strong>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
@@ -769,7 +770,7 @@ for (int i = 0; i &lt; len; i++) {
 <li>数字 <code>1-9</code> 在每一列只能出现一次。</li>
 <li>数字 <code>1-9</code> 在每一个以粗实线分隔的 <code>3x3</code> 宫内只能出现一次。</li>
 </ol>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565713709108-97c9ce73-2758-4642-9276-cd9a0c159f0e.png#align=left&display=inline&height=250&originHeight=250&originWidth=250&size=0&status=done&width=250" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566134922580-69cb8a94-57fb-4f56-8627-3f271c90cb8c.png#align=left&display=inline&height=250&originHeight=250&originWidth=250&size=0&status=done&width=250" alt></p>
 <p>上图是一个部分填充的有效的数独。</p>
 <p>数独部分空格内已填入了数字，空白格用 <code>&#39;.&#39;</code> 表示。</p>
 <p><strong>示例 1:</strong></p>
@@ -820,7 +821,7 @@ for (int i = 0; i &lt; len; i++) {
 <p><a name="80f35795"></a></p>
 <h3 id="1-用哈希"><a href="#1-用哈希" class="headerlink" title="1. 用哈希"></a>1. 用哈希</h3><p>我把大的3*3理解为一个哈希区域</p>
 <p>行列都用临时数组作为哈希存储就可以了</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565713707343-75ecba82-408c-4743-911a-a1ebc76e8761.png#align=left&display=inline&height=342&originHeight=342&originWidth=800&size=0&status=done&width=800" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566134919521-919b1c6a-d761-46f0-a0b6-efd106e49d21.png#align=left&display=inline&height=342&originHeight=342&originWidth=800&size=0&status=done&width=800" alt></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> isValidSudoku <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">let</span> row <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -890,10 +891,10 @@ for (int i = 0; i &lt; len; i++) {
   [16, 7,10,11]
 ]</code></pre><p><a name="4b86211f-8"></a></p>
 <h2 id="解决-8"><a href="#解决-8" class="headerlink" title="解决"></a>解决</h2><p><a name="3375fd7a"></a></p>
-<h3 id="1-按照规则把每个元素旋转一遍"><a href="#1-按照规则把每个元素旋转一遍" class="headerlink" title="1. 按照规则把每个元素旋转一遍"></a>1. 按照规则把每个元素旋转一遍</h3><p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565713707308-de2b4d96-b39c-4034-9aab-fb14f43785ef.png#align=left&display=inline&height=174&originHeight=174&originWidth=196&size=0&status=done&width=196" alt></p>
+<h3 id="1-按照规则把每个元素旋转一遍"><a href="#1-按照规则把每个元素旋转一遍" class="headerlink" title="1. 按照规则把每个元素旋转一遍"></a>1. 按照规则把每个元素旋转一遍</h3><p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566134919003-9e3fe907-a39d-4523-9ccf-6a0d3645ba23.png#align=left&display=inline&height=174&originHeight=174&originWidth=196&size=0&status=done&width=196" alt></p>
 <p>比如3*3矩阵, 看最外层定点循环有:</p>
 <pre><code>[0][0] -&gt; [[0][2] -&gt; [2][2] -&gt; [2][0] -&gt; [0][0]</code></pre><p>除了顶点外的变有:</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1565713707363-89c66ee2-850c-4391-ab7e-8dfe424bb198.png#align=left&display=inline&height=192&originHeight=192&originWidth=223&size=0&status=done&width=223" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566134919471-2a8f5f5d-d9bf-49e5-a464-182de0bceed4.png#align=left&display=inline&height=192&originHeight=192&originWidth=223&size=0&status=done&width=223" alt></p>
 <pre><code>[0][1] -&gt; [1][2] -&gt; [2][1] -&gt; [1][0] -&gt; [0][1]</code></pre><p>需要用一个变量来保存循环过程中的交换, 可以递推出<code>n行n列</code>公式为:</p>
 <pre><code>[i][j] -&gt; [j][n-i-1] -&gt; [n-i-1][n-j-1] -&gt; [n-j-1][i] -&gt; [i][j]</code></pre><p>因为一般元素旋转了代表了另外一般也旋转了. 因此只要扫一遍<code>i到n/2就可以了</code></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> rotate <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -910,7 +911,7 @@ for (int i = 0; i &lt; len; i++) {
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><a name="de74cf0f"></a></p>
 <h3 id="2-根据旋转数组的规则数学矩阵旋转"><a href="#2-根据旋转数组的规则数学矩阵旋转" class="headerlink" title="2. 根据旋转数组的规则数学矩阵旋转"></a>2. 根据旋转数组的规则<code>数学矩阵旋转</code></h3><p>可以通过转置矩阵, 然后再交换列就OK了<img src="https://gw.alipayobjects.com/os/lib/twemoji/11.2.0/2/svg/1f646.svg#align=left&display=inline&height=18&originHeight=150&originWidth=150&status=done&width=18" alt>‍<img src="https://gw.alipayobjects.com/os/lib/twemoji/11.2.0/2/svg/2642.svg#align=left&display=inline&height=18&originHeight=150&originWidth=150&status=done&width=18" alt></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1565713708878-de5b56cd-15d1-4e68-894b-61eb2f492e79.jpeg#align=left&display=inline&height=500&originHeight=500&originWidth=1341&size=0&status=done&width=1341" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134920425-ef206336-624e-490b-8677-91f15e2ed122.jpeg#align=left&display=inline&height=500&originHeight=500&originWidth=1341&size=0&status=done&width=1341" alt></p>
 
             </div>
             <hr/>
@@ -1069,9 +1070,9 @@ for (int i = 0; i &lt; len; i++) {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《力扣算法-算法初级-数组篇》
+                    《LeetCode算法初级题解——数组》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/li-kou-suan-fa-suan-fa-chu-ji-shu-zu-pian/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/11/leetcode-suan-fa-chu-ji-ti-jie-shu-zu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sansenlian
             </a> 采用
@@ -1362,7 +1363,7 @@ for (int i = 0; i &lt; len; i++) {
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">4.6k</span>
+      <span class="white-color">38.1k</span>
       
 
       

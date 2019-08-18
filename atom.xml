@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sansenlian.github.io/"/>
-  <updated>2019-08-15T12:07:35.470Z</updated>
+  <updated>2019-08-18T14:25:13.293Z</updated>
   <id>https://sansenlian.github.io/</id>
   
   <author>
@@ -17,11 +17,372 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>需求实现</title>
+    <link href="https://sansenlian.github.io/2019/08/18/xu-qiu-shi-xian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/xu-qiu-shi-xian/</id>
+    <published>2019-08-18T13:43:24.000Z</published>
+    <updated>2019-08-18T14:25:13.293Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;62a31500&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;鼠标悬浮显示下拉菜单&quot;&gt;&lt;a href=&quot;#鼠标悬浮显示下拉菜单&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网络问题</title>
+    <link href="https://sansenlian.github.io/2019/08/18/wang-luo-wen-ti/"/>
+    <id>https://sansenlian.github.io/2019/08/18/wang-luo-wen-ti/</id>
+    <published>2019-08-18T13:43:19.000Z</published>
+    <updated>2019-08-18T14:25:13.296Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;4f03b79e&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;http状态码和含义&quot;&gt;&lt;a href=&quot;#http状态码和含义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端综合知识要点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/</id>
+    <published>2019-08-18T13:43:14.000Z</published>
+    <updated>2019-08-18T14:25:13.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;2591eeb7&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前端SEO要注意哪些&quot;&gt;&lt;a href=&quot;#前端SEO要注意哪些&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端综合小知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/</id>
+    <published>2019-08-18T13:43:09.000Z</published>
+    <updated>2019-08-18T14:25:13.436Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;br&gt;&lt;a name=&quot;20ad3c21&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;node的使用场景和优缺点&quot;&gt;&lt;a href=&quot;#node的使用场景和优缺点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——字符串</title>
+    <link href="https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-zi-fu-chuan/"/>
+    <id>https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-zi-fu-chuan/</id>
+    <published>2019-08-18T13:36:46.000Z</published>
+    <updated>2019-08-18T14:25:13.438Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;6674e141&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-反转字符串&quot;&gt;&lt;a href=&quot;#1-反转字符串&quot; class=&quot;headerlink&quot; title=&quot;1. 反转字符串&quot;&gt;&lt;/a&gt;1. 反转字符串&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——链表</title>
+    <link href="https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-lian-biao/"/>
+    <id>https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-lian-biao/</id>
+    <published>2019-08-18T13:29:24.000Z</published>
+    <updated>2019-08-18T14:25:13.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;2c842867&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;0-创建链表&quot;&gt;&lt;a href=&quot;#0-创建链表&quot; class=&quot;headerlink&quot; title=&quot;0. 创建链表&quot;&gt;&lt;/a&gt;0. 创建链表&lt;/h1&gt;&lt;p&gt;修改下传入数组就好了&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS要点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/css-yao-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/css-yao-dian/</id>
+    <published>2019-08-18T13:07:31.000Z</published>
+    <updated>2019-08-18T14:25:13.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;br&gt;&lt;a name=&quot;89a87447&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;说下盒模型&quot;&gt;&lt;a href=&quot;#说下盒模型&quot; class=&quot;headerlink&quot; title=&quot;说下盒模型&quot;&gt;&lt;/a&gt;说下盒模型&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS小知识</title>
+    <link href="https://sansenlian.github.io/2019/08/18/css-xiao-zhi-shi/"/>
+    <id>https://sansenlian.github.io/2019/08/18/css-xiao-zhi-shi/</id>
+    <published>2019-08-18T13:07:26.000Z</published>
+    <updated>2019-08-18T14:25:13.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;81a779f9&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;float有什么要注意的点&quot;&gt;&lt;a href=&quot;#float有什么要注意的点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript要点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/javascript-yao-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/javascript-yao-dian/</id>
+    <published>2019-08-18T07:05:26.000Z</published>
+    <updated>2019-08-18T14:25:14.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;ES6&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ES6&quot;&gt;&lt;a href=&quot;#ES6&quot; class=&quot;headerlink&quot; title=&quot;ES6&quot;&gt;&lt;/a&gt;ES6&lt;/h1&gt;&lt;p&gt;&lt;a name=&quot;f7fa5f4a&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript小知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/javascript-xiao-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/javascript-xiao-zhi-shi-dian/</id>
+    <published>2019-08-18T07:01:08.000Z</published>
+    <updated>2019-08-18T14:25:14.443Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;51b2a30f&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;JavaScript-堆和栈有哪些&quot;&gt;&lt;a href=&quot;#JavaScript-堆和栈有哪些&quot; class=&quot;headerlink&quot; title=&quot;JavaScript
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript基础点</title>
+    <link href="https://sansenlian.github.io/2019/08/18/javascript-ji-chu-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/javascript-ji-chu-dian/</id>
+    <published>2019-08-18T07:01:03.000Z</published>
+    <updated>2019-08-18T14:25:14.444Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;5c9d4b9d&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;for-…-of循环和for-…-in循环有何区别&quot;&gt;&lt;a href=&quot;#for-…-of循环和for-…-in循环有何区别&quot; class=&quot;headerlink&quot; title=&quot;for …
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript代码实现</title>
+    <link href="https://sansenlian.github.io/2019/08/18/javascript-dai-ma-shi-xian/"/>
+    <id>https://sansenlian.github.io/2019/08/18/javascript-dai-ma-shi-xian/</id>
+    <published>2019-08-18T07:00:58.000Z</published>
+    <updated>2019-08-18T14:25:14.445Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;e9b5374d&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;实现一个通用事件代理绑定函数绑定-触发-解绑&quot;&gt;&lt;a href=&quot;#实现一个通用事件代理绑定函数绑定-触发-解绑&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML小知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/17/html-xiao-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/17/html-xiao-zhi-shi-dian/</id>
+    <published>2019-08-17T07:43:36.000Z</published>
+    <updated>2019-08-18T14:25:14.446Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;ecb9c6c4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;html标签有几个可以逃过同源策略&quot;&gt;&lt;a href=&quot;#html标签有几个可以逃过同源策略&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript小知识点(一)</title>
+    <link href="https://sansenlian.github.io/2019/08/17/javascript-xiao-zhi-shi-dian-yi/"/>
+    <id>https://sansenlian.github.io/2019/08/17/javascript-xiao-zhi-shi-dian-yi/</id>
+    <published>2019-08-17T02:27:23.000Z</published>
+    <updated>2019-08-18T14:25:14.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;ylXpL&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;promise有没有不能满足你需求的情况&quot;&gt;&lt;a href=&quot;#promise有没有不能满足你需求的情况&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java常用语法</title>
+    <link href="https://sansenlian.github.io/2019/08/16/java-chang-yong-yu-fa/"/>
+    <id>https://sansenlian.github.io/2019/08/16/java-chang-yong-yu-fa/</id>
+    <published>2019-08-16T12:39:14.000Z</published>
+    <updated>2019-08-18T14:25:14.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;z2mW9&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;笔试用到的部分&quot;&gt;&lt;a href=&quot;#笔试用到的部分&quot; class=&quot;headerlink&quot; title=&quot;笔试用到的部分&quot;&gt;&lt;/a&gt;笔试用到的部分&lt;/h3&gt;&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++常用写法</title>
+    <link href="https://sansenlian.github.io/2019/08/16/c-chang-yong-xie-fa/"/>
+    <id>https://sansenlian.github.io/2019/08/16/c-chang-yong-xie-fa/</id>
+    <published>2019-08-16T12:38:24.000Z</published>
+    <updated>2019-08-18T14:25:14.450Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>KMP字符串匹配算法</title>
     <link href="https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/"/>
     <id>https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/</id>
     <published>2019-08-14T07:33:40.000Z</published>
-    <updated>2019-08-15T12:07:35.470Z</updated>
+    <updated>2019-08-18T14:25:14.451Z</updated>
     
     <summary type="html">
     
@@ -43,7 +404,7 @@
     <link href="https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/"/>
     <id>https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/</id>
     <published>2019-08-14T07:26:55.000Z</published>
-    <updated>2019-08-15T12:07:35.471Z</updated>
+    <updated>2019-08-18T14:25:14.452Z</updated>
     
     <summary type="html">
     
@@ -61,11 +422,11 @@
   </entry>
   
   <entry>
-    <title>力扣算法-算法初级-数组篇</title>
-    <link href="https://sansenlian.github.io/2019/08/11/li-kou-suan-fa-suan-fa-chu-ji-shu-zu-pian/"/>
-    <id>https://sansenlian.github.io/2019/08/11/li-kou-suan-fa-suan-fa-chu-ji-shu-zu-pian/</id>
+    <title>LeetCode算法初级题解——数组</title>
+    <link href="https://sansenlian.github.io/2019/08/11/leetcode-suan-fa-chu-ji-ti-jie-shu-zu/"/>
+    <id>https://sansenlian.github.io/2019/08/11/leetcode-suan-fa-chu-ji-ti-jie-shu-zu/</id>
     <published>2019-08-11T06:55:06.000Z</published>
-    <updated>2019-08-15T12:07:35.472Z</updated>
+    <updated>2019-08-18T14:25:14.453Z</updated>
     
     <summary type="html">
     
@@ -88,7 +449,7 @@
     <link href="https://sansenlian.github.io/2019/08/11/wei-yun-suan/"/>
     <id>https://sansenlian.github.io/2019/08/11/wei-yun-suan/</id>
     <published>2019-08-11T01:49:19.000Z</published>
-    <updated>2019-08-15T12:07:35.473Z</updated>
+    <updated>2019-08-18T14:25:14.454Z</updated>
     
     <summary type="html">
     
