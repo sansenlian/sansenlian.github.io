@@ -402,14 +402,14 @@ ES6
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.5k
+                        8.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        12 分
+                        30 分
                     </div>
                     
                 
@@ -428,7 +428,7 @@ ES6
                 <p><a name="ES6"></a></p>
 <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p><a name="f7fa5f4a"></a></p>
 <h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>可以用export来对外暴露函数, 外部通过import来引入函数</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951710-7df56948-f88a-475b-a7d1-aecd86c6c532.jpeg#align=left&display=inline&height=228&originHeight=228&originWidth=327&size=0&status=done&width=327" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268377946-16c4192e-aaee-43fd-bab3-fb4b219edbf4.jpeg#align=left&display=inline&height=228&originHeight=228&originWidth=327&size=0&status=done&width=327" alt></p>
 <p><a name="9db6aea8"></a></p>
 <h4 id="简单介绍一下symbol"><a href="#简单介绍一下symbol" class="headerlink" title="简单介绍一下symbol"></a>简单介绍一下symbol</h4><p>主要是为了解决命名重复问题，可以在对象属性的时候用到，但是不会被枚举</p>
 <blockquote>
@@ -454,7 +454,7 @@ ES6
      return  &quot;monkey is&quot; `${this.type}` &quot;,name is &quot;`{ this.name}`;
    }
  }</code></pre><p>map多了个set()和get()的方法,     set是使用add()来进行添加的</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566111951706-08e36910-5c94-4dce-b795-bdd3a3e43b1b.png#align=left&display=inline&height=504&originHeight=504&originWidth=537&size=0&status=done&width=537" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566268376801-9fcc741d-e4e9-4144-b4e3-f31d8ed47a00.png#align=left&display=inline&height=504&originHeight=504&originWidth=537&size=0&status=done&width=537" alt></p>
 <p>他们两个的方法其实都是差不多的, 都是迭代的作用</p>
 <p>map的key可以是任意数据类型, 包括对象</p>
 <p>set类似数组, 但是不允许有重复的元素出现</p>
@@ -523,11 +523,11 @@ myObj<span class="token punctuation">.</span>element<span class="token operator"
 element<span class="token punctuation">.</span>someObject<span class="token operator">=</span>myObj<span class="token punctuation">;</span></code></pre>
 <p><a name="326d068e"></a></p>
 <h1 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h1><p><code>所有对象都有自己的原型对象（prototype）原型链的尽头就是null。</code></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951764-071b7794-bb51-45e2-b484-3adfc718692a.jpeg#align=left&display=inline&height=718&originHeight=718&originWidth=654&size=0&status=done&width=654" alt>j’s</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376621-7c086e84-dc9d-4231-9417-261406d79222.jpeg#align=left&display=inline&height=718&originHeight=718&originWidth=654&size=0&status=done&width=654" alt></p>
 <p>为了解决<code>共享属性问题</code></p>
 <p>同一个构造函数创建的<code>实例之间是无法共享属性的</code></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951699-425ed32c-234d-4436-a80d-278c5f357267.jpeg#align=left&display=inline&height=416&originHeight=416&originWidth=572&size=0&status=done&width=572" alt></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951739-13142037-381c-4c1f-8dfe-acbd5bac4aad.jpeg#align=left&display=inline&height=139&originHeight=139&originWidth=520&size=0&status=done&width=520" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376689-c4e02ac6-5be4-4f2e-a4ae-01aae5a356d5.jpeg#align=left&display=inline&height=416&originHeight=416&originWidth=572&size=0&status=done&width=572" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376624-cfd9b604-d2fe-4354-8f2c-7c778d37b6af.jpeg#align=left&display=inline&height=139&originHeight=139&originWidth=520&size=0&status=done&width=520" alt></p>
 <p>判断对象是不是另一个对象的原型</p>
 <ul>
 <li><code>instanceof</code>判断是不是原型的`实例``</li>
@@ -541,9 +541,9 @@ element<span class="token punctuation">.</span>someObject<span class="token oper
 <p>constructor类似双向链表的front修改原型的时候也要修改constructor</p>
 <p>prototype对象有一个constructor属性，默认指向prototype对象所在的构造函数。</p>
 <p><code>constructor属性的作用是，可以得知某个实例对象，到底是哪一个构造函数产生的。</code></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951715-f0ba7a01-4006-44f0-954f-de4bbe771070.jpeg#align=left&display=inline&height=305&originHeight=305&originWidth=754&size=0&status=done&width=754" alt></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951771-2c967ecd-78e6-4819-acd9-44f6cafde5aa.jpeg#align=left&display=inline&height=584&originHeight=584&originWidth=907&size=0&status=done&width=907" alt></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951755-b02b29fb-6a5a-4f94-9a9d-4eb2aed2ea46.jpeg#align=left&display=inline&height=1080&originHeight=1080&originWidth=1478&size=0&status=done&width=1478" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376730-477f44f6-1941-40e6-b073-7c0ba22cf629.jpeg#align=left&display=inline&height=305&originHeight=305&originWidth=754&size=0&status=done&width=754" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376665-eb6925ff-da31-4d3d-9bd4-0d3cd64fae52.jpeg#align=left&display=inline&height=584&originHeight=584&originWidth=907&size=0&status=done&width=907" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376700-1ab8fbfe-52ca-4045-b00c-a737b5ddd357.jpeg#align=left&display=inline&height=1080&originHeight=1080&originWidth=1478&size=0&status=done&width=1478" alt></p>
 <p><a name="5ca0c95b"></a></p>
 <h1 id="讲下js的继承"><a href="#讲下js的继承" class="headerlink" title="讲下js的继承"></a>讲下js的继承</h1><p><a name="43385c22"></a></p>
 <h4 id="1-构造函数继承"><a href="#1-构造函数继承" class="headerlink" title="1. 构造函数继承"></a>1. 构造函数继承</h4><p>(<code>继承构造函数</code>), 也叫类抄写, 比如我们在考试, 你写了一个构造函数, 我要继承你的构造函数, 就在我的构造函数里面用call或者cpply抄写一份你的东西, <code>我给你题目你给我答案</code>, 当然我抄完后还可以在自己的构造函数的<code>选做题</code>里面放一些自己的东西</p>
@@ -615,7 +615,7 @@ Child<span class="token punctuation">.</span>prototype<span class="token punctua
 <blockquote>
 <p>即在原型中间新建一个空的构造函数作为中介, 然后如果我执行<strong>child.prototype.constructor=child就不会影响parent.constructor指向我</strong>会变成空构造函数的构造者变成了我</p>
 </blockquote>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951764-65180cc4-7c23-4aa9-8d56-64048055ef28.jpeg#align=left&display=inline&height=385&originHeight=385&originWidth=1019&size=0&status=done&width=1019" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376655-4ecb5792-55e3-4b91-bcba-e8df1e67a8fb.jpeg#align=left&display=inline&height=385&originHeight=385&originWidth=1019&size=0&status=done&width=1019" alt></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 写法一: </span>
 <span class="token keyword">function</span> <span class="token function">Child</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   Parent<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -665,7 +665,25 @@ Parent<span class="token punctuation">.</span>prototype<span class="token punctu
 </ul>
 <p>闭包会常驻内存, 会增大内存使用, 使用不当就会有内存泄漏</p>
 <p><a name="3019f04b"></a></p>
-<h1 id="讲一下ajax原理和流程"><a href="#讲一下ajax原理和流程" class="headerlink" title="讲一下ajax原理和流程"></a>讲一下ajax原理和流程</h1><p>原理就是在用户和服务器之间加了一个中间层, 通过XMLHTTPRequest()对象来向服务器发送异步请求<br>其中最关键的一就是从服务器中获得请求数据<br>通过监听readystatechange事件，<br>通过这个实例 的readyState属性来判断这个ajax请求状态，<br>其中分为0，1，2，3，4这四种状态<br><code>0未初始化</code><br><code>1载入/正在发送请求</code><br><code>2载入完成/数据接收</code><br><code>3交互/解析数据</code><br><code>4接收数据完成</code></p>
+<h1 id="讲一下ajax原理和流程"><a href="#讲一下ajax原理和流程" class="headerlink" title="讲一下ajax原理和流程"></a>讲一下ajax原理和流程</h1><p>优势主要集中在:</p>
+<ul>
+<li>减轻了服务器压力</li>
+<li>无刷新更新网页数据, 优化了用户体验</li>
+</ul>
+<p>劣势</p>
+<ul>
+<li>搜索引擎支持较弱</li>
+<li>不安全, 暴露了服务器更多接口</li>
+<li>不支持浏览器前进,后退功能, 网页状态无法保留 可以通过前端路由进行解决</li>
+</ul>
+<p>原理就是在用户和服务器之间加了一个中间层, 通过XMLHTTPRequest()对象来向服务器发送异步请求<br>其中最关键的一就是从服务器中获得请求数据，通过监听readystatechange事件，通过这个实例 的readyState属性来判断这个ajax请求状态，其中分为0，1，2，3，4这四种状态</p>
+<ol>
+<li><code>未初始化</code></li>
+<li><code>载入/正在发送请求</code></li>
+<li><code>载入完成/数据接收</code></li>
+<li><code>交互/解析数据</code></li>
+<li><code>接收数据完成</code></li>
+</ol>
 <p>流程就是</p>
 <ol>
 <li>先建立XMLHTTPRequest</li>
@@ -673,7 +691,8 @@ Parent<span class="token punctuation">.</span>prototype<span class="token punctu
 <li>设定状态变化函数</li>
 <li>发送http请求获取异步返回的数据</li>
 </ol>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566111951754-22daa794-6137-4ff3-a91c-e48f6dd3cea5.jpeg#align=left&display=inline&height=351&originHeight=351&originWidth=797&size=0&status=done&width=797" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376697-247d251e-aa5c-4092-8e44-933901b52318.jpeg#align=left&display=inline&height=351&originHeight=351&originWidth=797&size=0&status=done&width=797" alt><br><a name="9vwme"></a></p>
+<h4 id="AJAX-的取消"><a href="#AJAX-的取消" class="headerlink" title="AJAX 的取消"></a>AJAX 的取消</h4><p>原生的XMLHttpRequest的对象, 直接 xhr.abort() 即可 同时可以监听onabort事件来处理abort之后要做的工作。中断请求之后可能服务器端已经对该请求做出了相应的处理并给出了响应, 只不过浏览器不接收这个响应罢了<br>如果使用fetch， 暂时无法中断请求</p>
 <p><a name="d6d4daad"></a></p>
 <h4 id="fetch和ajax-的主要区别"><a href="#fetch和ajax-的主要区别" class="headerlink" title="fetch和ajax 的主要区别"></a>fetch和ajax 的主要区别</h4><p>fetch是优化版本的ajax, 其实ajax写法比较麻烦,暴露了太多fetch就不用管那么多</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -688,8 +707,8 @@ Parent<span class="token punctuation">.</span>prototype<span class="token punctu
         method<span class="token punctuation">:</span> <span class="token string">'get'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p><a name="1c3afb0c"></a></p>
-<h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p><a name="41de7755"></a></p>
-<h3 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h3><ol>
+<h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>禁止Ajax发起跨域请求， 实际上请求会发起， 只不过返回响应会被浏览器拦截。Ajax跨域请求不能携带本网站Cookie<br><a name="41de7755"></a></p>
+<h3 id="JSONP跨域（单向跨域）"><a href="#JSONP跨域（单向跨域）" class="headerlink" title="JSONP跨域（单向跨域）"></a>JSONP跨域（单向跨域）</h3><ol>
 <li><code>jsonp</code>可以解决老版本浏览器跨域访问的问题, 但是只能用<code>get</code>不能用<code>post</code></li>
 </ol>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
@@ -706,9 +725,247 @@ Parent<span class="token punctuation">.</span>prototype<span class="token punctu
 <li>img</li>
 </ol>
 <blockquote>
-<p>jsonp就是利用了</p>
+<p>jsonp就是利用了<script>标签可以链接到不同源的js脚本，来到达跨域目的</p>
 </blockquote>
+<p>当链接的资源到达浏览器时，浏览器会根据他们的类型来采取不同的处理方式，比如，如果是css文件，则会进行对页面 repaint，如果是img 则会将图片渲染出来，如果是script 脚本，则会进行执行，比如我们在页面引入了jquery库，为什么就可以使用 $ 了呢？就是因为 jquery 库被浏览器执行之后，会给全局对象window增加一个属性：$ ，所以我们才能使用 $ 来进行各种处理。（另外为什么要一般要加css放在头部，而js脚本放在body尾部呢，就是为了减少repaint的次数，另外因为js引擎是单线程执行，如果将js脚本放在头部，那么在js引擎在执行js代码时，会造成页面暂停。）</p>
+<p>参考: <a href="https://www.cnblogs.com/digdeep/p/4170059.html">https://www.cnblogs.com/digdeep/p/4170059.html</a></p>
+<blockquote>
+<p>jsonp 的基本原理，利用script标签的特性，<code>将数据使用json格式用一个函数包裹起来，然后在进行访问的页面中定义一个相同函数名的函数</code>，因为 script 标签src引用的js脚本到达浏览器时会执行，而<code>我们有定义了一个同名的函数，所以json格式的数据，就做完参数传递给了我们定义的同名函数了</code>。这样就完成了跨域数据交换。</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/html5/jsonp_data.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'head'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 对方也设置同样的callbackFun名字就可以了</span>
+<span class="token keyword">function</span> <span class="token function">callbackFun</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 其访问的8080端口的html5项目中的jsonp_data.js代码如下：</span>
+<span class="token function">callbackFun</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"age"</span><span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"yuanfang"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p><a name="b816f331"></a></p>
+<h3 id="CORS跨域（单向）"><a href="#CORS跨域（单向）" class="headerlink" title="CORS跨域（单向）"></a>CORS跨域（单向）</h3><p>与JSONP比较,    不同是:</p>
+<ol>
+<li>不支持老浏览器</li>
+<li>但是支持<code>Get/Post</code></li>
+</ol>
+<p><code>cors</code>实现 CORS 通信的关键是服务器。只要服务器实现了 CORS 接口，就可以跨域通信。<code>是最常用的跨域方式, 支持post</code>这个会经常用到,例如自己前台发送信息到后台就需要这样来做<br />前端发送正常的ajax请求<br />关键是后台处理, 需要加上<code>允许请求跨域</code><br /><code>access-control-allow-origin</code>该值要与请求头中 Origin 一致才能生效，否则将跨域失败。<br /><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376668-a55c7bb9-9700-4239-a0d3-437aadef7a9e.jpeg#align=left&display=inline&height=111&originHeight=111&originWidth=611&size=0&status=done&width=611" alt=""></p>
+<p><a name="216b2e2e"></a></p>
+<h3 id="服务端代理跨域（单向跨域）"><a href="#服务端代理跨域（单向跨域）" class="headerlink" title="服务端代理跨域（单向跨域）"></a>服务端代理跨域（单向跨域）</h3><p><code>服务端代理</code>就是把跨域请求交给服务器然后服务器帮忙代理<br />什么意思<code>其实这里我也有用到过</code>就是获取邀请的api时候代理发送请求然后返回结果给前端<br />前端浏览器虽然限制了跨域,但是后台服务器没有限制跨域<br />可以先发送到自己本机的服务器上然后让自己的服务器代理获取其他页面的信息<br />获取到后再转发回来</p>
+<p><a name="1b6ffe7f"></a></p>
+<h3 id="双向跨域（主要用于多窗口间的信息互相传递）"><a href="#双向跨域（主要用于多窗口间的信息互相传递）" class="headerlink" title="双向跨域（主要用于多窗口间的信息互相传递）"></a>双向跨域（主要用于多窗口间的信息互相传递）</h3><p>参考：<a href="https://github.com/nzhl/front-end-interview/blob/master/%E7%BD%91%E7%BB%9C.md">链接</a><br><a name="e328bf7f"></a></p>
+<h4 id="1-location-hash："><a href="#1-location-hash：" class="headerlink" title="1. location.hash："></a>1. location.hash：</h4><p>主要原理就是利用iframe窗体可以设置父窗体的location.hash. 来自跨域的服务器可以通弄过页面B中的 parent.location.hash 来向A页面发送信息.<br />在 url 中，<a href="http://www.baidu.com#helloworld">http://www.baidu.com#helloworld</a> 的 "#helloworld" 就是 location.hash，改变 hash 值不会导致页面刷新，所以可以利用 hash 值来进行数据的传递，当然数据量是有限的。</p>
+<pre class=" language-javascript"><code class="language-javascript">  <span class="token comment" spellcheck="true">// ------------------- http://domain1.cn/index.html -----------------------</span>
+  <span class="token operator">&lt;</span>iframe id<span class="token operator">=</span><span class="token string">"iframe"</span> src<span class="token operator">=</span><span class="token string">"http://domain2.cn/index.html"</span> <span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">/</span>iframe<span class="token operator">></span>
 
+  <span class="token comment" spellcheck="true">// ------------------- http://domain2.cn/index.html -----------------------</span>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    parent<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash <span class="token operator">=</span> <span class="token string">"wangbadan"</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+  <span class="token comment" spellcheck="true">// 页面成功加载后可以发现 `domain1.cn/index.html`的地址变成了</span>
+  <span class="token comment" spellcheck="true">// http://www.domain1.cn/index.html#wangbadan</span></code></pre>
+<p>data.html 收到消息后通过<code>parent.location.hash</code>值来修改 index.html 的 hash 值，从而达到数据传递。</p>
+<pre class=" language-html"><code class="language-html">// hash/server/data.html 对应 localhost:8081/data.html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>hash<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">"#data"</span><span class="token punctuation">:</span>
+      <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token string">"data.html 的数据"</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      parent<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash <span class="token operator">=</span> data<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ie, chrome 下的安全机制无法修改 parent.location.hash</span>
+      <span class="token comment" spellcheck="true">// 所以要利用一个中间的代理 iframe </span>
+      <span class="token keyword">var</span> ifrproxy <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'iframe'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ifrproxy<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+      ifrproxy<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://localhost:8080/proxy.html#'</span> <span class="token operator">+</span> data<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 该文件在 client 域名的域下</span>
+      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>ifrproxy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>由于两个页面不在同一个域下 IE、Chrome 不允许修改 parent.location.hash 的值，所以要借助于 localhost:8080 域名下的一个代理 iframe 的 proxy.html 页面</p>
+<pre class=" language-html"><code class="language-html">// hash/client/proxy.html 对应 localhost:8080/proxy.html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    parent<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash <span class="token operator">=</span>self<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>当然这种方法存在着诸多的缺点：</p>
+<ul>
+<li>数据直接暴露在了 url 中</li>
+<li>数据容量和类型都有限等等</li>
+</ul>
+<p><a name="d9080e2f"></a></p>
+<h4 id="2-window-name"><a href="#2-window-name" class="headerlink" title="2. window.name:"></a>2. window.name:</h4><p>也能实现完全跨域, 利用的是同一个窗口的window.name即使载入新的网址也不发生变化这个特征, 支持的name值最长可以为2M.<br />window.name（一般在 js 代码里出现）的值不是一个普通的全局变量，而是当前窗口的名字，这里要注意的是每个 iframe 都有包裹它的 window，而这个 window 是 top window 的子窗口，而它自然也有 window.name 的属性，window.name 属性的神奇之处在于 name 值在不同的页面（甚至不同域名）加载后依旧存在（如果没修改则值不会变化），并且可以支持非常长的 name 值（2MB）。<br />前端逻辑：</p>
+<pre class=" language-html"><code class="language-html">// name/client/index.html 对应 localhost:8080/index.html 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> ifr <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'iframe'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ifr<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://localhost:8081/data.html"</span><span class="token punctuation">;</span>
+  ifr<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>ifr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ifr<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 必须确保iframe页面已经加载好, 也就是数据已经被子窗口读取到</span>
+    ifr<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      data <span class="token operator">=</span> ifr<span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'收到数据:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ifr<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://localhost:8080/proxy.html"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>数据页面：</p>
+<pre class=" language-html"><code class="language-html">// name/server/data.html 对应 localhost:8081/data.html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  window<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"data.html 的数据!"</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>localhost:8080index.html 在请求数据端 localhost:8081/data.html 时，我们可以在该页面新建一个 iframe，该 iframe 的 src 指向数据端地址(利用 iframe 标签的跨域能力)，数据端文件设置好 window.name 的值。</p>
+<p><a name="006ec476"></a></p>
+<h4 id="3-postMessage"><a href="#3-postMessage" class="headerlink" title="3. postMessage"></a>3. postMessage</h4><p>postMessage 是 HTML5 新增加的一项功能，跨文档消息传输(Cross Document Messaging)，目前：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 都支持这项功能，使用起来也特别简单。<br />前端逻辑：</p>
+<pre class=" language-html"><code class="language-html">// postMessage/client/index.html 对应 localhost:8080/index.html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://localhost:8081/data.html<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  window<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> targetOrigin <span class="token operator">=</span> <span class="token string">'http://localhost:8081'</span><span class="token punctuation">;</span>
+    window<span class="token punctuation">.</span>frames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">'index.html 的 data!'</span><span class="token punctuation">,</span> targetOrigin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'index.html 接收到的消息:'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>数据端逻辑：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// postMessage/server/data.html 对应 localhost:8081/data.html</span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>source <span class="token operator">!=</span> window<span class="token punctuation">.</span>parent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> e<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'data.html 接收到的消息:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    parent<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">'data.html 的 data!'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p><a name="2bf03b0d"></a></p>
+<h4 id="4-document-domain"><a href="#4-document-domain" class="headerlink" title="4. document.domain"></a>4. document.domain</h4><p>对于主域相同而子域不同的情况下，可以通过设置 document.domain 的办法来解决，具体做法是可以在 <a href="http://www.example.com/index.html">http://www.example.com/index.html</a> 和 <a href="http://sub.example.com/data.html">http://sub.example.com/data.html</a> 两个文件分别加上 document.domain = "example.com" 然后通过 index.html 文件创建一个 iframe，去控制 iframe 的 window，从而进行交互，当然这种方法只能解决主域相同而二级域名不同的情况</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ------------------- http://domain.cn/A.html -----------------------</span>
+<span class="token operator">&lt;</span>iframe id<span class="token operator">=</span><span class="token string">"iframe"</span> src<span class="token operator">=</span><span class="token string">"http://domain.cn/B.html"</span> onload<span class="token operator">=</span><span class="token string">"test()"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>iframe<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+  document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.cn'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//设置成主域</span>
+  <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// contentWindow 可取得子窗口的 window 对象</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'￼iframe'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>contentWindow<span class="token punctuation">)</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span> 
+<span class="token comment" spellcheck="true">// ------------------- http://domain.cn/B.html -----------------------</span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+    <span class="token comment" spellcheck="true">//在iframe载入这个页面也设置document.domain, 两者域名必须一致</span>
+    document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.cn'</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span>data<span class="token operator">=</span><span class="token string">"hhhh"</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p><a name="e317aee4"></a></p>
+<h1 id="讲一下事件代理-事件委托"><a href="#讲一下事件代理-事件委托" class="headerlink" title="讲一下事件代理(事件委托)"></a>讲一下事件代理(事件委托)</h1><p>事件代理是JavaScript常用的绑定事件技巧把原本要处理的事情委托给父元素</p>
+<p><code>利用的是DOM元素事件冒泡</code></p>
+<p><code>可以提高性能, 节省内存占用, 减少事件注册</code></p>
+<blockquote>
+<p>例如:<br>例如有一千多个li元素要判断点击,    就应该把点击事件委托给父元素,    当点击到的时候再去判断具体的是点到哪个, 不然就很耗性能<br><code>这里用到事件捕获</code>:    父元素捕获子元素target为目标</p>
+</blockquote>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376743-35edcbcb-ef1b-49ab-9fd2-2831c0a8f8be.jpeg#align=left&display=inline&height=828&originHeight=828&originWidth=1165&size=0&status=done&width=1165" alt=""></p>
+<p>当li被点击时，由于冒泡原理，事件就会冒泡到ul上，因为ul上有点击事件，所以事件就会触发，当然，这里当点击ul的时候，也是会触发的，</p>
+<p>Event对象提供了一个属性叫target，可以返回事件的目标节点，我们成为事件源<code>通过target来判断点击到的是哪一个li</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376683-c6f16d46-f4eb-4271-9d33-4185769aedfc.jpeg#align=left&display=inline&height=174&originHeight=174&originWidth=380&size=0&status=done&width=380" alt=""></p>
+<p><a name="b7d1768f"></a></p>
+<h4 id="JavaScript-的事件流"><a href="#JavaScript-的事件流" class="headerlink" title="JavaScript 的事件流"></a>JavaScript 的事件流</h4><p>JavaScript事件流主要有冒泡事件和捕获事件<br />DOM事件流同时支持者两种事件捕获<br /><code>现在统一标准是先捕获再冒泡</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376695-a6a94105-cf66-4234-954c-bb0f02f559ce.jpeg#align=left&display=inline&height=280&originHeight=280&originWidth=382&size=0&status=done&width=382" alt=""></p>
+<p>addEventListener有三个参数：<code>第三个参数就是设定为事件捕获还是冒泡</code></p>
+<p>true为事件捕获</p>
+<p>false为事件冒泡</p>
+<blockquote>
+<p>element.addEventListener(event, function, useCapture)<br>例如:</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript">Button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// ......</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<hr>
+<p><a name="bf0d2ab9"></a></p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>比如子元素点击了, 没有触发点击事件的话就会冒泡到上一层父元素触发其点击事件</p>
+<p><code>阻止事件冒泡使用e.stopPropagation()ie下使用cancelBubble = true</code></p>
+<p><a name="9124a7c9"></a></p>
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>是从上往下层捕获事件的, 父元素先触发子元素后触发</p>
+<p><code>阻止事件捕获使用e.preventDefault(), ie下设置window.event.returnValue = false</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268376717-a781ce16-19c5-4134-8f28-9d96fb60dc39.jpeg#align=left&display=inline&height=479&originHeight=479&originWidth=1127&size=0&status=done&width=1127" alt=""></p>
+<p><a name="2ddc7254"></a></p>
+<h1 id="为什么JavaScript-是单线程"><a href="#为什么JavaScript-是单线程" class="headerlink" title="为什么JavaScript 是单线程"></a>为什么JavaScript 是单线程</h1><p>JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，<code>JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。</code>比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？</p>
+<p>所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语言的核心特征，将来也不会改变。</p>
+<p>为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
+<p><a name="15d5d41a"></a></p>
+<h1 id="JavaScript-设计模式"><a href="#JavaScript-设计模式" class="headerlink" title="JavaScript 设计模式"></a>JavaScript 设计模式</h1><p><a href="https://www.cnblogs.com/wuguanglin/p/JavaScriptPattern.html">https://www.cnblogs.com/wuguanglin/p/JavaScriptPattern.html</a></p>
+<p><a name="e146dbe8"></a></p>
+<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><p>就是内存中只有一个实例，系统判断是否已经有了这个单例，没有就创建，有就不创建<br />应用场景有：全局缓存, 弹窗</p>
+<p><a name="7f10b11f"></a></p>
+<h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><p>根据不同参数可以命中不同的策略，这些策略往往通过函数进行封装返回，类似vue里面的计算属性一样</p>
+<p><a name="eb1dfda7"></a></p>
+<h4 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h4><p>代理模式经常用在不方便直接操作对象的时候使用, 或者说需要第三方来操作这个对象更好的情况下就叫代理模式</p>
+<p><a name="de2a2941"></a></p>
+<h4 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h4><p><code>主要是为了遍历对象元素,但是不暴露对象内部</code><br />提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示把在元素之间游走的责任交给迭代器，而不是聚合对象</p>
+<p>通常使用在</p>
+<p>1、访问一个聚合对象的内容而无须暴露它的内部表示。</p>
+<p>2、需要为聚合对象提供多种遍历方式。</p>
+<p>3、为遍历不同的聚合结构提供一个统一的接口。</p>
+<p><a name="60bffc96"></a></p>
+<h4 id="观察者模式-发布订阅"><a href="#观察者模式-发布订阅" class="headerlink" title="观察者模式(发布订阅)"></a>观察者模式(发布订阅)</h4><p>定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新<br />就是vue原理也是通过发布订阅模式</p>
+<p>通过object.defineProperty定义一个更新方法, 然后把那些需要被监测更新的加入到订阅中去, 一更新就触发自己的update</p>
+<p>应用场景:<br />一个对象必须通知其他对象，而并不知道这些对象是谁。</p>
+<p><a name="a5c7aeff"></a></p>
+<h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><p>将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化</p>
+<p>其实就是把对一个对象产生的命令操作解耦出来<br />通过调用者调用接受者执行命令，顺序：调用者→接受者→命令</p>
+<p><a name="e546bc3d"></a></p>
+<h4 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h4><p><code>一致性对待</code>就是讲对象表现为<code>树形结构来表达整体与部分关系(时候层次结构)</code><br />组合模式使得用户对单个对象和组合对象的使用具有一致性,也就是说<code>下一层操作需要统一对待的时候</code><br />扫描文件夹时，文件夹下面可以为另一个文件夹也可以为文件，我们希望统一对待这些文件夹和文件，这种情形适合使用组合模式。</p>
+<p>使用场景：部分、整体场景，如树形菜单，文件、文件夹的管理</p>
+<p><a name="3d74cb5f"></a></p>
+<h4 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h4><p>定义：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。<br /><code>其实就是把一些通用的方法写在父类上</code>然后子类自己定义自己的方法</p>
+<p>主要解决：一些方法通用，却在每一个子类都重新写了这一方法。</p>
+<p>使用场景：</p>
+<p>1、有多个子类共有的方法，且逻辑相同。</p>
+<p>2、重要的、复杂的方法，可以考虑作为模板方法。</p>
+<p><a name="3c737b3f"></a></p>
+<h4 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h4><p>享元模式<code>共享元素</code>是一种优化程序性能的模式，本质为减少对象创建的个数。<br /><code>其实就是如果内存中有,那就不用重复创建</code><br />主要解决：在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建。<br />如何解决：用唯一标识码判断，如果在内存中有，则返回这个唯一标识码所标识的对象。</p>
+<p>关键代码：用 hash对象存储这些对象。<br />使用场景：</p>
+<p>1、系统有大量相似对象。</p>
+<p>2、需要缓冲池的场景。</p>
+<p><a name="6d4a95b9"></a></p>
+<h4 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h4><p>通过请求第一个条件，会持续执行后续的条件，直到返回结果为止<br /><code>主要是对if-else进行优化, 分清各自</code><br />定义：避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</p>
+<p><a name="8080e510"></a></p>
+<h4 id="中介模式"><a href="#中介模式" class="headerlink" title="中介模式"></a>中介模式</h4><p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566268377325-37139e39-0fc1-4617-b106-a6f44fc6eaab.png#align=left&display=inline&height=394&originHeight=394&originWidth=380&size=0&status=done&width=380" alt=""></p>
+<p>对象和对象之间借助第三方中介者进行通信。<br /><code>是网状</code></p>
+<p>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。<br />使用场景：</p>
+<p>1、系统中对象之间存在比较复杂的引用关系，导致它们之间的依赖关系结构混乱而且难以复用该对象。</p>
+<p>2、想通过一个中间类来封装多个类中的行为，<code>而又不想生成太多的子类。</code></p>
+<p><a name="815e3853"></a></p>
+<h4 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h4><p>定义：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。</p>
+<p>主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。</p>
+<p><a name="5ba313f4"></a></p>
+<h4 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h4><p>将事物内部的每个状态分别封装成类，内部状态改变会产生不同行为。</p>
+<p><code>主要解决：</code>对象的行为依赖于它的状态（属性），并且可以根据它的状态改变而改变它的相关行为。</p>
+<p><code>何时使用：</code>代码中包含大量与对象状态有关的条件语句。</p>
+<p><code>如何解决：</code>将各种具体的状态类抽象出来。<br /><code>使用场景：</code></p>
+<p>1、行为随状态改变而改变的场景。</p>
+<p>2、条件、分支语句的代替者。</p>
+<p><a name="0afd573a"></a></p>
+<h4 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h4><p>使用场景：有动机地修改一个正常运行的系统的接口，这时应该考虑使用适配器模式。</p>
+<p>注意事项：适配器不是在详细设计时添加的，而是解决正在服役的项目的问题。<br />目的是<code>将一个类的接口转换成客户希望的另外一个接口</code></p>
+<p>关键代码：<code>适配器继承或依赖已有的对象，实现想要的目标接口。</code></p>
+<p><a name="d79eddcf"></a></p>
+<h4 id="构造函数模式化"><a href="#构造函数模式化" class="headerlink" title="构造函数模式化"></a>构造函数模式化</h4><p>简单地说就是, <code>大家都买了同样一部手机, 但是每个人可以选择在自己手机上去安装私人app</code></p>
+<p>解决重复实例化问题, 直接把属性和方法赋值给了实例对象</p>
+<p><a name="b98e9d7c"></a></p>
+<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><p>同样是一个工厂, 但是我可以做衣服和鞋子, 我只要告诉工厂我要什么就可以了, 工厂根据客户的不同需求已经封装好了不同对应的方法, 经常用到switch判断</p>
+<p><code>工厂封装了不同事情的细节, 可以做多件事情, 用户只要告诉工厂要的需求即可</code></p>
+<p><a name="36679427"></a></p>
+<h4 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h4><p>就是按照框架把流程性东西一步步东西封装到同一个函数中去, 调用者不需要知道该函数的细节, 直接调用就可以了</p>
+<p><code>目的是为了做一件事情, 不过是细节被封装了</code></p>
+</script></p></blockquote>
             </div>
             <hr/>
 
@@ -987,8 +1244,7 @@ float有什么要注意的点float设计出来是用于文字环绕效果的现�
                             
 JavaScript 堆和栈有哪些
 栈(stack)：栈会自动分配内存空间，会自动释放，存放基本类型，简单的数据段，占据固定大小的空间。（基本类型：String，Number，Boolean，Null，Undefined）速度快
-
-堆(h
+堆(he
                         
                     </div>
                     <div class="publish-info">
@@ -1159,7 +1415,7 @@ JavaScript 堆和栈有哪些
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       

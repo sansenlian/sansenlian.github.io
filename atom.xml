@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sansenlian.github.io/"/>
-  <updated>2019-08-18T14:25:13.293Z</updated>
+  <updated>2019-08-27T06:46:03.903Z</updated>
   <id>https://sansenlian.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>需求实现</title>
-    <link href="https://sansenlian.github.io/2019/08/18/xu-qiu-shi-xian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/xu-qiu-shi-xian/</id>
-    <published>2019-08-18T13:43:24.000Z</published>
-    <updated>2019-08-18T14:25:13.293Z</updated>
+    <title>优秀的计算机读物</title>
+    <link href="https://sansenlian.github.io/2019/08/27/you-xiu-de-ji-suan-ji-du-wu/"/>
+    <id>https://sansenlian.github.io/2019/08/27/you-xiu-de-ji-suan-ji-du-wu/</id>
+    <published>2019-08-27T06:36:19.000Z</published>
+    <updated>2019-08-27T06:46:03.903Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;62a31500&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;鼠标悬浮显示下拉菜单&quot;&gt;&lt;a href=&quot;#鼠标悬浮显示下拉菜单&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;掘金计划的书籍很多都很不错：&lt;a href=&quot;https://github.com/xitu/gold-miner&quot; target=&quot;_blank&quot;
         
       
     
@@ -40,416 +39,11 @@
   </entry>
   
   <entry>
-    <title>网络问题</title>
-    <link href="https://sansenlian.github.io/2019/08/18/wang-luo-wen-ti/"/>
-    <id>https://sansenlian.github.io/2019/08/18/wang-luo-wen-ti/</id>
-    <published>2019-08-18T13:43:19.000Z</published>
-    <updated>2019-08-18T14:25:13.296Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;4f03b79e&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;http状态码和含义&quot;&gt;&lt;a href=&quot;#http状态码和含义&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>前端综合知识要点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-zhi-shi-yao-dian/</id>
-    <published>2019-08-18T13:43:14.000Z</published>
-    <updated>2019-08-18T14:25:13.297Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;2591eeb7&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;前端SEO要注意哪些&quot;&gt;&lt;a href=&quot;#前端SEO要注意哪些&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>前端综合小知识点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/qian-duan-zong-he-xiao-zhi-shi-dian/</id>
-    <published>2019-08-18T13:43:09.000Z</published>
-    <updated>2019-08-18T14:25:13.436Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;br&gt;&lt;a name=&quot;20ad3c21&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;node的使用场景和优缺点&quot;&gt;&lt;a href=&quot;#node的使用场景和优缺点&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode算法初级题解——字符串</title>
-    <link href="https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-zi-fu-chuan/"/>
-    <id>https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-zi-fu-chuan/</id>
-    <published>2019-08-18T13:36:46.000Z</published>
-    <updated>2019-08-18T14:25:13.438Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;6674e141&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-反转字符串&quot;&gt;&lt;a href=&quot;#1-反转字符串&quot; class=&quot;headerlink&quot; title=&quot;1. 反转字符串&quot;&gt;&lt;/a&gt;1. 反转字符串&lt;/h1&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode算法初级题解——链表</title>
-    <link href="https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-lian-biao/"/>
-    <id>https://sansenlian.github.io/2019/08/18/leetcode-suan-fa-chu-ji-ti-jie-lian-biao/</id>
-    <published>2019-08-18T13:29:24.000Z</published>
-    <updated>2019-08-18T14:25:13.439Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;2c842867&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;0-创建链表&quot;&gt;&lt;a href=&quot;#0-创建链表&quot; class=&quot;headerlink&quot; title=&quot;0. 创建链表&quot;&gt;&lt;/a&gt;0. 创建链表&lt;/h1&gt;&lt;p&gt;修改下传入数组就好了&lt;/p&gt;
-&lt;pre
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CSS要点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/css-yao-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/css-yao-dian/</id>
-    <published>2019-08-18T13:07:31.000Z</published>
-    <updated>2019-08-18T14:25:13.439Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;br&gt;&lt;a name=&quot;89a87447&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;说下盒模型&quot;&gt;&lt;a href=&quot;#说下盒模型&quot; class=&quot;headerlink&quot; title=&quot;说下盒模型&quot;&gt;&lt;/a&gt;说下盒模型&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CSS小知识</title>
-    <link href="https://sansenlian.github.io/2019/08/18/css-xiao-zhi-shi/"/>
-    <id>https://sansenlian.github.io/2019/08/18/css-xiao-zhi-shi/</id>
-    <published>2019-08-18T13:07:26.000Z</published>
-    <updated>2019-08-18T14:25:13.440Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;81a779f9&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;float有什么要注意的点&quot;&gt;&lt;a href=&quot;#float有什么要注意的点&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript要点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/javascript-yao-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/javascript-yao-dian/</id>
-    <published>2019-08-18T07:05:26.000Z</published>
-    <updated>2019-08-18T14:25:14.442Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;ES6&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ES6&quot;&gt;&lt;a href=&quot;#ES6&quot; class=&quot;headerlink&quot; title=&quot;ES6&quot;&gt;&lt;/a&gt;ES6&lt;/h1&gt;&lt;p&gt;&lt;a name=&quot;f7fa5f4a&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript小知识点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/javascript-xiao-zhi-shi-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/javascript-xiao-zhi-shi-dian/</id>
-    <published>2019-08-18T07:01:08.000Z</published>
-    <updated>2019-08-18T14:25:14.443Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;51b2a30f&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;JavaScript-堆和栈有哪些&quot;&gt;&lt;a href=&quot;#JavaScript-堆和栈有哪些&quot; class=&quot;headerlink&quot; title=&quot;JavaScript
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript基础点</title>
-    <link href="https://sansenlian.github.io/2019/08/18/javascript-ji-chu-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/javascript-ji-chu-dian/</id>
-    <published>2019-08-18T07:01:03.000Z</published>
-    <updated>2019-08-18T14:25:14.444Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;5c9d4b9d&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;for-…-of循环和for-…-in循环有何区别&quot;&gt;&lt;a href=&quot;#for-…-of循环和for-…-in循环有何区别&quot; class=&quot;headerlink&quot; title=&quot;for …
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript代码实现</title>
-    <link href="https://sansenlian.github.io/2019/08/18/javascript-dai-ma-shi-xian/"/>
-    <id>https://sansenlian.github.io/2019/08/18/javascript-dai-ma-shi-xian/</id>
-    <published>2019-08-18T07:00:58.000Z</published>
-    <updated>2019-08-18T14:25:14.445Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href&gt;&lt;/a&gt;&lt;a name=&quot;e9b5374d&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;实现一个通用事件代理绑定函数绑定-触发-解绑&quot;&gt;&lt;a href=&quot;#实现一个通用事件代理绑定函数绑定-触发-解绑&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HTML小知识点</title>
-    <link href="https://sansenlian.github.io/2019/08/17/html-xiao-zhi-shi-dian/"/>
-    <id>https://sansenlian.github.io/2019/08/17/html-xiao-zhi-shi-dian/</id>
-    <published>2019-08-17T07:43:36.000Z</published>
-    <updated>2019-08-18T14:25:14.446Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;ecb9c6c4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;html标签有几个可以逃过同源策略&quot;&gt;&lt;a href=&quot;#html标签有几个可以逃过同源策略&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript小知识点(一)</title>
-    <link href="https://sansenlian.github.io/2019/08/17/javascript-xiao-zhi-shi-dian-yi/"/>
-    <id>https://sansenlian.github.io/2019/08/17/javascript-xiao-zhi-shi-dian-yi/</id>
-    <published>2019-08-17T02:27:23.000Z</published>
-    <updated>2019-08-18T14:25:14.447Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;ylXpL&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;promise有没有不能满足你需求的情况&quot;&gt;&lt;a href=&quot;#promise有没有不能满足你需求的情况&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java常用语法</title>
-    <link href="https://sansenlian.github.io/2019/08/16/java-chang-yong-yu-fa/"/>
-    <id>https://sansenlian.github.io/2019/08/16/java-chang-yong-yu-fa/</id>
-    <published>2019-08-16T12:39:14.000Z</published>
-    <updated>2019-08-18T14:25:14.447Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;z2mW9&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;笔试用到的部分&quot;&gt;&lt;a href=&quot;#笔试用到的部分&quot; class=&quot;headerlink&quot; title=&quot;笔试用到的部分&quot;&gt;&lt;/a&gt;笔试用到的部分&lt;/h3&gt;&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>C++常用写法</title>
-    <link href="https://sansenlian.github.io/2019/08/16/c-chang-yong-xie-fa/"/>
-    <id>https://sansenlian.github.io/2019/08/16/c-chang-yong-xie-fa/</id>
-    <published>2019-08-16T12:38:24.000Z</published>
-    <updated>2019-08-18T14:25:14.450Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>KMP字符串匹配算法</title>
-    <link href="https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/"/>
-    <id>https://sansenlian.github.io/2019/08/14/kmp-zi-fu-chuan-pi-pei-suan-fa/</id>
-    <published>2019-08-14T07:33:40.000Z</published>
-    <updated>2019-08-18T14:25:14.451Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;:::tips&lt;br&gt;&lt;a href=&quot;https://github.com/sansenlian/Algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;常见算法github地址——欢迎随手star&lt;/a&gt;&lt;br&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常见算法github地址</title>
-    <link href="https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/"/>
-    <id>https://sansenlian.github.io/2019/08/14/chang-jian-suan-fa-github-di-zhi/</id>
-    <published>2019-08-14T07:26:55.000Z</published>
-    <updated>2019-08-18T14:25:14.452Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;:::tips&lt;br&gt;&lt;a href=&quot;https://github.com/sansenlian/Algorithm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;常见算法github地址——欢迎随手star&lt;/a&gt;&lt;br&gt;:::&lt;br&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode算法初级题解——数组</title>
-    <link href="https://sansenlian.github.io/2019/08/11/leetcode-suan-fa-chu-ji-ti-jie-shu-zu/"/>
-    <id>https://sansenlian.github.io/2019/08/11/leetcode-suan-fa-chu-ji-ti-jie-shu-zu/</id>
-    <published>2019-08-11T06:55:06.000Z</published>
-    <updated>2019-08-18T14:25:14.453Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a name=&quot;52690216&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-从排序数组中删除重复项&quot;&gt;&lt;a href=&quot;#1-从排序数组中删除重复项&quot; class=&quot;headerlink&quot; title=&quot;1. 从排序数组中删除重复项&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>位运算</title>
-    <link href="https://sansenlian.github.io/2019/08/11/wei-yun-suan/"/>
-    <id>https://sansenlian.github.io/2019/08/11/wei-yun-suan/</id>
-    <published>2019-08-11T01:49:19.000Z</published>
-    <updated>2019-08-18T14:25:14.454Z</updated>
+    <title>浏览器小知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/27/liu-lan-qi-xiao-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/27/liu-lan-qi-xiao-zhi-shi-dian/</id>
+    <published>2019-08-27T03:04:36.000Z</published>
+    <updated>2019-08-27T06:46:03.904Z</updated>
     
     <summary type="html">
     
@@ -458,9 +52,422 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;测试第 k 位: &lt;code&gt;s &amp;amp; (1 &amp;lt;&amp;lt; k)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;设置第 k 位: &lt;code&gt;s |= (1 &amp;lt;&amp;lt; k)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;第 k 位置零: &lt;code&gt;s &amp;amp;=
+&lt;li&gt;浏览器可以同时向一个域名发起8个请求，并发过多请求容易超出服务器阈值而被BAN（以前服务器负载均衡能力差, 流量稍微大一点服务器就容易崩溃, 这样做保证了服务器的稳定性, 同时防止黑客利用浏览器发起DDOS攻击）参考：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJS小知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/25/nodejs-xiao-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/25/nodejs-xiao-zhi-shi-dian/</id>
+    <published>2019-08-24T16:56:58.000Z</published>
+    <updated>2019-08-27T06:46:03.904Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;YiLYM&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;时间循环libuv&quot;&gt;&lt;a href=&quot;#时间循环libuv&quot; class=&quot;headerlink&quot; title=&quot;时间循环libuv&quot;&gt;&lt;/a&gt;时间循环libuv&lt;/h3&gt;&lt;p&gt;参考：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJS基础知识</title>
+    <link href="https://sansenlian.github.io/2019/08/25/nodejs-ji-chu-zhi-shi/"/>
+    <id>https://sansenlian.github.io/2019/08/25/nodejs-ji-chu-zhi-shi/</id>
+    <published>2019-08-24T16:55:59.000Z</published>
+    <updated>2019-08-27T06:46:03.907Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>webpack基础知识</title>
+    <link href="https://sansenlian.github.io/2019/08/25/webpack-ji-chu-zhi-shi/"/>
+    <id>https://sansenlian.github.io/2019/08/25/webpack-ji-chu-zhi-shi/</id>
+    <published>2019-08-24T16:01:58.000Z</published>
+    <updated>2019-08-27T06:46:03.907Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;iDwyL&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;webpack打包原理&quot;&gt;&lt;a href=&quot;#webpack打包原理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>力扣题解——1101-1163</title>
+    <link href="https://sansenlian.github.io/2019/08/24/li-kou-ti-jie-1101-1163/"/>
+    <id>https://sansenlian.github.io/2019/08/24/li-kou-ti-jie-1101-1163/</id>
+    <published>2019-08-24T03:13:36.000Z</published>
+    <updated>2019-08-27T06:46:03.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;d3c41683&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1101-彼此熟识的最早时间&quot;&gt;&lt;a href=&quot;#1101-彼此熟识的最早时间&quot; class=&quot;headerlink&quot; title=&quot;1101 彼此熟识的最早时间&quot;&gt;&lt;/a&gt;1101
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——精简</title>
+    <link href="https://sansenlian.github.io/2019/08/23/shu-ju-jie-gou-jing-jian/"/>
+    <id>https://sansenlian.github.io/2019/08/23/shu-ju-jie-gou-jing-jian/</id>
+    <published>2019-08-23T00:47:57.000Z</published>
+    <updated>2019-08-27T06:46:03.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;参考王道数据结构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a name=&quot;TrweM&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;栈、队列、线性表&quot;&gt;&lt;a href=&quot;#栈、队列、线性表&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——详解</title>
+    <link href="https://sansenlian.github.io/2019/08/23/shu-ju-jie-gou-xiang-jie/"/>
+    <id>https://sansenlian.github.io/2019/08/23/shu-ju-jie-gou-xiang-jie/</id>
+    <published>2019-08-23T00:37:04.000Z</published>
+    <updated>2019-08-27T06:46:03.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;Power By &lt;a href=&quot;mailto:sansenlian@foxmail.com&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法中级题解——动态规划</title>
+    <link href="https://sansenlian.github.io/2019/08/23/leetcode-suan-fa-zhong-ji-ti-jie-dong-tai-gui-hua/"/>
+    <id>https://sansenlian.github.io/2019/08/23/leetcode-suan-fa-zhong-ji-ti-jie-dong-tai-gui-hua/</id>
+    <published>2019-08-22T16:23:40.000Z</published>
+    <updated>2019-08-27T06:46:03.910Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;1.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-跳跃游戏&quot;&gt;&lt;a href=&quot;#1-跳跃游戏&quot; class=&quot;headerlink&quot; title=&quot;1. 跳跃游戏&quot;&gt;&lt;/a&gt;1. 跳跃游戏&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——其他</title>
+    <link href="https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-qi-ta/"/>
+    <id>https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-qi-ta/</id>
+    <published>2019-08-21T13:29:44.000Z</published>
+    <updated>2019-08-27T06:46:03.911Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;1.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-位1的个数&quot;&gt;&lt;a href=&quot;#1-位1的个数&quot; class=&quot;headerlink&quot; title=&quot;1. 位1的个数&quot;&gt;&lt;/a&gt;1. 位1的个数&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基础数学求解算法</title>
+    <link href="https://sansenlian.github.io/2019/08/21/ji-chu-shu-xue-qiu-jie-suan-fa/"/>
+    <id>https://sansenlian.github.io/2019/08/21/ji-chu-shu-xue-qiu-jie-suan-fa/</id>
+    <published>2019-08-21T12:22:12.000Z</published>
+    <updated>2019-08-27T06:46:03.911Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;GQyuH&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;辗转相除法（欧几里得算法）——最大公约数&quot;&gt;&lt;a href=&quot;#辗转相除法（欧几里得算法）——最大公约数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——数学</title>
+    <link href="https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-shu-xue/"/>
+    <id>https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-shu-xue/</id>
+    <published>2019-08-21T11:46:50.000Z</published>
+    <updated>2019-08-27T06:46:03.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;1.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-Fizz-Buzz&quot;&gt;&lt;a href=&quot;#1-Fizz-Buzz&quot; class=&quot;headerlink&quot; title=&quot;1.  Fizz Buzz&quot;&gt;&lt;/a&gt;1.  Fizz Buzz&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——设计问题</title>
+    <link href="https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-she-ji-wen-ti/"/>
+    <id>https://sansenlian.github.io/2019/08/21/leetcode-suan-fa-chu-ji-ti-jie-she-ji-wen-ti/</id>
+    <published>2019-08-21T09:45:52.000Z</published>
+    <updated>2019-08-27T06:46:03.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;1.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-Shuffle-an-Array&quot;&gt;&lt;a href=&quot;#1-Shuffle-an-Array&quot; class=&quot;headerlink&quot; title=&quot;1. Shuffle an Array&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS零碎知识点</title>
+    <link href="https://sansenlian.github.io/2019/08/21/css-ling-sui-zhi-shi-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/21/css-ling-sui-zhi-shi-dian/</id>
+    <published>2019-08-21T08:56:21.000Z</published>
+    <updated>2019-08-27T06:46:03.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;四种选择器的解析速度由快到慢依次是：ID、class、tag和universal(*)，所以要少用通配符选择器&lt;/li&gt;
+&lt;li&gt;少使用后代选择器，因为也很低效，例如： html body ul li a {
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——动态规划</title>
+    <link href="https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-dong-tai-gui-hua/"/>
+    <id>https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-dong-tai-gui-hua/</id>
+    <published>2019-08-20T09:20:32.000Z</published>
+    <updated>2019-08-27T06:46:03.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;1.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-爬楼梯&quot;&gt;&lt;a href=&quot;#1-爬楼梯&quot; class=&quot;headerlink&quot; title=&quot;1. 爬楼梯&quot;&gt;&lt;/a&gt;1. 爬楼梯&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——排序和搜索</title>
+    <link href="https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-pai-xu-he-sou-suo/"/>
+    <id>https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-pai-xu-he-sou-suo/</id>
+    <published>2019-08-20T08:46:09.000Z</published>
+    <updated>2019-08-27T06:46:03.915Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;K1lJc&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-合并两个有序数组&quot;&gt;&lt;a href=&quot;#1-合并两个有序数组&quot; class=&quot;headerlink&quot; title=&quot;1. 合并两个有序数组&quot;&gt;&lt;/a&gt;1. 合并两个有序数组&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode算法初级题解——树</title>
+    <link href="https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-shu/"/>
+    <id>https://sansenlian.github.io/2019/08/20/leetcode-suan-fa-chu-ji-ti-jie-shu/</id>
+    <published>2019-08-20T04:09:19.000Z</published>
+    <updated>2019-08-27T06:46:03.917Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;28369ad1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;0-二叉树的构建&quot;&gt;&lt;a href=&quot;#0-二叉树的构建&quot; class=&quot;headerlink&quot; title=&quot;0. 二叉树的构建&quot;&gt;&lt;/a&gt;0.
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>力扣题解——351-400</title>
+    <link href="https://sansenlian.github.io/2019/08/20/li-kou-ti-jie-351-400/"/>
+    <id>https://sansenlian.github.io/2019/08/20/li-kou-ti-jie-351-400/</id>
+    <published>2019-08-20T03:39:58.000Z</published>
+    <updated>2019-08-27T06:46:03.918Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;7038bceb&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;351-安卓系统手势解锁&quot;&gt;&lt;a href=&quot;#351-安卓系统手势解锁&quot; class=&quot;headerlink&quot; title=&quot;351 安卓系统手势解锁&quot;&gt;&lt;/a&gt;351
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>算法做题要点</title>
+    <link href="https://sansenlian.github.io/2019/08/20/suan-fa-zuo-ti-yao-dian/"/>
+    <id>https://sansenlian.github.io/2019/08/20/suan-fa-zuo-ti-yao-dian/</id>
+    <published>2019-08-20T03:30:22.000Z</published>
+    <updated>2019-08-27T06:46:03.918Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a name=&quot;qGNhr&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;第一章-技巧部分&quot;&gt;&lt;a href=&quot;#第一章-技巧部分&quot; class=&quot;headerlink&quot; title=&quot;第一章    技巧部分&quot;&gt;&lt;/a&gt;第一章    技巧部分&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue升级webpack版本到webpack4</title>
+    <link href="https://sansenlian.github.io/2019/08/20/vue-sheng-ji-webpack-ban-ben-dao-webpack4/"/>
+    <id>https://sansenlian.github.io/2019/08/20/vue-sheng-ji-webpack-ban-ben-dao-webpack4/</id>
+    <published>2019-08-20T03:07:50.000Z</published>
+    <updated>2019-08-27T06:46:03.919Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;用vue来实验下, 目的是把webpack3升级至^4.0&lt;/p&gt;
+&lt;p&gt;更新思路是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先更新&lt;/li&gt;
+&lt;li&gt;看是否废弃掉了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;yarn global add @vue/cli-init 
+vue
         
       
     

@@ -399,14 +399,14 @@ node的使用场景和优缺点是一个JavaScript运行环境, 依赖于v8引�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -422,20 +422,20 @@ node的使用场景和优缺点是一个JavaScript运行环境, 依赖于v8引�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href></a><br><a name="20ad3c21"></a></p>
-<h3 id="node的使用场景和优缺点"><a href="#node的使用场景和优缺点" class="headerlink" title="node的使用场景和优缺点"></a>node的使用场景和优缺点</h3><p>是一个JavaScript运行环境, 依赖于v8引擎, 是事件驱动, <code>单进程, 单线程, 高并发是最重要的优点</code></p>
+                <p><a name="SiZz9"></a></p>
+<h1 id="node的使用场景和优缺点"><a href="#node的使用场景和优缺点" class="headerlink" title="node的使用场景和优缺点"></a>node的使用场景和优缺点</h1><p>是一个JavaScript运行环境, 依赖于v8引擎, 是事件驱动, <code>单进程, 单线程, 高并发是最重要的优点</code></p>
 <hr>
 <p>缺点是: <code>只支持单核cpu</code>, 不能充分利用cpu资源</p>
 <p>可靠性低, <code>一旦代码某个环节奔溃整个系统都会奔溃</code></p>
-<p><a href></a><br><a name="2c6ea741"></a></p>
-<h3 id="对git熟悉吗-知道常用的git命令吗"><a href="#对git熟悉吗-知道常用的git命令吗" class="headerlink" title="对git熟悉吗, 知道常用的git命令吗"></a>对git熟悉吗, 知道常用的git命令吗</h3><pre class=" language-git"><code class="language-git">git clone &lt;远程项目地址>  #克隆
+<p><a name="R3LnT"></a></p>
+<h1 id="对git熟悉吗-知道常用的git命令吗"><a href="#对git熟悉吗-知道常用的git命令吗" class="headerlink" title="对git熟悉吗, 知道常用的git命令吗"></a>对git熟悉吗, 知道常用的git命令吗</h1><pre class=" language-git"><code class="language-git">git clone &lt;远程项目地址>  #克隆
 git status # 查看修改情况
 git diff &lt;文件名称> #查看单个文件修改情况</code></pre>
 <p><code>单人开发</code></p>
 <pre class=" language-git"><code class="language-git">git pull origin master #同步别人修改的内容
 git push origin master #提交到远程服务器</code></pre>
 <hr>
-<p><code>多人开发</code><br><br>branch就不一定是master了, 依据自己的分支来操作</p>
+<p><code>多人开发</code><br>branch就不一定是master了, 依据自己的分支来操作</p>
 <pre class=" language-git"><code class="language-git">git checkout -b &lt;分支名字> #拉取分支
 git branch #可以参看本地所有分支名字
 
@@ -449,28 +449,28 @@ git push origin &lt;branchname> #提交到远程分支,自己的分支</code></p
 <pre class=" language-git"><code class="language-git">git checkout master #切换到master分支
 git merge &lt;branchname> #合并自己的分支
 git push origin master #提交到master分支</code></pre>
-<p><a href></a><br><a name="6adc733f"></a></p>
-<h3 id="常见的BOM属性对象方法"><a href="#常见的BOM属性对象方法" class="headerlink" title="常见的BOM属性对象方法"></a>常见的BOM属性对象方法</h3><p><code>(1)location对象</code></p>
-<p>location.href– 返回或设置当前文档的URL<br><br>location.search – 返回URL中的查询字符串部分。例如 <a href="http://www.dreamdu.com/dreamdu.php?id=5&name=dreamdu" target="_blank" rel="noopener">http://www.dreamdu.com/dreamdu.php?id=5&amp;name=dreamdu</a> 返回包括(?)后面的内容?id=5&amp;name=dreamdu<br><br>location.hash – 返回URL#后面的内容，如果没有#，返回空<br><br>location.host – 返回URL中的域名部分，例如<a href="http://www.dreamdu.com" target="_blank" rel="noopener">www.dreamdu.com</a><br><br>location.hostname – 返回URL中的主域名部分，例如dreamdu.com<br><br>location.pathname – 返回URL的域名后的部分。例如 <a href="http://www.dreamdu.com/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com/xhtml/</a> 返回/xhtml/<br><br>location.port – 返回URL中的端口部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回8080<br><br>location.protocol – 返回URL中的协议部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回(//)前面的内容http:<br><br>location.assign – 设置当前文档的URL<br><br>location.replace() – 设置当前文档的URL，并且在history对象的地址列表中移除这个URL location.replace(url);<br><br>location.reload() – 重载当前页面</p>
+<p><a name="X3jRV"></a></p>
+<h1 id="常见的BOM属性对象方法"><a href="#常见的BOM属性对象方法" class="headerlink" title="常见的BOM属性对象方法"></a>常见的BOM属性对象方法</h1><p><code>(1)location对象</code></p>
+<p>location.href– 返回或设置当前文档的URL<br>location.search – 返回URL中的查询字符串部分。例如 <a href="http://www.dreamdu.com/dreamdu.php?id=5&name=dreamdu" target="_blank" rel="noopener">http://www.dreamdu.com/dreamdu.php?id=5&amp;name=dreamdu</a> 返回包括(?)后面的内容?id=5&amp;name=dreamdu<br>location.hash – 返回URL#后面的内容，如果没有#，返回空<br>location.host – 返回URL中的域名部分，例如<a href="http://www.dreamdu.com" target="_blank" rel="noopener">www.dreamdu.com</a><br>location.hostname – 返回URL中的主域名部分，例如dreamdu.com<br>location.pathname – 返回URL的域名后的部分。例如 <a href="http://www.dreamdu.com/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com/xhtml/</a> 返回/xhtml/<br>location.port – 返回URL中的端口部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回8080<br>location.protocol – 返回URL中的协议部分。例如 <a href="http://www.dreamdu.com:8080/xhtml/" target="_blank" rel="noopener">http://www.dreamdu.com:8080/xhtml/</a> 返回(//)前面的内容http:<br>location.assign – 设置当前文档的URL<br>location.replace() – 设置当前文档的URL，并且在history对象的地址列表中移除这个URL location.replace(url);<br>location.reload() – 重载当前页面</p>
 <p><code>(2)history对象</code></p>
-<p>history.go() – 前进或后退指定的页面数 history.go(num);<br><br>history.back() – 后退一页<br><br>history.forward() – 前进一页</p>
+<p>history.go() – 前进或后退指定的页面数 history.go(num);<br>history.back() – 后退一页<br>history.forward() – 前进一页</p>
 <p><code>(3)Navigator对象</code></p>
-<p>navigator.userAgent – 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)<br><br>navigator.cookieEnabled – 返回浏览器是否支持(启用)cookie</p>
-<p><a href></a><br><a name="d9eb80cf"></a></p>
-<h3 id="说一下web-Quality（无障碍）"><a href="#说一下web-Quality（无障碍）" class="headerlink" title="说一下web Quality（无障碍）"></a>说一下web Quality（无障碍）</h3><p>能够被残障人士使用的网站才能称得上一个易用的（易访问的）网站。</p>
+<p>navigator.userAgent – 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)<br>navigator.cookieEnabled – 返回浏览器是否支持(启用)cookie</p>
+<p><a name="GNRE6"></a></p>
+<h1 id="说一下web-Quality（无障碍）"><a href="#说一下web-Quality（无障碍）" class="headerlink" title="说一下web Quality（无障碍）"></a>说一下web Quality（无障碍）</h1><p>能够被残障人士使用的网站才能称得上一个易用的（易访问的）网站。</p>
 <p>使用alt属性：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.jpg<span class="token punctuation">"</span></span>  <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this is a person<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></code></pre>
 <p>有时候浏览器会无法显示图像。具体的原因有：</p>
 <p>用户关闭了图像显示</p>
 <p>浏览器是不支持图形显示的迷你浏览器</p>
-<p>浏览器是语音浏览器（供盲人和弱视人群使用）<br><br>如果您使用了alt 属性，那么浏览器至少可以显示或读出有关图像的描述。</p>
-<p><a href></a><br><a name="1b760308"></a></p>
-<h3 id="你怎么理解浏览器内核"><a href="#你怎么理解浏览器内核" class="headerlink" title="你怎么理解浏览器内核"></a>你怎么理解浏览器内核</h3><p>主要分为渲染引擎和JS引擎</p>
-<p><a href></a><br><a name="9e5c825b"></a></p>
-<h3 id="fetch发送2次请求的原因"><a href="#fetch发送2次请求的原因" class="headerlink" title="fetch发送2次请求的原因"></a>fetch发送2次请求的原因</h3><p>fetch发送post请求的时候，总是发送2次，第一次状态码是204，第二次才成功？</p>
+<p>浏览器是语音浏览器（供盲人和弱视人群使用）<br>如果您使用了alt 属性，那么浏览器至少可以显示或读出有关图像的描述。</p>
+<p><a name="eXNzk"></a></p>
+<h1 id="你怎么理解浏览器内核"><a href="#你怎么理解浏览器内核" class="headerlink" title="你怎么理解浏览器内核"></a>你怎么理解浏览器内核</h1><p>主要分为渲染引擎和JS引擎</p>
+<p><a name="YB3Ph"></a></p>
+<h1 id="fetch发送2次请求的原因"><a href="#fetch发送2次请求的原因" class="headerlink" title="fetch发送2次请求的原因"></a>fetch发送2次请求的原因</h1><p>fetch发送post请求的时候，总是发送2次，第一次状态码是204，第二次才成功？</p>
 <p>原因很简单，因为你用fetch的post请求的时候，导致fetch 第一次发送了一个<code>Options请求，询问服务器是否支持修改的请求头</code>，如果服务器支持，则在第二次中发送真正的请求。</p>
-<p><a href></a><br><a name="979b0d7d"></a></p>
-<h3 id="说一下web-worker"><a href="#说一下web-worker" class="headerlink" title="说一下web worker"></a>说一下web worker</h3><p>在HTML页面中，如果在执行脚本时，页面的状态是不可相应的，直到脚本执行完成后，页面才变成可相应。</p>
+<p><a name="Bs0bR"></a></p>
+<h1 id="说一下web-worker"><a href="#说一下web-worker" class="headerlink" title="说一下web worker"></a>说一下web worker</h1><p>在HTML页面中，如果在执行脚本时，页面的状态是不可相应的，直到脚本执行完成后，页面才变成可相应。</p>
 <p><code>web worker是运行在后台的js，独立于其他脚本，不会影响页面你的性能。</code>并且<code>通过postMessage将结果回传到主线程</code>。这样在进行复杂操作的时候，就不会阻塞主线程了。</p>
 <p>如何创建web worker：</p>
 <ol>
@@ -478,15 +478,22 @@ git push origin master #提交到master分支</code></pre>
 <li>创建web worker文件（js，回传函数等）</li>
 <li>创建web worker对象</li>
 </ol>
-<p><a href></a><br><a name="fb429527"></a></p>
-<h3 id="cache-control的值有哪些"><a href="#cache-control的值有哪些" class="headerlink" title="cache-control的值有哪些"></a>cache-control的值有哪些</h3><p>cache-control是一个通用消息头字段被用于HTTP请求和响应中，通过指定指令来实现缓存机制，这个缓存指令是单向的，常见的取值有<code>private、no-cache、max-age、must-revalidate</code>等，<code>默认为private</code>。</p>
-<p><a href></a><br><a name="27d68721"></a></p>
-<h3 id="浏览器在生成页面的时候，会生成那两颗树？"><a href="#浏览器在生成页面的时候，会生成那两颗树？" class="headerlink" title="浏览器在生成页面的时候，会生成那两颗树？"></a>浏览器在生成页面的时候，会生成那两颗树？</h3><p>构造两棵树，DOM树和CSSOM规则树</p>
+<p><a name="ZCgBb"></a></p>
+<h1 id="cache-control的值有哪些"><a href="#cache-control的值有哪些" class="headerlink" title="cache-control的值有哪些"></a>cache-control的值有哪些</h1><p>cache-control是一个通用消息头字段被用于HTTP请求和响应中，通过指定指令来实现缓存机制，这个缓存指令是单向的，常见的取值有<code>private、no-cache、max-age、must-revalidate</code>等，<code>默认为private</code>。</p>
+<p><a name="yFpdM"></a></p>
+<h1 id="浏览器在生成页面的时候，会生成那两颗树？"><a href="#浏览器在生成页面的时候，会生成那两颗树？" class="headerlink" title="浏览器在生成页面的时候，会生成那两颗树？"></a>浏览器在生成页面的时候，会生成那两颗树？</h1><p>构造两棵树，DOM树和CSSOM规则树</p>
 <p>当浏览器接收到服务器相应来的HTML文档后，会遍历文档节点，生成DOM树，</p>
 <p>CSSOM规则树由浏览器解析CSS文件生成</p>
-<p><a href></a><br><a name="421f52ca"></a></p>
-<h3 id="click在ios上有300ms延迟，原因及如何解决？"><a href="#click在ios上有300ms延迟，原因及如何解决？" class="headerlink" title="click在ios上有300ms延迟，原因及如何解决？"></a>click在ios上有300ms延迟，原因及如何解决？</h3><p><code>(1)粗暴型，禁用缩放</code><br><code>(2)改用FastClick，其原理是：</code></p>
-<p>检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉</p>
+<p><a name="TWbSc"></a></p>
+<h1 id="click在ios上有300ms延迟，原因及如何解决？"><a href="#click在ios上有300ms延迟，原因及如何解决？" class="headerlink" title="click在ios上有300ms延迟，原因及如何解决？"></a>click在ios上有300ms延迟，原因及如何解决？</h1><p><code>(1)粗暴型，禁用缩放</code><br><code>(2)改用FastClick，其原理是：</code></p>
+<p>检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉<br><a name="zpbTs"></a></p>
+<h1 id="浏览器修改DOM是同步还是异步"><a href="#浏览器修改DOM是同步还是异步" class="headerlink" title="浏览器修改DOM是同步还是异步"></a>浏览器修改DOM是同步还是异步</h1><p><a href="https://github.com/nzhl/front-end-interview/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8.md" target="_blank" rel="noopener">https://github.com/nzhl/front-end-interview/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8.md</a><br>浏览器对于DOM本身结构的修改是同步的，但是真实体现在浏览器的表现层面上就是异步的。因为浏览器会将DOM的修改暂存在一个队列中, 当前代码执行完成后再集中渲染，DOM树的修改是同步的(js可以立即获取元素)，渲染到屏幕上是异步的(不一定即时看到)<br><a name="6yvw4"></a></p>
+<h1 id="浏览器环境通知用户"><a href="#浏览器环境通知用户" class="headerlink" title="浏览器环境通知用户"></a>浏览器环境通知用户</h1><p>请求通知权限</p>
+<pre class=" language-javascript"><code class="language-javascript">Notification<span class="token punctuation">.</span><span class="token function">requestPermission</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 请求通知的权限</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 仅当值为 "granted" 时显示通知</span>
+  <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Notification</span><span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>body<span class="token punctuation">:</span> <span class="token string">"notification body"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 显示通知</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -726,14 +733,7 @@ git push origin master #提交到master分支</code></pre>
                     <div class="summary block-with-text">
                         
                             
-前端SEO要注意哪些
-合理的标题，描述和关键字要强调重点
-语义化html代码
-最重要的html代码放在最前面
-重要内容不要用js输出，爬虫不会去爬js获取内容
-少用iframe
-非装饰性图片要加alt，图片不加载的时候显示的文字
-提高网站
+Cookie、sessionStorage、localStoragecookie是在http请求中携带的，用于浏览器和服务器之间通信大小限制在4k内sessionStorage，localStorage只在本地存储，大小可以大一些些. 5
                         
                     </div>
                     <div class="publish-info">
@@ -946,7 +946,7 @@ git push origin master #提交到master分支</code></pre>
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       

@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="CSS要点, sansenlian的博客">
     <meta name="description" content="
+css
 说下盒模型
 
 如何实现居中
@@ -14,7 +15,7 @@
 块级水平居中
 直接用margin: auto来实现
 绝对定位元素的居中
-可以是哟经left: 50%, margin: 负固定值来">
+可以是哟经left: 50%, margin: 负">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -411,7 +412,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        6 分
                     </div>
                     
                 
@@ -427,28 +428,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href></a><br><a name="89a87447"></a></p>
-<h1 id="说下盒模型"><a href="#说下盒模型" class="headerlink" title="说下盒模型"></a>说下盒模型</h1><p><img src="https://raw.githubusercontent.com/sansenlian/PicPlace/master/img/20190808104146.png#align=left&display=inline&height=437&originHeight=991&originWidth=740&status=done&width=326" alt></p>
-<p><a href></a><br><a name="b0304957"></a></p>
-<h1 id="如何实现居中"><a href="#如何实现居中" class="headerlink" title="如何实现居中"></a>如何实现居中</h1><p><a href></a><br><a name="d365d58d"></a></p>
+                <p><a name="css"></a></p>
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p><a name="89a87447"></a></p>
+<h1 id="说下盒模型"><a href="#说下盒模型" class="headerlink" title="说下盒模型"></a>说下盒模型</h1><p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566268503545-9c615fd2-a9aa-4a14-b362-6adbb59e7331.png#align=left&display=inline&height=991&originHeight=991&originWidth=740&size=0&status=done&width=740" alt></p>
+<p><a name="b0304957"></a></p>
+<h1 id="如何实现居中"><a href="#如何实现居中" class="headerlink" title="如何实现居中"></a>如何实现居中</h1><p><a name="d365d58d"></a></p>
 <h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><p><code>行内水平居中</code></p>
 <p>行内水平居中就直接用text-align: center</p>
 <p><code>块级水平居中</code></p>
 <p>直接用margin: auto来实现</p>
 <p><code>绝对定位元素的居中</code></p>
-<p>可以是哟经left: 50%, margin: 负固定值来实现<br><br><br>也可以使用transform: translate(x轴, y轴)来实现</p>
+<p>可以是哟经left: 50%, margin: 负固定值来实现<br>也可以使用transform: translate(x轴, y轴)来实现</p>
 <p><code>flex居中</code></p>
 <p>使用justify-content: center来实现, 这个是主轴</p>
-<p><a href></a><br><a name="4117e80d"></a></p>
+<p><a name="4117e80d"></a></p>
 <h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p><code>行内垂直居中</code></p>
 <p>设置line-height和height一样高就好了</p>
 <p><code>绝对定位元素居中</code></p>
-<p>绝对定位元素可以使用<code>top: 50%, margin-top: 负的一半</code>高度<br><br><br>或者直接使用<code>transform: translate(x轴, y轴)</code>来实现</p>
+<p>绝对定位元素可以使用<code>top: 50%, margin-top: 负的一半</code>高度<br>或者直接使用<code>transform: translate(x轴, y轴)</code>来实现</p>
 <p>也可以结合使用绝对定位+margin:auto来实现</p>
 <p>margin: auto中的auto意思是自动填充满剩余空间部分</p>
 <p><code>flex居中</code></p>
 <p>使用flex布局来实现 <code>align-items: center</code>,代表交叉轴, 也就是垂直轴</p>
-<p><a href></a><br><a name="2e347bce"></a></p>
+<p><a name="2e347bce"></a></p>
 <h1 id="BFC怎么形成"><a href="#BFC怎么形成" class="headerlink" title="BFC怎么形成"></a>BFC怎么形成</h1><ul>
 <li><code>根元素html 而不是body</code>, 并且body设置overflow: hidden 无效, 详见<a href="https://stackoverflow.com/questions/41506456/why-body-overflow-not-working/41507857#41507857" target="_blank" rel="noopener">https://stackoverflow.com/questions/41506456/why-body-overflow-not-working/41507857#41507857</a></li>
 <li><code>overflow 不为visible</code></li>
@@ -458,26 +460,25 @@
 </ul>
 <p>计算BFC的高度的时候，浮动元素也参与计算</p>
 <ol>
-<li>解决普通文档流块元素的外边距折叠问题<br><br>也就是说, 之前遇到的上下margin会重叠问题<blockquote>
-<p>解决方法:<br>元素置于不同的BFC中进行隔离就可以解决<br><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g3eygqstspj30sa08eacq.jpg#align=left&display=inline&height=302&originHeight=302&originWidth=1018&status=done&width=1018" alt></p>
+<li><p>解决普通文档流块元素的外边距折叠问题<br><br>也就是说, 之前遇到的上下margin会重叠问题</p>
+<blockquote>
+<p>解决方法:<br>元素置于不同的BFC中进行隔离就可以解决<br><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501535-15557ab0-5069-49da-becb-edd666eb6d2d.jpeg#align=left&display=inline&height=302&originHeight=302&originWidth=1018&size=0&status=done&width=1018" alt></p>
 </blockquote>
 </li>
-</ol>
-<ol start="2">
-<li>清除盒子内子元素的浮动问题<br><br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g3eyfqv0kqj306m035jr7.jpg#align=left&display=inline&height=113&originHeight=113&originWidth=238&status=done&width=238" alt><blockquote>
+<li><p>清除盒子内子元素的浮动问题<br><br><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501684-0d9e134f-3de9-428d-84ab-641290382122.jpeg#align=left&display=inline&height=113&originHeight=113&originWidth=238&size=0&status=done&width=238" alt></p>
+<blockquote>
 <p>解决:<br>在父元素里添加属性overflow: hidden会触发BFC, 和外部隔开, 内部规矩化</p>
 </blockquote>
 </li>
-</ol>
-<ol start="3">
-<li>被浮动元素遮挡问题<blockquote>
-<p>解决:<br>可以触发下方的元素, 对其添加属性overflow:hidden 触发BFC盒子模型<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3eyhb6d05j30ol04fwfv.jpg#align=left&display=inline&height=159&originHeight=159&originWidth=885&status=done&width=885" alt><br>可以对demo2触发其BFC然后就不会遮挡<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3eyhz5ta0j306m04jdg0.jpg#align=left&display=inline&height=163&originHeight=163&originWidth=238&status=done&width=238" alt></p>
+<li><p>被浮动元素遮挡问题</p>
+<blockquote>
+<p>解决:<br>可以触发下方的元素, 对其添加属性overflow:hidden 触发BFC盒子模型<br><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501688-3d8ea592-a9de-4470-9ec2-b0c4acd302f0.jpeg#align=left&display=inline&height=159&originHeight=159&originWidth=885&size=0&status=done&width=885" alt><br>可以对demo2触发其BFC然后就不会遮挡<br><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501691-5411f07b-1230-4aac-b5ac-cb0c60fd6a1a.jpeg#align=left&display=inline&height=163&originHeight=163&originWidth=238&size=0&status=done&width=238" alt></p>
 </blockquote>
 </li>
 </ol>
-<p><a href></a><br><a name="b9a4588a"></a></p>
+<p><a name="b9a4588a"></a></p>
 <h1 id="圣杯布局和双飞翼布局"><a href="#圣杯布局和双飞翼布局" class="headerlink" title="圣杯布局和双飞翼布局"></a>圣杯布局和双飞翼布局</h1><p>双飞翼布局优秀点, 变大后不会变形</p>
-<p><a href></a><br><a name="0d889a3f"></a></p>
+<p><a name="0d889a3f"></a></p>
 <h5 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h5><p>圣杯布局 container要<code>float: left</code></p>
 <p>是<code>container预留padding左右</code>, 然后main占100%宽度</p>
 <p>左边的margin: -100%, <code>position设为relative</code></p>
@@ -515,12 +516,12 @@
 <span class="token punctuation">}</span></code></pre>
 <p>为什么左边的是-100%, 因为-左边padding预留位置就会跑到上一行mian那一行</p>
 <p>但是是在最右边, 那还是要跑去最左边才可以, 也就是再继续靠左, 加起来就是100%width</p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g3exkoq78xj30ev09fwf5.jpg#align=left&display=inline&height=339&originHeight=339&originWidth=535&status=done&width=535" alt></p>
-<p><a href></a><br><a name="bb7f05f6"></a></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501650-99754830-1916-44f8-9be0-31b6511b558a.jpeg#align=left&display=inline&height=339&originHeight=339&originWidth=535&size=0&status=done&width=535" alt></p>
+<p><a name="bb7f05f6"></a></p>
 <h5 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h5><p>与圣杯布局不同的是, container只有包裹住中间的main</p>
 <p><code>然后左右用margin来空出位置</code></p>
 <p>左边的也是要margin-left: -100%,    但是不需要relative定位</p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g3exojtfs7j30jd09340s.jpg#align=left&display=inline&height=327&originHeight=327&originWidth=697&status=done&width=697" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268501684-d7c28cd0-9d6e-49f2-be2b-b8c81be93a71.jpeg#align=left&display=inline&height=327&originHeight=327&originWidth=697&size=0&status=done&width=697" alt></p>
 <pre class=" language-javascript"><code class="language-javascript">#container <span class="token punctuation">{</span>
   width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -545,7 +546,7 @@
 #footer <span class="token punctuation">{</span>
   clear<span class="token punctuation">:</span> both<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><a href></a><br><a name="2e169b41"></a></p>
+<p><a name="2e169b41"></a></p>
 <h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><p><code>容器属性</code></p>
 <ul>
 <li>justify-content    主轴布局</li>
@@ -565,23 +566,23 @@
 <li>flex    是flex-grow，flex-shrink和flex-basis的简写，默认值为0 1 auto。后面两个属性可选</li>
 <li>align-self    允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto</li>
 </ul>
-<p><a href></a><br><a name="e2f54c69"></a></p>
+<p><a name="e2f54c69"></a></p>
 <h1 id="怎么清除浮动"><a href="#怎么清除浮动" class="headerlink" title="怎么清除浮动"></a>怎么清除浮动</h1><p>一般我们是用clear: both来清除浮动的, 使用div会占用DOM空间, 所以比较好的做法是在父元素中加上伪元素:after</p>
 <hr>
-<p>末尾添加一个空div作为兄弟：<br></p>
+<p>末尾添加一个空div作为兄弟：</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.clearfix</span><span class="token pseudo-element">::after</span> </span><span class="token punctuation">{</span>
       <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span>,
       <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
       <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
   <span class="token punctuation">}</span></code></pre>
 <p>父元素添加overflow: hidden | auto 或其他能够构成BFC的属性</p>
-<p><a href></a><br><a name="601902a8"></a></p>
+<p><a name="601902a8"></a></p>
 <h1 id="重绘和回流"><a href="#重绘和回流" class="headerlink" title="重绘和回流"></a>重绘和回流</h1><p><code>重绘（repaint或redraw）</code>：当盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来之后，浏览器便把这些原色都按照各自的特性绘制一遍，将内容呈现在页面上。重绘是指一个元素外观的改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现新的外观。</p>
 <p>触发重绘的条件：<code>改变元素外观属性。</code>如：color，background-color等。</p>
 <blockquote>
 <p>注意：table及其内部元素可能需要多次计算才能确定好其在渲染树中节点的属性值，比同等元素要多花两倍时间，这就是我们尽量避免使用table布局页面的原因之一。</p>
 </blockquote>
-<p>重排（重构/回流/reflow）：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建, 这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。<br><br>DOM的变化影响到了预算内宿的几何属性比如宽高，浏览器重新计算元素的几何属性，其他元素的几何属性也会受到影响，<code>浏览器需要重新构造渲染书，这个过程称之为重排</code>，浏览器将受到影响的<code>部分重新绘制在屏幕上 的过程称为重绘</code>，引起重排重绘的原因有：</p>
+<p>重排（重构/回流/reflow）：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建, 这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。<br>DOM的变化影响到了预算内宿的几何属性比如宽高，浏览器重新计算元素的几何属性，其他元素的几何属性也会受到影响，<code>浏览器需要重新构造渲染书，这个过程称之为重排</code>，浏览器将受到影响的<code>部分重新绘制在屏幕上 的过程称为重绘</code>，引起重排重绘的原因有：</p>
 <ol>
 <li>添加或者删除可见的DOM元素</li>
 <li>元素尺寸位置的改变</li>
@@ -1055,7 +1056,7 @@ float有什么要注意的点float设计出来是用于文字环绕效果的现�
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       

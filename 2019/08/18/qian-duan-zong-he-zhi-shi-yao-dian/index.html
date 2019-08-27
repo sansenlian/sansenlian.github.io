@@ -6,14 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="前端综合知识要点, sansenlian的博客">
     <meta name="description" content="
-前端SEO要注意哪些
-合理的标题，描述和关键字要强调重点
-语义化html代码
-最重要的html代码放在最前面
-重要内容不要用js输出，爬虫不会去爬js获取内容
-少用iframe
-非装饰性图片要加alt，图片不加载的时候显示的文字
-提高网站">
+Cookie、sessionStorage、localStoragecookie是在http请求中携带的，用于浏览器和服务器之间通信大小限制在4k内sessionStorage，localStorage只在本地存储，大小可以大一些些. 5">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -403,14 +396,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        5.3k
+                        6.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        19 分
+                        23 分
                     </div>
                     
                 
@@ -426,8 +419,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href></a><a name="2591eeb7"></a></p>
-<h3 id="前端SEO要注意哪些"><a href="#前端SEO要注意哪些" class="headerlink" title="前端SEO要注意哪些"></a>前端SEO要注意哪些</h3><ul>
+                <p><a name="Ke9wq"></a></p>
+<h1 id="Cookie、sessionStorage、localStorage"><a href="#Cookie、sessionStorage、localStorage" class="headerlink" title="Cookie、sessionStorage、localStorage"></a>Cookie、sessionStorage、localStorage</h1><p>cookie是在http请求中携带的，用于<code>浏览器和服务器之间通信</code>大小限制在<code>4k内</code><br>sessionStorage，localStorage只在本地存储，大小可以大一些些. 5mb左右<br><code>localStorage.setItem尽量加到try-catch中, 因为某些浏览器是禁用这个api的</code></p>
+<ul>
+<li><p>cookie 通常用于登录状态的保存等功能的实现</p>
+</li>
+<li><p>sessionStorage通常用来在单页应用中方便各个模块的数据共享</p>
+</li>
+<li><p>localStorage通常用来存储一些体积较大但又需要持久保存的数据, 例如在线编辑文章的自动保存<br><a name="DXaoe"></a></p>
+<h3 id="Cookie的安全问题"><a href="#Cookie的安全问题" class="headerlink" title="Cookie的安全问题"></a>Cookie的安全问题</h3><p>参考：<a href="https://github.com/nzhl/front-end-interview/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8.md" target="_blank" rel="noopener">链接</a></p>
+</li>
+<li><p>服务器端返回cookie时, 对于某些敏感的cookie设置httpOnly为true, 这种cookie是无法通过document.cookie拿到的, 所以也就无法修改. 同时只会在发送请求的时候被附带, 使用脚本AJAX时由于无法获取, 所以也不会被带上.</p>
+</li>
+<li><p>尽可能地设置有效期较短的cookie， 也就是增加expires/max-age (前者是HTTP1.0中的表示绝对时间后者是1.1新规范表示相对时间, 一般为保证兼容性都写), 或者干脆不写或者写一个早于当前时间的日期, 这样的话cookie将会随着Session一起过期</p>
+</li>
+<li><p>给cookie添加secure: true, 表示只在https协议下传输.</p>
+</li>
+<li><p>给敏感的cookie加密或者哈希</p>
+<blockquote>
+<p>碰到不支持cookie的页面可以通过以下方式来支持session：</p>
+<ul>
+<li>URL重写: 把sessionID以URL参数的形势传入</li>
+<li>隐藏表单: 在页面中插入一个隐藏的表单来记录sessionId, 每次需要提交新的请求时带上该表</li>
+<li>ip地址: 单纯地根据ip地址来判断是否是同一用户.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><a name="2aqld"></a></p>
+<h3 id="document-cookie-转化为对象"><a href="#document-cookie-转化为对象" class="headerlink" title="document.cookie 转化为对象"></a>document.cookie 转化为对象</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> cookie2obj <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> list <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'; '</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> each <span class="token keyword">of</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> temp <span class="token operator">=</span> each<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">)</span>
+    obj<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> obj
+<span class="token punctuation">}</span></code></pre>
+<p><a name="Ur7cO"></a></p>
+<h3 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h3><p><code>共同点</code>：都是保存在浏览器端，并且是同源的<br><code>Cookie</code>：cookie数据始终在<code>同源的http请求中携带（即使不需要）</code>，</p>
+<blockquote>
+<p>即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。<br>cookie数据存储的大小很小只有4K左右。<br>另外两个是5mb左右</p>
+</blockquote>
+<p><code>sessionStorage</code>：<code>仅在当前浏览器窗口关闭前有效</code>，自然也就不可能持久保持，<br><code>localStorage：始终有效</code>，窗口或浏览器关闭也一直保存，因此用作持久数据<br><code>cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</code>。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
+<hr>
+<p><code>localStorage：</code>localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：<code>同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效</code>）<br>补充说明一下<code>cookie的作用：</code></p>
+<ul>
+<li><code>保存用户登录状态。</code>例如将用户<code>id存储于一个cookie内</code>，这样当用户下次访问该页面时就<code>不需要重新登录了</code>，现在很多论坛和社区都提供这样的功能。   cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个  月、一年等。</li>
+<li><code>跟踪用户行为。</code>例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后  台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。<blockquote>
+<p>从安全性来说，因为<code>每次http请求都回携带cookie信息，这样子浪费了带宽</code>，所以<code>cookie应该尽可能的少用</code><br>此外cookie还需要<code>指定作用域，不可以跨域调用</code>，限制很多，但是<code>用户识别用户登陆来说，cookie还是比storage好用，其他情况下可以用storage，localstorage可以用来在页面传递参数</code><br>sessionstorage可以用来保存一些<code>临时的数据，防止用户刷新页面后丢失了一些参数</code></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>HTTP是一个无状态协议，因此<code>Cookie的最大的作用就是存储sessionId</code>用来唯一标识用户</p>
+<ol>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上。</li>
+<li>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗<br><br>考虑到安全应当使用session。</li>
+<li>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能<br><br>考虑到减轻服务器性能方面，应当使用COOKIE。</li>
+<li>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。<br><a name="YYaXG"></a><h1 id="前端SEO要注意哪些"><a href="#前端SEO要注意哪些" class="headerlink" title="前端SEO要注意哪些"></a>前端SEO要注意哪些</h1></li>
+</ol>
+<ul>
 <li>合理的标题，描述和关键字要强调重点</li>
 <li>语义化html代码</li>
 <li>最重要的html代码放在最前面</li>
@@ -436,8 +488,8 @@
 <li>非装饰性图片要加alt，图片不加载的时候显示的文字</li>
 <li>提高网站速度，这是一个重要指标</li>
 </ul>
-<p><a href></a><a name="aa8321f2"></a></p>
-<h3 id="web中怎么实现会话跟踪"><a href="#web中怎么实现会话跟踪" class="headerlink" title="web中怎么实现会话跟踪"></a>web中怎么实现会话跟踪</h3><p>可以通过</p>
+<p><a name="WfeVL"></a></p>
+<h1 id="web中怎么实现会话跟踪"><a href="#web中怎么实现会话跟踪" class="headerlink" title="web中怎么实现会话跟踪"></a>web中怎么实现会话跟踪</h1><p>可以通过</p>
 <ul>
 <li>cookie</li>
 <li>session</li>
@@ -445,8 +497,8 @@
 <li>隐藏的input</li>
 <li>ip地址</li>
 </ul>
-<p><a href></a><a name="0823f9b6"></a></p>
-<h3 id="常见的web安全及防护原理"><a href="#常见的web安全及防护原理" class="headerlink" title="常见的web安全及防护原理"></a>常见的web安全及防护原理</h3><p>常见的web安全及防护原理</p>
+<p><a name="Zf8pW"></a></p>
+<h1 id="常见的web安全及防护原理"><a href="#常见的web安全及防护原理" class="headerlink" title="常见的web安全及防护原理"></a>常见的web安全及防护原理</h1><p>常见的web安全及防护原理</p>
 <p><code>sql注入</code></p>
 <p>通过sql命令插入到web表单中欺骗服务器</p>
 <hr>
@@ -457,33 +509,21 @@
 <li>不要用管理员权限进行数据库连接, 每个应用权限都是有限的</li>
 <li>不要明文存放信息</li>
 </ul>
-<p><code>CSRF攻击</code></p>
-<p>csrf是代替用户完成指定动作, 通过伪装来自受信任用户的请求来进行对受信任的网站一些操作</p>
-<p>xss是其中的方法之一</p>
-<p>例如利用本地cookie访问危险网站</p>
+<p><code>CSRF攻击</code><br>csrf是代替用户完成指定动作, 通过伪装来自受信任用户的请求来进行对受信任的网站一些操作<br>xss是其中的方法之一<br>例如利用本地cookie访问危险网站</p>
 <hr>
 <p>解决:</p>
 <ul>
-<li><p>通过在客户端页面增加伪随机数</p>
-</li>
-<li><p>进行验证</p>
-</li>
+<li>通过在客户端页面增加伪随机数</li>
+<li>进行验证</li>
 </ul>
 <hr>
-<p><code>xss攻击</code></p>
-<p>通过外部脚本攻击, 在页面内插入恶意html标签或者JavaScript代码, 用于窃听cookie</p>
-<p>解决:</p>
+<p><code>xss攻击</code><br>通过外部脚本攻击, 在页面内插入恶意html标签或者JavaScript代码, 用于窃听cookie<br>解决:</p>
 <ul>
 <li><p>进行标签过滤, 和关键字符过滤</p>
 </li>
-<li><p>任何内容写入到页面钱都应该进行encode</p>
-</li>
-</ul>
-<p><a href></a><a name="797ac6d3"></a></p>
-<h3 id="浏览器从url输入到显示页面的步骤"><a href="#浏览器从url输入到显示页面的步骤" class="headerlink" title="浏览器从url输入到显示页面的步骤"></a>浏览器从url输入到显示页面的步骤</h3><p>用户输入URL并回车，浏览器进程判断是搜索还是URL址址，是URL址址就通过IPC将URL发送给<code>网络进程</code>，网络进程查找<code>本地缓存</code>，如果没找到，进行DNS解析IP，端口请求是http发送的，利用IP和端口构建TCP连接，三次握手，发送HTTP请求，服务器响应并返回HTTP响应。如果有301，302则执行重定向相应流程。200则继续，判断Content-type如果<code>text/html</code>，浏览器进程准备<code>渲染进程</code>，<code>发送提交文档消息，让网络进程与渲染进程建立管道</code>，将内容提交给渲染进程，如果是同域建复用父进程的渲染进程。<code>渲染进程接收完毕</code>，向浏览器进程发送<code>确认文档</code>，浏览器<code>安全栏，前进，后退界面更新</code>，渲染进程渲染完后，向浏览器进程提交页面加载完毕。</p>
-<p><a href></a><a name="539e1647"></a></p>
-<h3 id="如何进行网站优化"><a href="#如何进行网站优化" class="headerlink" title="如何进行网站优化"></a>如何进行网站优化</h3><p><a href></a><a name="70d3abc9"></a></p>
-<h4 id="js的性能优化有哪些"><a href="#js的性能优化有哪些" class="headerlink" title="js的性能优化有哪些"></a>js的性能优化有哪些</h4><ul>
+<li><p>任何内容写入到页面钱都应该进行encode<br><a name="PvB7g"></a></p>
+<h1 id="如何进行网站优化"><a href="#如何进行网站优化" class="headerlink" title="如何进行网站优化"></a>如何进行网站优化</h1><p><a name="0b9lZ"></a></p>
+<h3 id="js的性能优化有哪些"><a href="#js的性能优化有哪些" class="headerlink" title="js的性能优化有哪些"></a>js的性能优化有哪些</h3></li>
 <li><p>添加本地缓存</p>
 </li>
 <li><p>避免使用CSS表达式</p>
@@ -498,118 +538,59 @@
 </li>
 <li><p>事件节流</p>
 <blockquote>
-<p>比如在textarea里面如果需要监听change事件，即keyup来监听事件</p>
+<p>比如在textarea里面如果需要监听change事件，即keyup来监听事件<br>可以通过加上settimeout来进行事件节流 就是不要一直都是实时监听，可以隔一段时间监听下</p>
 </blockquote>
 </li>
-</ul>
-<blockquote>
-<p>可以通过加上settimeout来进行事件节流 就是不要一直都是实时监听，可以隔一段时间监听下</p>
-</blockquote>
-<ul>
 <li><p>使用ssr后端渲染, 减少前端渲染时间，就是一次性输出html内容，不用频繁调用ajax</p>
 </li>
 <li><p>css放在前面， js放在后面</p>
+<blockquote>
+<p>JS的下载会同时阻塞浏览器的解析和渲染, 所以放末尾可以防止白屏时间过长.<br>但一些统计类js, 或是要网页面中添加内容的js可以考虑放在开头.</p>
+</blockquote>
 </li>
 </ul>
-<p><a href></a><a name="ebfe2a87"></a></p>
-<h4 id="服务器方面"><a href="#服务器方面" class="headerlink" title="服务器方面"></a>服务器方面</h4><p>使用CND加速，ETag配置，用Gzip压缩</p>
-<p><a href></a><a name="b901e650"></a></p>
-<h4 id="内容方面"><a href="#内容方面" class="headerlink" title="内容方面"></a>内容方面</h4><ol>
+<p><a name="gslfW"></a></p>
+<h3 id="服务器方面"><a href="#服务器方面" class="headerlink" title="服务器方面"></a>服务器方面</h3><p>使用CND加速，ETag配置，用Gzip压缩<br><a name="6BGtU"></a></p>
+<h3 id="内容方面"><a href="#内容方面" class="headerlink" title="内容方面"></a>内容方面</h3><ol>
 <li>减少http请求， 包括图像使用css雪碧图，合并文件之类的</li>
 <li>减少dns查询，用dns缓存</li>
 <li>减少DOM数量</li>
 <li>减小cookies的大小</li>
 <li>尽量不要在html中去拉伸图片</li>
 </ol>
-<p><code>css</code></p>
-<p>样式表放在顶部， 不要使用css表达式，使用不用<a href="/import">@import </a> </p>
-<p><code>JavaScript</code></p>
+<p><code>css</code><br>CSS的下载并不阻塞浏览器的解析, 但是阻塞浏览器的渲染. 如果CSS不放head中, 浏览器将首先使用一个空的样式树来对页面的元素进行渲染, 之后加载CSS之后再讲元素重绘回流, 所以这样做会产生所谓的FONC(flash of unstyled content)现象, 但是如果css过大可能导致白屏时间过长(因为渲染会被阻塞), 所以如果是非首屏可见元素的CSS可以考虑放在HTML的末尾.<br>样式表放在顶部， 不要使用css表达式，使用不用<a href>@import </a><br><code>JavaScript</code></p>
 <ol>
-<li><p>脚本放在页面底部</p>
-</li>
-<li><p>文件用外部引入，压缩，减少不必要脚本</p>
-</li>
-<li><p>减少DOM访问</p>
-</li>
+<li>脚本放在页面底部</li>
+<li>文件用外部引入，压缩，减少不必要脚本</li>
+<li>减少DOM访问</li>
 </ol>
 <hr>
 <p>降低请求量：合并资源，减少HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。</p>
 <p>加快请求速度：预解析DNS，减少域名数，并行加载，CDN 分发。</p>
 <p>缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存localStorage。</p>
 <p>渲染：JS/CSS优化，加载顺序，服务端渲染，pipeline。</p>
-<p><a href></a><a name="3a00f9e4"></a></p>
-<h3 id="谈谈你对重构的理解"><a href="#谈谈你对重构的理解" class="headerlink" title="谈谈你对重构的理解"></a>谈谈你对重构的理解</h3><p>网站重构是不改变外观的前提下, 进行结构优化, 添加可读性, 加快速度</p>
+<p><a name="F870Q"></a></p>
+<h1 id="谈谈你对重构的理解"><a href="#谈谈你对重构的理解" class="headerlink" title="谈谈你对重构的理解"></a>谈谈你对重构的理解</h1><p>网站重构是不改变外观的前提下, 进行结构优化, 添加可读性, 加快速度</p>
 <p><code>高复用低耦合, 文件小, 好维护, 好扩展</code>才是好代码</p>
-<p><a href></a><a name="0b3dbe8c"></a></p>
-<h4 id="常用的重构方法是"><a href="#常用的重构方法是" class="headerlink" title="常用的重构方法是"></a>常用的重构方法是</h4><ul>
+<p><a name="FUt3u"></a></p>
+<h3 id="常用的重构方法是"><a href="#常用的重构方法是" class="headerlink" title="常用的重构方法是"></a>常用的重构方法是</h3><ul>
 <li>表格table改为div+css</li>
 <li>使网站兼容现代浏览器, 废弃ie6</li>
 <li>对于移动平台进行优化</li>
 <li>针对seo进行优化</li>
 <li>减少无用代码, 和代码体积, 提高速度</li>
 </ul>
-<p><a href></a><a name="726c9033"></a></p>
-<h3 id="严格模式和混杂模式有什么区别"><a href="#严格模式和混杂模式有什么区别" class="headerlink" title="严格模式和混杂模式有什么区别"></a>严格模式和混杂模式有什么区别</h3><p><code>Doctype</code>声明于文档最前面，告诉浏览器以何种方式来渲染页面，这里有两种模式，严格模式和混杂模式。</p>
+<p><a name="R2BRn"></a></p>
+<h1 id="严格模式和混杂模式有什么区别"><a href="#严格模式和混杂模式有什么区别" class="headerlink" title="严格模式和混杂模式有什么区别"></a>严格模式和混杂模式有什么区别</h1><p><code>Doctype</code>声明于文档最前面，告诉浏览器以何种方式来渲染页面，这里有两种模式，严格模式和混杂模式。</p>
 <p><code>严格模式</code>是让浏览器用最高标准运行</p>
 <p>比如最新版本代码会忽略一些老旧的代码</p>
 <p>那么老旧的代码就不会被运行，叫做以最高标准进行</p>
 <hr>
 <p><code>混杂模式</code>是可以向后兼容老式浏览器的</p>
-<p>就是新的可以支持，老的代码也可以运行成功</p>
-<p><a href></a><a name="d343aabe"></a></p>
-<h3 id="Cookie、sessionStorage、localStorage的区别"><a href="#Cookie、sessionStorage、localStorage的区别" class="headerlink" title="Cookie、sessionStorage、localStorage的区别"></a>Cookie、sessionStorage、localStorage的区别</h3><p>cookie是在http请求中携带的，用于<code>浏览器和服务器之间通信</code>大小限制在<code>4k内</code></p>
-<p>sessionStorage，localStorage只在本地存储，大小可以大一些些. 5mb左右</p>
-<p><code>localStorage.setItem尽量加到try-catch中, 因为某些浏览器是禁用这个api的</code></p>
-<hr>
-<p><code>共同点</code>：都是保存在浏览器端，并且是同源的</p>
-<p><code>Cookie</code>：cookie数据始终在<code>同源的http请求中携带（即使不需要）</code>，</p>
-<blockquote>
-<p>即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</p>
-</blockquote>
-<blockquote>
-<p>cookie数据存储的大小很小只有4K左右。</p>
-</blockquote>
-<blockquote>
-<p>另外两个是5mb左右</p>
-</blockquote>
-<p><code>sessionStorage</code>：<code>仅在当前浏览器窗口关闭前有效</code>，自然也就不可能持久保持，</p>
-<p><code>localStorage：始终有效</code>，窗口或浏览器关闭也一直保存，因此用作持久数据；</p>
-<p><code>cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</code>。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
-<hr>
-<p><code>localStorage：</code>localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：<code>同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效</code>）</p>
-<p>补充说明一下<code>cookie的作用：</code></p>
-<ul>
-<li><code>保存用户登录状态。</code>例如将用户<code>id存储于一个cookie内</code>，这样当用户下次访问该页面时就<code>不需要重新登录了</code>，现在很多论坛和社区都提供这样的功能。   cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个  月、一年等。</li>
-<li><code>跟踪用户行为。</code>例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后  台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。</li>
-</ul>
-<blockquote>
-<p>从安全性来说，因为<code>每次http请求都回携带cookie信息，这样子浪费了带宽</code>，所以<code>cookie应该尽可能的少用</code></p>
-</blockquote>
-<blockquote>
-<p>此外cookie还需要<code>指定作用域，不可以跨域调用</code>，限制很多，但是<code>用户识别用户登陆来说，cookie还是比storage好用，其他情况下可以用storage，localstorage可以用来在页面传递参数</code></p>
-</blockquote>
-<blockquote>
-<p>sessionstorage可以用来保存一些<code>临时的数据，防止用户刷新页面后丢失了一些参数</code></p>
-</blockquote>
-<hr>
-<p>HTTP是一个无状态协议，因此<code>Cookie的最大的作用就是存储sessionId</code>用来唯一标识用户</p>
-<ol>
-<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
-</li>
-<li><p>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗<br><br>考虑到安全应当使用session。</p>
-</li>
-<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能<br><br>考虑到减轻服务器性能方面，应当使用COOKIE。</p>
-</li>
-<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
-</li>
-</ol>
-<p><a href></a><a name="0c81dc0d"></a></p>
-<h3 id="说一下浏览器缓存"><a href="#说一下浏览器缓存" class="headerlink" title="说一下浏览器缓存"></a>说一下浏览器缓存</h3><p>缓存分为两种：<code>强缓存和协商缓存</code>，根据响应的header内容来决定。</p>
+<p>就是新的可以支持，老的代码也可以运行成功<br><a name="oUkpo"></a></p>
+<h1 id="说一下浏览器缓存"><a href="#说一下浏览器缓存" class="headerlink" title="说一下浏览器缓存"></a>说一下浏览器缓存</h1><p>缓存分为两种：<code>强缓存和协商缓存</code>，根据响应的header内容来决定。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566268586360-401c4109-c953-457e-8bc8-591727dacf74.png#align=left&display=inline&height=451&originHeight=593&originWidth=623&size=0&status=done&width=474" alt></p>
 <blockquote>
 <p>因为服务器上的资源不是一直固定不变的，大多数情况下它会更新，这个时候如果我们还访问本地缓存，那么对用户来说，那就相当于资源没有更新，用户看到的还是旧的资源；<code>所以我们希望服务器上的资源更新了浏览器就请求新的资源，没有更新就使用本地的缓存</code>，以最大程度的减少因网络请求而产生的资源浪费。</p>
-</blockquote>
-<blockquote>
-<p><img src="https://uploadfiles.nowcoder.com/images/20190312/311436_1552361773903_9DC69E327B4B3691E94CD9D52D10E2C1#alt=img" alt></p>
 </blockquote>
 <table>
 <thead>
@@ -633,18 +614,38 @@
 <td>是，通过服务器来告知缓存是否可用</td>
 </tr>
 </tbody></table>
-<p><code>强缓存相关字段有expires，cache-control</code>。如果cache-control与expires同时存在的话，cache-control的优先级高于expires。</p>
-<p>协商缓存相关字段`有</p>
+<p><code>强缓存相关字段有expires，cache-control</code>。如果cache-control与expires同时存在的话，cache-control的优先级高于expires。<br>协商缓存相关字段有</p>
 <ul>
-<li>Last-Modified/If-Modified-Since</li>
-<li>Etag/If-None-Match</li>
+<li><p>Last-Modified/If-Modified-Since</p>
+</li>
+<li><p>Etag/If-None-Match<br><a name="tvxWA"></a></p>
+<h3 id="缓存过程"><a href="#缓存过程" class="headerlink" title="缓存过程"></a>缓存过程</h3><p>先进行Cache-Control判断，当Cache-Control没有触发(过期, 浏览器刷新, 没有设置Cache-Control和Expires), 则应用协商缓存。<br>刷新过程, 忽略强制缓存直接触发协商缓存，Ctr + F5 刷新, 清空本地缓存, 强制重新下载<br>Cache-Control 可以用以下取值：</p>
+</li>
+<li><p>private: 客户端可以缓存</p>
+</li>
+<li><p>public: 客户端和代理服务器都可缓存（前端的同学，可以认为public和private是一样的）</p>
+</li>
+<li><p>max-age=xxx: 缓存的内容将在 xxx 秒后失效（相对时间, 解决了客户端服务器端时差问题）</p>
+</li>
+<li><p>no-cache: 需要使用对比缓存来验证缓存数据（后面介绍）</p>
+</li>
+<li><p>no-store: 所有内容都不会缓存，强制缓存，对比缓存都不会触发<br><a name="UHW2Q"></a></p>
+<h3 id="其他缓存技术"><a href="#其他缓存技术" class="headerlink" title="其他缓存技术"></a>其他缓存技术</h3></li>
+<li><p>离线缓存技术, 包括应用缓存manifest和 Service Worker 两种, 前一种已经被标准废弃, 推荐使用第二种, 与上面所提到的缓存不同的是, 上面的缓存是基于请求的, 而这里的缓存是基于整个应用的. 我的猜测是, 首先触发离线缓存, 然后对于需要更新的文件在判断是否触发强制缓存和对比缓存.</p>
+<ul>
+<li>Service Worker基于Web Worker实现, 本质上就是一个特殊的Worker(非JS主线程的其他线程),它可以实现拦截和处理网络请求、消息推送、静默更新、事件同步等服务, 限制条件是页面必须基于HTTPS.(例外是 localhost 和 127.0.0.1 即使HTTP也可以使用)</li>
 </ul>
-<hr>
-<p><a href></a><a name="ca8b8687"></a></p>
-<h3 id="讲讲移动端自适应问题"><a href="#讲讲移动端自适应问题" class="headerlink" title="讲讲移动端自适应问题"></a>讲讲移动端自适应问题</h3><p>逻辑分辨率和物理分辨率不一致是很正常的</p>
+</li>
+<li><p>应用程序缓存，是从浏览器的缓存中分出来的一块缓存区，要想在这个缓存中保存数据，可以使用一个描述文件（manifest file），列出要下载和缓存的资源。 只需要在html文件中引用对应的manifest文件即可</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE HTML></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">manifest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./address-of-manifest<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> html content <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p><a name="06zod"></a></p>
+<h1 id="讲讲移动端自适应问题"><a href="#讲讲移动端自适应问题" class="headerlink" title="讲讲移动端自适应问题"></a>讲讲移动端自适应问题</h1></li>
+</ul>
+<p>逻辑分辨率和物理分辨率不一致是很正常的</p>
 <p>css渲染是根据逻辑分辨率, 所以有时候就会出现1px对应4个物理分辨率的情况, 会产生模糊</p>
-<p><a href></a><a name="0eb44b7f"></a></p>
-<h3 id="响应式和自适应"><a href="#响应式和自适应" class="headerlink" title="响应式和自适应"></a>响应式和自适应</h3><p>响应式主要是根据@media来实现</p>
+<p><a name="m6pOJ"></a></p>
+<h1 id="响应式和自适应"><a href="#响应式和自适应" class="headerlink" title="响应式和自适应"></a>响应式和自适应</h1><p>响应式主要是根据@media来实现</p>
 <p>自适应则是忽略了@media依靠的是窗口比例来实现</p>
 <p>自适应比较好</p>
 <p>如今的大型网站, 例如淘宝已经没有响应式了</p>
@@ -676,7 +677,7 @@
         lastTouchEnd <span class="token operator">=</span> now<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="http://www.w3cplus.com/sites/default/files/blogs/2015/1511/rem-6.jpg#alt=Flexible%C3%A5%C2%AE%C2%9E%C3%A7%C2%8E%C2%B0%C3%A6%C2%89%C2%8B%C3%A6%C2%B7%C2%98H5%C3%A9%C2%A1%C2%B5%C3%A9%C2%9D%C2%A2%C3%A7%C2%9A%C2%84%C3%A7%C2%BB%C2%88%C3%A7%C2%AB%C2%AF%C3%A9%C2%80%C2%82%C3%A9%0A%C2%8D" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268586354-d98949c3-3c3a-4af7-aa91-d0eaf35d6f30.jpeg#align=left&display=inline&height=434&originHeight=434&originWidth=600&size=0&status=done&width=600" alt></p>
 <p>viewport: layout viewport、visual viewport、ideal viewport。</p>
 <ul>
 <li><code>layout viewport:</code>大于实际屏幕， 元素的宽度继承于 layoutviewport，用于保证网站的外观特性与桌面浏览器一样。layoutviewport 到底多宽，每个浏览器不同。iPhone 的 safari 为 980px，通过 document.documentElement.clientWidth 获取。</li>
@@ -697,11 +698,11 @@ visualviewport <span class="token operator">=</span> viewport_2<span class="toke
 <p><code>dpr</code></p>
 <p>什么是dpr: 设备像素比(dpr) = 物理像素/设备独立像素。如 iphone 6、7、8 的 dpr 为 2，那么一个设备独立像素便为 4 个物理像素，因此在 css 上设置的 1px 在其屏幕上占据的是 2个物理像素，0.5px 对应的才是其所能展示的最小单位。这就是 1px 在 retina 屏上变粗的原因，目前有很多办法来解决这一问题。</p>
 <hr>
-<p><a href></a><a name="ce806820"></a></p>
+<p><a name="ce806820"></a></p>
 <h4 id="px与自适应"><a href="#px与自适应" class="headerlink" title="px与自适应"></a>px与自适应</h4><p>上述我们了解到了当通过viewport元标签，设置布局视口为理想视口时，1个css像素可以表示成：</p>
 <pre><code>1 CSS像素 = 物理像素／分辨率</code></pre><p>我们直到，在pc端的布局视口通常情况下为980px，移动端以iphone6为例，分辨率为375 _ 667，也就是说布局视口在理想的情况下为375px。比如现在我们有一个750px _ 1134px的视觉稿，那么在pc端，一个css像素可以如下计算：</p>
 <pre><code>PC端： 1 CSS像素 = 物理像素／分辨率 = 750 ／ 980 =0.76 px</code></pre><p>而在iphone6下：</p>
-<pre><code>iphone6：1 CSS像素 = 物理像素 ／分辨率 = 750 ／ 375 = 2 px</code></pre><p><a href></a><a name="107b9842"></a></p>
+<pre><code>iphone6：1 CSS像素 = 物理像素 ／分辨率 = 750 ／ 375 = 2 px</code></pre><p><a name="107b9842"></a></p>
 <h4 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h4><pre class=" language-scss"><code class="language-scss">@media screen <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">960</span>px<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token selector">body</span><span class="token punctuation">{</span>
       <span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#FF6699</span>
@@ -726,7 +727,7 @@ visualviewport <span class="token operator">=</span> viewport_2<span class="toke
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>但是媒体查询的缺点也很明显，如果在浏览器大小改变时，需要改变的样式太多，那么多套样式代码会很繁琐。</p>
-<p><a href></a><a name="81522afd"></a></p>
+<p><a name="81522afd"></a></p>
 <h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>trangle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>设置样式让其自适应：</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.trangle</span></span><span class="token punctuation">{</span>
@@ -735,9 +736,9 @@ visualviewport <span class="token operator">=</span> viewport_2<span class="toke
   <span class="token property">padding-top</span><span class="token punctuation">:</span><span class="token number">75%</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>通过设置padding-top：75%,相对比宽度的75%，因此这样就设置了一个长宽高恒定比例的长方形，具体效果展示如下：</p>
-<p><a href="https://user-images.githubusercontent.com/17233651/41851698-52d2bd2c-78bb-11e8-97cb-26f985195809.gif" target="_blank" rel="noopener"><img src="https://user-images.githubusercontent.com/17233651/41851698-52d2bd2c-78bb-11e8-97cb-26f985195809.gif#alt=jest" alt></a></p>
+<p><a href="https://user-images.githubusercontent.com/17233651/41851698-52d2bd2c-78bb-11e8-97cb-26f985195809.gif" target="_blank" rel="noopener"></a></p>
 <p><code>有明显的以下两个缺点：</code></p>
-<p>（1）<code>计算困难，</code>如果我们要定义一个元素的宽度和高度，按照设计稿，必须换算成百分比单位。<br><br>（2）各个属性中如果使用百分比，<code>相对父元素的属性并不是唯一的</code>。比如width和height相对于父元素的width和height，而margin、padding不管垂直还是水平方向都相对比父元素的宽度、border-radius则是相对于元素自身等等，造成我们使用百分比单位容易使布局问题变得复杂。</p>
+<p>（1）<code>计算困难，</code>如果我们要定义一个元素的宽度和高度，按照设计稿，必须换算成百分比单位。<br>（2）各个属性中如果使用百分比，<code>相对父元素的属性并不是唯一的</code>。比如width和height相对于父元素的width和height，而margin、padding不管垂直还是水平方向都相对比父元素的宽度、border-radius则是相对于元素自身等等，造成我们使用百分比单位容易使布局问题变得复杂。</p>
 <p><a name="rem"></a></p>
 <h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><p>rem单位都是<code>相对于根元素html的font-size</code>来决定大小的</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">refreshRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -750,11 +751,11 @@ visualviewport <span class="token operator">=</span> viewport_2<span class="toke
 win<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> refreshRem<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>小缺陷是：</p>
 <p><strong><em>在响应式布局中，必须通过js来动态控制根元素font-size的大小。</em></strong>也就是说css样式和js代码有一定的耦合性。且必须将改变font-size的代码放在css样式之前。</p>
-<p><a href></a><a name="0dc77462"></a></p>
+<p><a name="0dc77462"></a></p>
 <h4 id="通过vw-vh来实现自适应"><a href="#通过vw-vh来实现自适应" class="headerlink" title="通过vw/vh来实现自适应"></a>通过vw/vh来实现自适应</h4><p>对于iphone6/7  375*667的分辨率，那么px可以通过如下方式换算成vw：</p>
 <pre><code>1px = （1/375）*100 vw</code></pre><p>此外，也可以通过postcss的相应插件，预处理css做一个自动的转换，<a href="https://github.com/evrone/postcss-px-to-viewport" target="_blank" rel="noopener">postcss-px-to-viewport</a>可以自动将px转化成vw。</p>
-<p><a href></a><a name="9ea28e21"></a></p>
-<h3 id="1px解决办法"><a href="#1px解决办法" class="headerlink" title="1px解决办法"></a>1px解决办法</h3><p>可以使用以下方法来:</p>
+<p><a name="I4J5b"></a></p>
+<h1 id="1px解决办法"><a href="#1px解决办法" class="headerlink" title="1px解决办法"></a>1px解决办法</h1><p>可以使用以下方法来:</p>
 <ol>
 <li>border-image/background-image</li>
 <li>伪类+transform</li>
@@ -762,7 +763,7 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
 <li>viewport<code>但是所有布局都要按照物理像素来写</code>这样不现实, 可以借助<code>flexible</code>或<code>vw、vh</code>来帮助我们进行适配</li>
 <li>多背景渐变实现和阴影方式(其实和背景一样)</li>
 </ol>
-<p><a href></a><a name="0fe37b3f"></a></p>
+<p><a name="0fe37b3f"></a></p>
 <h4 id="1-border-image-background-image"><a href="#1-border-image-background-image" class="headerlink" title="1. border-image/background-image"></a>1. border-image/background-image</h4><p><strong>优点：</strong></p>
 <ul>
 <li>可以设置单条,多条边框</li>
@@ -773,8 +774,8 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
 <li>修改颜色麻烦, 需要替换图片</li>
 <li>圆角需要特殊处理，并且边缘会模糊</li>
 </ul>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5a3qsuxpbj31iw0d6q5r.jpg#alt=" alt></p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5a3koajdjj31720u00xj.jpg#alt=" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268586567-1cd572a3-4391-4f8a-9525-1abb777a8e5b.jpeg#align=left&display=inline&height=474&originHeight=474&originWidth=1976&size=0&status=done&width=1976" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268586367-ea499e37-3384-4dc5-b501-5b3fc73ae63e.jpeg#align=left&display=inline&height=1080&originHeight=1080&originWidth=1550&size=0&status=done&width=1550" alt></p>
 <p><code>border-image</code>属性是一个简写的CSS属性，它可以同时设置<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-source.html" target="_blank" rel="noopener">border-image-source</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-slice.html" target="_blank" rel="noopener">border-image-slice</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-width.html" target="_blank" rel="noopener">border-image-width</a>、<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-outset.html" target="_blank" rel="noopener">border-image-outset</a>和<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/border-image-repeat.html" target="_blank" rel="noopener">border-image-repeat</a>属性。</p>
 <p>基于<code>media</code>查询判断不同设备像素比给定不同的<code>border-image</code></p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.border_1px</span></span><span class="token punctuation">{</span>
@@ -792,7 +793,7 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
   <span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
         <span class="token punctuation">}</span></code></pre>
-<p><a href></a><a name="e12fef84"></a></p>
+<p><a name="e12fef84"></a></p>
 <h4 id="2-渐变和阴影"><a href="#2-渐变和阴影" class="headerlink" title="2. 渐变和阴影"></a>2. 渐变和阴影</h4><p>与background-image方案类似，<code>只是将图片替换为css3渐变</code>。设置1px的渐变背景，<code>50%有颜色，50%透明。</code></p>
 <p><strong>优点：</strong></p>
 <ul>
@@ -825,11 +826,11 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
 <ul>
 <li>边框有阴影，颜色变浅</li>
 </ul>
-<p><a href></a><a name="b5bbb66e"></a></p>
+<p><a name="b5bbb66e"></a></p>
 <h4 id="3-viewport-rem-实现"><a href="#3-viewport-rem-实现" class="headerlink" title="3. viewport + rem 实现"></a>3. viewport + rem 实现</h4><pre class=" language-css"><code class="language-css">&lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"</span>></code></pre>
 <p>在devicePixelRatio = 3 时，输出viewport：</p>
 <pre class=" language-css"><code class="language-css">&lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no"</span>></code></pre>
-<p>这种兼容方案相对比较完美，适合新的项目，老的项目修改成本过大。<br><br>对于这种方案，可以看看<a href="https://github.com/amfe/article/issues/17" target="_blank" rel="noopener">《使用Flexible实现手淘H5页面的终端适配》</a><br><br><strong>优点：</strong></p>
+<p>这种兼容方案相对比较完美，适合新的项目，老的项目修改成本过大。<br>对于这种方案，可以看看<a href="https://github.com/amfe/article/issues/17" target="_blank" rel="noopener">《使用Flexible实现手淘H5页面的终端适配》</a><br><strong>优点：</strong></p>
 <ul>
 <li>所有场景都能满足</li>
 <li>一套代码，可以兼容基本所有布局</li>
@@ -838,8 +839,8 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
 <ul>
 <li>老项目修改代价过大，只适用于新项目</li>
 </ul>
-<p><a href></a><a name="26949996"></a></p>
-<h4 id="4-伪类-transform-重做border"><a href="#4-伪类-transform-重做border" class="headerlink" title="4. 伪类+transform(重做border)"></a>4. 伪类+transform(<code>重做border</code>)</h4><p>对于老项目，伪类+transform是比较完美的方法了。<br><br><code>原理是把原先元素的 border 去掉</code>，然后利用 :before 或者 :after <code>重做 border ，并 transform 的 scale 缩小一半</code>，原先的元素相对定位，新做的 border 绝对定位。单条border样式设置：</p>
+<p><a name="26949996"></a></p>
+<h4 id="4-伪类-transform-重做border"><a href="#4-伪类-transform-重做border" class="headerlink" title="4. 伪类+transform(重做border)"></a>4. 伪类+transform(<code>重做border</code>)</h4><p>对于老项目，伪类+transform是比较完美的方法了。<br><code>原理是把原先元素的 border 去掉</code>，然后利用 :before 或者 :after <code>重做 border ，并 transform 的 scale 缩小一半</code>，原先的元素相对定位，新做的 border 绝对定位。单条border样式设置：</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.scale-1px</span></span><span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span>
@@ -856,13 +857,10 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
   <span class="token property">-webkit-transform-origin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">transform-origin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><a href></a><a name="f5889746"></a></p>
+<p><a name="f5889746"></a></p>
 <h4 id="5-svg-目前最佳"><a href="#5-svg-目前最佳" class="headerlink" title="5. svg(目前最佳)"></a>5. svg(<code>目前最佳</code>)</h4><p>上面我们<code>border-image</code>和<code>background-image</code>都可以模拟<code>1px</code>边框，但是使用的都是位图，还需要外部引入。</p>
 <blockquote>
-<p>借助<code>PostCSS</code>的<code>postcss-write-svg</code></p>
-</blockquote>
-<blockquote>
-<p>直接使用<code>border-image</code>和<code>background-image</code>创建<code>svg</code>的<code>1px</code>边框：</p>
+<p>借助<code>PostCSS</code>的<code>postcss-write-svg</code><br>直接使用<code>border-image</code>和<code>background-image</code>创建<code>svg</code>的<code>1px</code>边框：</p>
 </blockquote>
 <pre class=" language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@svg</span> border_1px</span> <span class="token punctuation">{</span> 
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">2</span>px<span class="token punctuation">;</span> 
@@ -875,22 +873,25 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
 <span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">{</span> <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid transparent<span class="token punctuation">;</span> <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token function">svg</span><span class="token punctuation">(</span>border_<span class="token number">1</span>px <span class="token function">param</span><span class="token punctuation">(</span>--color <span class="token hexcode">#00b1ff</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">2</span> <span class="token number">2</span> stretch<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
 <p>编译后：</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">{</span> <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid transparent<span class="token punctuation">;</span> <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url">url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='2px'%3E%3Crect fill='%2300b1ff' width='100%25' height='50%25'/%3E%3C/svg%3E")</span> <span class="token number">2</span> <span class="token number">2</span> stretch<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
-<p>基本可以满足所有场景。</p>
-<p><a href></a><a name="06c46e14"></a></p>
-<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><p><code>get参数通过url传递，post放在request body中。</code></p>
-<p>get请求在url中传递的参数是有长度限制的，而post没有。</p>
-<p>get比post更不安全，因为参数直接暴露在url中，所以不能用来传递敏感信息。</p>
-<p>get请求只能进行url编码，而post支持多种编码方式</p>
-<p>get请求会浏览器主动cache，而post支持多种编码方式。</p>
-<p>get请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留。</p>
-<p>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
-<p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
-<blockquote>
-<p>总之能用post就post</p>
-</blockquote>
-<p><a href></a><a name="79274068"></a></p>
-<h3 id="怎么看网站的性能如何"><a href="#怎么看网站的性能如何" class="headerlink" title="怎么看网站的性能如何"></a>怎么看网站的性能如何</h3><p>检测页面加载时间一般有两种方式，一种是被动去测：就是在被检测的页面置入脚本或探针，当用户访问网页时，探针自动采集数据并传回数据库进行分析</p>
-<p>另一种主动监测的方式，即主动的搭建分布式受控环境，模拟用户发起页面访问请求，主动采集性能数据并分析，在检测的精准度上，专业的第三方工具效果更佳，比如说性能极客</p>
+<p>基本可以满足所有场景。<br><a name="9saP8"></a></p>
+<h1 id="怎么看网站的性能如何"><a href="#怎么看网站的性能如何" class="headerlink" title="怎么看网站的性能如何"></a>怎么看网站的性能如何</h1><p>检测页面加载时间一般有两种方式，一种是被动去测：就是在被检测的页面置入脚本或探针，当用户访问网页时，探针自动采集数据并传回数据库进行分析<br>另一种主动监测的方式，即主动的搭建分布式受控环境，模拟用户发起页面访问请求，主动采集性能数据并分析，在检测的精准度上，专业的第三方工具效果更佳，比如说性能极客<br><a name="w0VIu"></a></p>
+<h1 id="如何检测浏览器白屏时间-首屏加载时间-以及其他的资源的加载时间"><a href="#如何检测浏览器白屏时间-首屏加载时间-以及其他的资源的加载时间" class="headerlink" title="如何检测浏览器白屏时间, 首屏加载时间, 以及其他的资源的加载时间"></a>如何检测浏览器白屏时间, 首屏加载时间, 以及其他的资源的加载时间</h1><p>参考：<a href="http://www.alloyteam.com/2016/01/points-about-resource-loading/" target="_blank" rel="noopener">链接</a></p>
+<ol>
+<li>加载完静态资源后通过 ajax 请求去后台获取数据，数据回来后渲染内容，在每个点打上一个时间戳，首屏时间 =  点 8 - 点 1；</li>
+</ol>
+<p><a href="http://www.alloyteam.com/wp-content/uploads/2016/01/QQ%E6%88%AA%E5%9B%BE20160109164815.png" target="_blank" rel="noopener"><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566878154870-72e5c130-df9d-4c52-bd49-0d54cd8b8c80.png#align=left&display=inline&height=136&originHeight=136&originWidth=643&size=0&status=done&width=643" alt></a></p>
+<ol start="2">
+<li>使用后台直出，返回的 html 已经带上内容了，此时首屏时间 = 点 4 - 点 1。</li>
+</ol>
+<p><a href="http://www.alloyteam.com/wp-content/uploads/2016/01/QQ%E6%88%AA%E5%9B%BE20160109165343.png" target="_blank" rel="noopener"><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566878154887-b39fd0b3-bd3a-446f-acd8-e47eceb54d4a.png#align=left&display=inline&height=135&originHeight=135&originWidth=445&size=0&status=done&width=445" alt></a></p>
+<p>参考：<a href="https://github.com/nzhl/front-end-interview/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8.md" target="_blank" rel="noopener">链接</a></p>
+<ul>
+<li>使用performance API 可惜兼容性不强<a href="http://www.alloyteam.com/2016/01/points-about-resource-loading/" target="_blank" rel="noopener"></a></li>
+<li>在HTML的最开头用JS记录时间, 然后在紧接body的开始标签之后再次记录事件, 差值即为白屏事件.</li>
+<li>如果是首屏加载(即用户首屏所能看到的内容包括图片正常显示的时间), 则需要先找到首屏可见部分最底部的dom元素, 监听该元素以及首屏内可见的所有图片的load事件, 以load事件触发最慢的那个元素为标准, 算差值即为首屏加载时间.</li>
+<li>由于加载是并行的, 执行是串行的, 所以如果要记录某个外联jS的加载时间, 必须在前后打上事件戳, 中间不能有任何其他标签, 例如JS之前如果有比较大的外联CSS文件的话, 即使JS早已经加载完成也不会执行, 会等到CSS下载并解析完成后才会执行JS标签之后的时间戳打印.</li>
+<li>HTML里面Script的加载和执行均会影响 DOMContentLoaded事件的触发. 即使是放在body结尾的JS标签阻塞, 也会使得DOMContentLoaded推迟触发, 除非在标签中加上async.</li>
+</ul>
 
             </div>
             <hr/>
@@ -1130,12 +1131,10 @@ win<span class="token punctuation">.</span><span class="token function">addEvent
                     <div class="summary block-with-text">
                         
                             
-http状态码和含义1xx
-100continue表示继续，一般在发送post请求的时候，发送了http header后服务端会返回这个消息
-
-2xx
-
-200 OK：正常返回信息， 即返回的数据为全量的数据，如果文件不通过GZIP压缩的
+GET和POST的区别
+GET请求可以被添加到书签中，也可保存在浏览器历史记录中，请求可以被浏览器缓存，POST不能
+get请求会浏览器主动cache，而post支持多种编码方式
+get比post更不安全，GET请求收到URL长度限制，同
                         
                     </div>
                     <div class="publish-info">
@@ -1347,7 +1346,7 @@ node的使用场景和优缺点是一个JavaScript运行环境, 依赖于v8引�
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       

@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="位运算, sansenlian的博客">
     <meta name="description" content="
-测试第 k 位: s &amp;amp; (1 &amp;lt;&amp;lt; k)
-设置第 k 位: s |= (1 &amp;lt;&amp;lt; k)
-第 k 位置零: s &amp;amp;= ~(1 &amp;lt;&amp;lt; k)
-切换第 k 位值: s ^= ~(1 &amp;lt;&amp;">
+必备部分s &amp;lt;&amp;lt; n                                 // 乘以 2
+s &gt;&gt; n                                 // 除以 2
+s &amp;amp; t      ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -399,7 +398,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        115
+                        205
                     </div>
                     
 
@@ -422,21 +421,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>测试第 k 位: <code>s &amp; (1 &lt;&lt; k)</code></li>
-<li>设置第 k 位: <code>s |= (1 &lt;&lt; k)</code></li>
-<li>第 k 位置零: <code>s &amp;= ~(1 &lt;&lt; k)</code></li>
-<li>切换第 k 位值: <code>s ^= ~(1 &lt;&lt; k)</code></li>
-<li>乘以 2: <code>s &lt;&lt; n</code></li>
-<li>除以 2: <code>s &gt;&gt; n</code></li>
-<li>交集: <code>s &amp; t</code></li>
-<li>并集: <code>s | t</code></li>
-<li>减法: <code>s &amp; ~t</code></li>
-<li>交换 <code>x = x ^ y ^ (y = x)</code></li>
-<li>取出最小非 0 位（Extract lowest set bit）: <code>s &amp; (-s)</code></li>
-<li>取出最小 0 位（Extract lowest unset bit）: <code>~s &amp; (s + 1)</code></li>
-<li>交换值:<br><br><code>x ^= y; y ^= x; x ^= y;</code></li>
-</ul>
+                <p><a name="wvvot"></a></p>
+<h4 id="必备部分"><a href="#必备部分" class="headerlink" title="必备部分"></a>必备部分</h4><pre class=" language-javascript"><code class="language-javascript">s <span class="token operator">&lt;</span><span class="token operator">&lt;</span> n                                 <span class="token comment" spellcheck="true">// 乘以 2</span>
+s <span class="token operator">></span><span class="token operator">></span> n                                 <span class="token comment" spellcheck="true">// 除以 2</span>
+s <span class="token operator">&amp;</span> t                                 <span class="token comment" spellcheck="true">// 交集</span>
+s <span class="token operator">|</span> t                                 <span class="token comment" spellcheck="true">// 并集</span>
+x <span class="token operator">=</span> x <span class="token operator">^</span> y <span class="token operator">^</span> <span class="token punctuation">(</span>y <span class="token operator">=</span> x<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">// 交换</span>
+s <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token operator">-</span>s<span class="token punctuation">)</span>                             <span class="token comment" spellcheck="true">// 取出最小非 0 位</span>
+
+<span class="token comment" spellcheck="true">// 加号操作可能造成溢出, 因此不建议使用mid = (left + right)>>1</span>
+mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">></span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span><span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 异或去重</span>
+<span class="token operator">^</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0</span>
+<span class="token operator">^</span> <span class="token number">5</span> <span class="token operator">^</span> <span class="token number">6</span> <span class="token operator">^</span> <span class="token number">6</span> <span class="token operator">^</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 7</span></code></pre>
+<p><a name="7lnyn"></a></p>
+<h4 id="针对第K位操作"><a href="#针对第K位操作" class="headerlink" title="针对第K位操作"></a>针对第K位操作</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 翻转数的第K位</span>
+num <span class="token operator">^</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 将第K位设为0, 与上自己相反的</span>
+num <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 将第K位设为1, 因为|第K位置只要有1就肯定是1</span>
+num <span class="token operator">|</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> K<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 判断第K位是否为0, 因为1与1相与为1, 与0相与为</span>
+num <span class="token operator">&amp;</span> <span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+s <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 测试第 k 位</span>
+s <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置第 k 位</span>
+s <span class="token operator">^</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 切换第 k 位值</span></code></pre>
 
             </div>
             <hr/>
@@ -718,10 +733,9 @@
                     <div class="summary block-with-text">
                         
                             
-测试第 k 位: s &amp; (1 &lt;&lt; k)
-设置第 k 位: s |= (1 &lt;&lt; k)
-第 k 位置零: s &amp;= ~(1 &lt;&lt; k)
-切换第 k 位值: s ^= ~(1 &lt;&
+必备部分s &lt;&lt; n                                 // 乘以 2
+s >> n                                 // 除以 2
+s &amp; t      
                         
                     </div>
                     <div class="publish-info">
@@ -893,7 +907,7 @@
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       

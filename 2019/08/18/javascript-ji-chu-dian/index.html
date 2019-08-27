@@ -402,14 +402,14 @@ con">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.9k
+                        3.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        15 分
                     </div>
                     
                 
@@ -456,7 +456,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <hr>
 <p><code>深拷贝</code>就是能够实现真正意义上的数组和对象的拷贝。</p>
 <p>它的实现并不难，只要<code>递归调用&quot;浅拷贝&quot;</code>就行了。</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134680370-76723511-9f18-4a0f-81c7-6089a85c20f8.jpeg#align=left&display=inline&height=590&originHeight=590&originWidth=754&size=0&status=done&width=754" alt></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268411103-4647a694-f943-4c8d-8c4f-8407a93ee20f.jpeg#align=left&display=inline&height=590&originHeight=590&originWidth=754&size=0&status=done&width=754" alt></p>
 <p><a name="c0feb0da"></a></p>
 <h4 id="Ajax解决浏览器缓存问题"><a href="#Ajax解决浏览器缓存问题" class="headerlink" title="Ajax解决浏览器缓存问题"></a>Ajax解决浏览器缓存问题</h4><blockquote>
 <p>主要是通过 <code>no-cache</code> 和不同的 <code>url</code> 来解决</p>
@@ -690,72 +690,139 @@ flags <span class="token operator">+</span><span class="token operator">=</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span></code></pre>
 <p><a name="e6afe359"></a></p>
-<h4 id="JavaScript-的宏事件、微事件"><a href="#JavaScript-的宏事件、微事件" class="headerlink" title="JavaScript 的宏事件、微事件"></a>JavaScript 的宏事件、微事件</h4><p>目的是执行宏事件, 若宏事件中有微事件存在就执行微事件, 然后继续下一个宏事件</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566134681654-fc5e5bc8-cc0a-4f25-a11e-f6b7e4ea3c62.png#align=left&display=inline&height=941&originHeight=941&originWidth=741&size=0&status=done&width=741" alt></p>
-<p>手写实现new操作</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> myNew <span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 创建一个新对象且将其隐式原型指向构造函数原型</span>
-    <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-      __proto__ <span class="token punctuation">:</span> fun<span class="token punctuation">.</span>prototype
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">// 执行构造函数</span>
-    fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token operator">...</span>arguments<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">// 返回该对象</span>
-    <span class="token keyword">return</span> obj
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
-<span class="token punctuation">}</span>
-<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token function">myNew</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'chen'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {name: "chen", age: 18}</span></code></pre>
-<p><a name="2867ac7c"></a></p>
-<h4 id="说下DocumentFragment"><a href="#说下DocumentFragment" class="headerlink" title="说下DocumentFragment"></a>说下DocumentFragment</h4><p>找出下面代码并优化它</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134680241-9769bb07-2c94-4d88-8af2-956dc8a71f92.jpeg#align=left&display=inline&height=140&originHeight=140&originWidth=427&size=0&status=done&width=427" alt></p>
-<p>对该代码的优化是三个点</p>
+<h4 id="宏事件、微事件"><a href="#宏事件、微事件" class="headerlink" title="宏事件、微事件"></a>宏事件、微事件</h4><p>目的是执行宏事件, 若宏事件中有微事件存在就执行微事件, 然后继续下一个宏事件，都是队列，一段代码执行时，会先执行宏任务中的同步代码</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/437349/1566268412547-b362528a-951b-4f83-84ac-8b9d82eed2b3.png#align=left&display=inline&height=411&originHeight=941&originWidth=741&size=0&status=done&width=324" alt></p>
 <ol>
-<li>把data.length提出去</li>
-<li>不要在里面进行提取dom(‘list’)</li>
-<li>不要每一次都进行一遍innerHTML, 可以先用字符串拼接然后最后再进行一下innerHTML</li>
-</ol>
-<p><strong>JavaScript每一次对dom进行操作都很好性能, 所以要尽可能地减少对dom的操作</strong></p>
-<p>并且每一次innerHTML还会对页面进行重绘</p>
-<hr>
-<p><code>例如:</code>把<br>第1行<br>第2行<br>…（body之间有100个p元素）插入body里面的问题</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134680181-40e19336-1bb5-4cac-8c60-f6076f088923.jpeg#align=left&display=inline&height=229&originHeight=229&originWidth=370&size=0&status=done&width=370" alt></p>
-<p>正确写法应该是通过<code>DocumentFragment</code>创建的是一个虚拟DOM</p>
-<p>存放在内存中, 对其进行更改不会对文档有影响</p>
-<p>插入到正式的文档中后, 虚拟DOM会被删除</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134680233-cd0dc5de-2174-4d69-b1ae-88531756261a.jpeg#align=left&display=inline&height=234&originHeight=234&originWidth=413&size=0&status=done&width=413" alt></p>
-<p><a name="d74311a8"></a></p>
-<h4 id="节流和防抖原理"><a href="#节流和防抖原理" class="headerlink" title="节流和防抖原理"></a>节流和防抖原理</h4><p>节流就是指<code>连续触发事件</code>但是在 n 秒中<code>只执行一次函数</code>。节流会稀释函数的执行频率。</p>
-<p>防抖，就是指<code>触发事件后</code>在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566134681321-b8821df0-0439-4a71-9da7-2a2449ba2612.jpeg#align=left&display=inline&height=500&originHeight=500&originWidth=1235&size=0&status=done&width=1235" alt></p>
-<p>可以看下: <a href="https://www.jianshu.com/p/c8b86b09daf0" target="_blank" rel="noopener">节流和防抖</a></p>
-<p><a name="5b9493fb"></a></p>
-<h4 id="哪些操作会造成内存泄漏"><a href="#哪些操作会造成内存泄漏" class="headerlink" title="哪些操作会造成内存泄漏"></a>哪些操作会造成内存泄漏</h4><ul>
-<li>setTimeout的第一个参数使用字符串而不是函数的话就会内存泄漏</li>
-<li>闭包使用不当就会</li>
-<li>函数间相互调用形成闭环也会</li>
+<li><p>宏任务」、「微任务」都是队列，一段代码执行时，会先执行宏任务中的同步代码。</p>
+<ul>
+<li>宏任务包括<code>整体代码script</code>, <code>setTimeout</code>, <code>setInterval</code>, IO, UI渲染<br>   + 微任务包括<code>Promise</code>, Object.observe、MutationObserver</li>
 </ul>
-<p><a name="e1d1393b"></a></p>
-<h4 id="new操作符做了什么事情"><a href="#new操作符做了什么事情" class="headerlink" title="new操作符做了什么事情"></a>new操作符做了什么事情</h4><p>new 操作符新建了一个空对象，这个对象原型指向构造函数的prototype，执行构造函数后返回这个对象。</p>
-<p><a name="834a01e0"></a></p>
-<h4 id="说说你知道的JavaScript编写规范"><a href="#说说你知道的JavaScript编写规范" class="headerlink" title="说说你知道的JavaScript编写规范"></a>说说你知道的JavaScript编写规范</h4><p>比如不要在一行声明多个变量<br>使用全等来进行数值比较和布尔值比较<br>不要使用全局函数<br>用对象字面量来代替new Array这种操作<br>switch语句必须带有default<br>if必须有大括号<br>变量应该声明</p>
-<p><a name="e411ec76"></a></p>
-<h4 id="js监听对象属性的改变"><a href="#js监听对象属性的改变" class="headerlink" title="js监听对象属性的改变"></a>js监听对象属性的改变</h4><p>(1)在<code>ES5中可以通过Object.defineProperty</code>来实现已有属性的监听</p>
-<pre class=" language-javascript"><code class="language-javascript">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
-  <span class="token keyword">set</span>：<span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>user可以是obj<br>缺点：如果id不在user对象中，则不能监听id的变化</p>
+</li>
+<li><p>进行第一轮事件循环的时候会把全部的js脚本当成一个宏任务来运行。</p>
+</li>
+<li><p>如果执行中遇到setTimeout之类宏任务，那么就把这个setTimeout内部的函数推入「宏任务的队列」中，下一轮宏任务执行时调用。</p>
+</li>
+<li><p>如果执行中遇到 promise.then() 之类的微任务，就会推入到「当前宏任务的微任务队列」中，在本轮宏任务的同步代码都执行完成后，依次执行所有的微任务。</p>
+</li>
+<li><p>第一轮事件循环中当执行完全部的同步脚本以及微任务队列中的事件，这一轮事件循环就结束了，开始第二轮事件循环。</p>
+</li>
+<li><p>第二轮事件循环同理先执行同步脚本，遇到其他宏任务代码块继续追加到「宏任务的队列」中，遇到微任务，就会推入到「当前宏任务的微任务队列」中，在本轮宏任务的同步代码执行都完成后，依次执行当前所有的微任务。</p>
+<p>   开始第三轮，循环往复…<br>参考：<a href>https://juejin.im/post/5c148ec8e51d4576e83fd836</a><br><a name="DWxbp"></a></p>
+<h4 id="手写实现new操作"><a href="#手写实现new操作" class="headerlink" title="手写实现new操作"></a>手写实现new操作</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> myNew <span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true">// 创建一个新对象且将其隐式原型指向构造函数原型</span>
+ <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+   __proto__ <span class="token punctuation">:</span> fun<span class="token punctuation">.</span>prototype
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">// 执行构造函数</span>
+ fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token operator">...</span>arguments<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">// 返回该对象</span>
+ <span class="token keyword">return</span> obj
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ol>
+<p>function person(name, age) {<br>  this.name = name<br>  this.age = age<br>}<br>let obj = myNew(person)(‘chen’, 18) // {name: “chen”, age: 18}</p>
+<pre><code>
+&lt;a name=&quot;2867ac7c&quot;&gt;&lt;/a&gt;
+#### 说下DocumentFragment
+
+找出下面代码并优化它
+
+![](https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268411124-50cc6318-a7c8-4cbe-ae6e-7c448cca1cc9.jpeg#align=left&amp;display=inline&amp;height=140&amp;originHeight=140&amp;originWidth=427&amp;size=0&amp;status=done&amp;width=427)
+
+对该代码的优化是三个点
+
+1. 把data.length提出去
+1. 不要在里面进行提取dom(&#39;list&#39;)
+1. 不要每一次都进行一遍innerHTML, 可以先用字符串拼接然后最后再进行一下innerHTML
+
+**JavaScript每一次对dom进行操作都很好性能, 所以要尽可能地减少对dom的操作**
+
+并且每一次innerHTML还会对页面进行重绘
+
+---
+
+`例如:`把&lt;br /&gt;第1行&lt;br /&gt;第2行&lt;br /&gt;...（body之间有100个p元素）插入body里面的问题
+
+![](https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268411139-ad08cdba-0a8f-460f-9ca9-42e83dbad754.jpeg#align=left&amp;display=inline&amp;height=229&amp;originHeight=229&amp;originWidth=370&amp;size=0&amp;status=done&amp;width=370)
+
+正确写法应该是通过`DocumentFragment`创建的是一个虚拟DOM
+
+存放在内存中, 对其进行更改不会对文档有影响
+
+插入到正式的文档中后, 虚拟DOM会被删除
+
+![](https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268411134-0a925f53-672f-4d4e-a401-407df1465748.jpeg#align=left&amp;display=inline&amp;height=234&amp;originHeight=234&amp;originWidth=413&amp;size=0&amp;status=done&amp;width=413)
+
+&lt;a name=&quot;d74311a8&quot;&gt;&lt;/a&gt;
+#### 节流和防抖原理
+
+节流就是指`连续触发事件`但是在 n 秒中`只执行一次函数`。节流会稀释函数的执行频率。
+
+防抖，就是指`触发事件后`在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+
+![](https://cdn.nlark.com/yuque/0/2019/jpeg/437349/1566268414317-c7b5b166-8013-4f81-a79a-8c4e0b42a8c7.jpeg#align=left&amp;display=inline&amp;height=500&amp;originHeight=500&amp;originWidth=1235&amp;size=0&amp;status=done&amp;width=1235)
+
+可以看下: [节流和防抖](https://www.jianshu.com/p/c8b86b09daf0)
+
+&lt;a name=&quot;5b9493fb&quot;&gt;&lt;/a&gt;
+#### 哪些操作会造成内存泄漏
+
+- setTimeout的第一个参数使用字符串而不是函数的话就会内存泄漏
+- 闭包使用不当就会
+- 函数间相互调用形成闭环也会
+
+&lt;a name=&quot;e1d1393b&quot;&gt;&lt;/a&gt;
+#### new操作符做了什么事情
+
+new 操作符新建了一个空对象，这个对象原型指向构造函数的prototype，执行构造函数后返回这个对象。
+
+&lt;a name=&quot;834a01e0&quot;&gt;&lt;/a&gt;
+#### 说说你知道的JavaScript编写规范
+
+比如不要在一行声明多个变量&lt;br /&gt;使用全等来进行数值比较和布尔值比较&lt;br /&gt;不要使用全局函数&lt;br /&gt;用对象字面量来代替new Array这种操作&lt;br /&gt;switch语句必须带有default&lt;br /&gt;if必须有大括号&lt;br /&gt;变量应该声明
+
+&lt;a name=&quot;e411ec76&quot;&gt;&lt;/a&gt;
+#### js监听对象属性的改变
+
+(1)在`ES5中可以通过Object.defineProperty`来实现已有属性的监听
+
+```javascript
+Object.defineProperty(user,&#39;name&#39;,{
+  set：function(key,value){
+  }
+})</code></pre><p>user可以是obj<br>缺点：如果id不在user对象中，则不能监听id的变化</p>
 <p>(2)在ES6中可以通过<code>Proxy来实现</code></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span>  user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span>，<span class="token punctuation">{</span>
   <span class="token keyword">set</span>：<span class="token keyword">function</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">,</span>value<span class="token punctuation">,</span>receiver<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p><a name="jet7Z"></a></p>
+<h4 id="Promise在中途取消"><a href="#Promise在中途取消" class="headerlink" title="Promise在中途取消"></a>Promise在中途取消</h4><ol>
+<li><p>最简单的方式是直接返回一个永远 pending 的Promise，但是会导致内存泄漏</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>resolve <span class="token operator">=</span><span class="token operator">></span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'准备中途取消该promise'</span><span class="token punctuation">)</span>
+     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'这里就不会执行了'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>利用 throw 扔出一个特殊的错误信号，然后下方就会catch住</p>
+</li>
+</ol>
+<p>参考：<a href="https://github.com/xieranmaya/blog/issues/5" target="_blank" rel="noopener">链接</a></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> Break <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>resolve <span class="token operator">=</span><span class="token operator">></span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Break</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>val <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>reason <span class="token keyword">instanceof</span> <span class="token class-name">Break</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> reason <span class="token comment" spellcheck="true">// 丢出</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>reason <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'被丢出了，中断promise'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -997,8 +1064,7 @@ flags <span class="token operator">+</span><span class="token operator">=</span>
                             
 JavaScript 堆和栈有哪些
 栈(stack)：栈会自动分配内存空间，会自动释放，存放基本类型，简单的数据段，占据固定大小的空间。（基本类型：String，Number，Boolean，Null，Undefined）速度快
-
-堆(h
+堆(he
                         
                     </div>
                     <div class="publish-info">
@@ -1212,7 +1278,7 @@ class Event {
 
       
       &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-      <span class="white-color">38.1k</span>
+      <span class="white-color">66.9k</span>
       
 
       
